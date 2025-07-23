@@ -3,8 +3,7 @@ function RedactProfilePage() {
     <>
       <h1>RedactProfilePage</h1>
     </>
-  );
+  )
 }
-
 
 export default RedactProfilePage

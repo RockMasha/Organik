@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 
 function HomePage() {
   return (
     <>
       <Button>HomePage</Button>
     </>
-  );
+  )
 }
 
-export default HomePage;
+export default HomePage

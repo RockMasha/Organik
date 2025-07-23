@@ -1,7 +1,7 @@
-import { Outlet } from "react-router-dom";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import Toast from "../Toast/Toast";
+import { Outlet } from 'react-router-dom'
+import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import Toast from '../Toast/Toast'
 
 function Layout() {
   return (
@@ -9,10 +9,10 @@ function Layout() {
       <Header />
       <Outlet />
       <Footer />
-      
+
       <Toast />
     </>
-  );
+  )
 }
 
-export default Layout;
+export default Layout

@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --color-navy-100: oklch(0.4325 0.06 235.12);
+
+  --color-gray-100: oklch(0.212 0.005 269);
+  --color-gray-200: oklch(0.52 0.02 245.1);
+  --color-gray-300: oklch(0.856 0.002 30);
+  --color-gray-400: oklch(0.934 0.001 30);
+  --color-gray-500: oklch(0.964 0 0);
+
+  --color-white-100: oklch(0.987 0 0);
+  --color-white-200: oklch(1 0 0);
+
+  --color-green-100: oklch(0.767 0.12 152.98);
+  --color-green-200: oklch(0.942 0.015 145.76);
+  --color-green-300: oklch(0.965 0.015 145);
+
+  --color-orange-100: oklch(0.845 0.19 80);
+  --color-orange-200: oklch(0.82 0.18 70);
+}

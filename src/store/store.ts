@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./rootReducer";
+import { configureStore } from '@reduxjs/toolkit'
+import rootReducer from './rootReducer'
 import {
   persistStore,
   persistReducer,
@@ -9,11 +9,11 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import { persistConfig } from "./persistConfig";
-import { initKyWithStore } from "@/api/kyInstance";
+} from 'redux-persist'
+import { persistConfig } from './persistConfig'
+import { initKyWithStore } from '@/api/kyInstance'
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -23,10 +23,10 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-});
+})
 
-export const persistor = persistStore(store);
+export const persistor = persistStore(store)
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>
 
-initKyWithStore(store.getState);
+initKyWithStore(store.getState)

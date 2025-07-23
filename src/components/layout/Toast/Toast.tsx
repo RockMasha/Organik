@@ -1,4 +1,4 @@
-import { Toaster } from "sonner";
+import { Toaster } from 'sonner'
 
 function Toast() {
   return (
@@ -8,7 +8,7 @@ function Toast() {
         duration: 4000,
       }}
     />
-  );
+  )
 }
 
-export default Toast;
+export default Toast

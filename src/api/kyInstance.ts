@@ -1,13 +1,13 @@
-import type { RootState } from "@/store";
-import ky from "ky";
+import type { RootState } from '@/store'
+import ky from 'ky'
 
-const API_URL = import.meta.env.VITE_API_BASE_URL;
+const API_URL = import.meta.env.VITE_API_BASE_URL
 
-let getReduxState: (() => RootState) | null = null;
+let getReduxState: (() => RootState) | null = null
 
 export const initKyWithStore = (getStateFunc: () => RootState) => {
-  getReduxState = getStateFunc;
-};
+  getReduxState = getStateFunc
+}
 
 const api = ky.create({
   prefixUrl: API_URL,
@@ -16,14 +16,14 @@ const api = ky.create({
     beforeRequest: [
       (request) => {
         if (getReduxState) {
-          const state = getReduxState();
-          console.log(state);
+          const state = getReduxState()
+          console.log(state)
           // const token = state?.auth?.token;
           // if (token) {
           //   request.headers.set("Authorization", `Bearer ${token}`);
           // }
         }
-        return request;
+        return request
       },
     ],
     // afterResponse: [
@@ -37,6 +37,6 @@ const api = ky.create({
     //   }
     // ]
   },
-});
+})
 
-export default api;
+export default api

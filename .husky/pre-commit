@@ -1,6 +1,12 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+node_bin_path=$(command -v node || true)
 
-npm run type-check
-npm run lint
-npm run format
+if [ -z "$node_bin_path" ]; then
+  echo "Error: Node.js not found in PATH. Please ensure Node.js is installed and accessible."
+  exit 1
+fi
+
+"$node_bin_path" node_modules/npm/bin/npm-cli.js run type-check && \
+"$node_bin_path" node_modules/npm/bin/npm-cli.js run lint && \
+"$node_bin_path" node_modules/npm/bin/npm-cli.js run format
+
+git add .

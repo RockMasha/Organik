@@ -1,6 +1,6 @@
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-branch_regex="^(main|master|develop|feature\/[a-z0-9]+(?:-[a-z0-9]+)*|bugfix\/[a-z0-9]+(?:-[a-z0-9]+)*|chore\/[a-z0-9]+(?:-[a-z0-9]+)*|docs\/[a-z0-9]+(?:-[a-z0-9]+)*|refactor\/[a-z0-9]+(?:-[a-z0-9]+)*|perf\/[a-z0-9]+(?:-[a-z0-9]+)*|ci\/[a-z0-9]+(?:-[a-z0-9]+)*|build\/[a-z0-9]+(?:-[a-z0-9]+)*)$"
+branch_regex="^(main|master|develop|feature\/[a-z0-9]+(-[a-z0-9]+)*|bugfix\/[a-z0-9]+(-[a-z0-9]+)*|chore\/[a-z0-9]+(-[a-z0-9]+)*|docs\/[a-z0-9]+(-[a-z0-9]+)*|refactor\/[a-z0-9]+(-[a-z0-9]+)*|perf\/[a-z0-9]+(-[a-z0-9]+)*|ci\/[a-z0-9]+(-[a-z0-9]+)*|build\/[a-z0-9]+(-[a-z0-9]+)*)$"
 
 if ! echo "$current_branch" | grep -Eq "$branch_regex"; then
   echo "❌ Помилка: Неправильне іменування гілки."

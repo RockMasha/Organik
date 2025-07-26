@@ -63,12 +63,6 @@ const navigationMenuTriggerStyle = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent/50 data-[state=open]:text-accent-foreground',
-        ghost:
-          'bg-transparent hover:bg-muted hover:text-foreground data-[state=open]:bg-muted data-[state=open]:text-foreground',
-        underline:
-          'bg-transparent border-b-2 border-transparent hover:border-accent data-[state=open]:border-accent text-muted-foreground data-[state=open]:text-accent-foreground',
         blue: 'bg-navy-100 text-white-100 hover:bg-white-100 hover:text-navy-100',
         yellow: 'bg-yellow-300 text-navy-100 hover:bg-white-100',
         transparent:
@@ -76,7 +70,7 @@ const navigationMenuTriggerStyle = cva(
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'blue',
     },
   }
 )

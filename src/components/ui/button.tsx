@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-
 import { cn } from '@/lib/utils'
 import CircleLoader, {
   type Color as LoaderColor,
@@ -11,19 +10,6 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-primary text-primary-foreground shadow-xs hover:bg-primary/90',
-        destructive:
-          'bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60',
-        outline:
-          'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
-        secondary:
-          'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
-        ghost:
-          'hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50',
-        link: 'text-primary underline-offset-4 hover:underline',
-
-        // кастом
         blue: 'bg-navy-100 text-white-100 hover:bg-white-100 hover:text-navy-100',
         yellow: 'bg-yellow-300 text-navy-100 hover:bg-white-100',
         transparent:
@@ -37,11 +23,24 @@ const buttonVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'default',
+      variant: 'blue',
       size: 'default',
     },
   }
 )
+
+const getLoaderColor = (
+  variant?: VariantProps<typeof buttonVariants>['variant']
+): LoaderColor => {
+  switch (variant) {
+    case 'blue':
+      return 'orange'
+    case 'yellow':
+      return 'blue'
+    default:
+      return 'orange'
+  }
+}
 
 function Button({
   className,
@@ -49,7 +48,6 @@ function Button({
   size,
   icon,
   loader,
-  loaderColor = 'orange',
   children,
   disabled,
   ...props
@@ -57,8 +55,9 @@ function Button({
   VariantProps<typeof buttonVariants> & {
     icon?: React.ReactNode
     loader?: boolean
-    loaderColor?: LoaderColor
   }) {
+  const resolvedLoaderColor = getLoaderColor(variant)
+
   return (
     <button
       data-slot="button"
@@ -67,7 +66,7 @@ function Button({
       {...props}
     >
       <>
-        {loader && <CircleLoader color={loaderColor} />}
+        {loader && <CircleLoader color={resolvedLoaderColor} />}
         {icon && <span className="shrink-0">{icon}</span>}
         {children}
       </>

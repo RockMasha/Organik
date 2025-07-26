@@ -46,13 +46,10 @@ const useFormField = () => {
   const { getFieldState } = useFormContext()
   const formState = useFormState({ name: fieldContext.name })
   const fieldState = getFieldState(fieldContext.name, formState)
-
   if (!fieldContext) {
     throw new Error('useFormField should be used within <FormField>')
   }
-
   const { id } = itemContext
-
   return {
     id,
     name: fieldContext.name,
@@ -73,7 +70,6 @@ const FormItemContext = createContext<FormItemContextValue>(
 
 function FormItem({ className, ...props }: ComponentProps<'div'>) {
   const id = useId()
-
   return (
     <FormItemContext.Provider value={{ id }}>
       <div
@@ -90,7 +86,6 @@ function FormLabel({
   ...props
 }: ComponentProps<typeof LabelPrimitive.Root>) {
   const { error, formItemId } = useFormField()
-
   return (
     <Label
       data-slot="form-label"
@@ -104,7 +99,6 @@ function FormLabel({
 
 function FormControl({ ...props }: ComponentProps<typeof Slot>) {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
-
   return (
     <Slot
       data-slot="form-control"
@@ -120,7 +114,6 @@ function FormControl({ ...props }: ComponentProps<typeof Slot>) {
 
 function FormDescription({ className, ...props }: ComponentProps<'p'>) {
   const { formDescriptionId } = useFormField()
-
   return (
     <p
       data-slot="form-description"
@@ -134,9 +127,7 @@ function FormDescription({ className, ...props }: ComponentProps<'p'>) {
 function FormMessage({ className, children, ...props }: ComponentProps<'p'>) {
   const { error, formMessageId } = useFormField()
   const body = error ? String(error?.message ?? '') : children
-
   if (!body) return null
-
   return (
     <p
       data-slot="form-message"

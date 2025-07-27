@@ -1,4 +1,4 @@
-import type { RootState } from '@/store'
+import type { RootState } from '@/types'
 import ky from 'ky'
 
 const API_URL = import.meta.env.VITE_API_BASE_URL

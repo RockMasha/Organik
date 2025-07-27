@@ -1,1 +1,8 @@
-export { store, persistor, type RootState } from './store'
+export { store, persistor } from './store'
+
+//user
+export {
+  selectUser,
+  selectLoggedIn,
+  selectIsLoading,
+} from './slices/user/userSelectors'

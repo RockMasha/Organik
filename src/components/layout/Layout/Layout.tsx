@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import Toast from '../Toast/Toast'
+import { Toaster } from '@/components/ui/sonner'
 
 function Layout() {
   return (
@@ -10,7 +10,7 @@ function Layout() {
       <Outlet />
       <Footer />
 
-      <Toast />
+      <Toaster />
     </>
   )
 }

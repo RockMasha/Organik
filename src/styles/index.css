@@ -1,2 +1,6 @@
 @import './colors.css';
 @import './fonts.css';
+
+body {
+  font-family: Roboto;
+}

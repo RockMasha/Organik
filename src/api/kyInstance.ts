@@ -1,5 +1,5 @@
 import type { RootState } from '@/types'
-import ky from 'ky'
+import ky, { type KyRequest } from 'ky'
 
 const API_URL = import.meta.env.VITE_API_BASE_URL
 
@@ -15,28 +15,21 @@ const api = ky.create({
   hooks: {
     beforeRequest: [
       (request) => {
-        if (getReduxState) {
-          const state = getReduxState()
-          console.log(state)
-          // const token = state?.auth?.token;
-          // if (token) {
-          //   request.headers.set("Authorization", `Bearer ${token}`);
-          // }
-        }
+        setTokenToRequest(request)
         return request
       },
     ],
-    // afterResponse: [
-    //   async (request, options, response) => {
-    //     if (!response.ok) {
-    //       if (response.status === 401 || response.status === 403) {
-    //         console.error('Authentication error or forbidden access. Attempting to log out...');
-    //       }
-    //     }
-    //     return response;
-    //   }
-    // ]
   },
 })
+
+function setTokenToRequest(request: KyRequest) {
+  if (getReduxState) {
+    const state = getReduxState()
+    const token = state.user.token
+    if (token) {
+      request.headers.set('Authorization', `Bearer ${token}`)
+    }
+  }
+}
 
 export default api

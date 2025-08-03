@@ -9,43 +9,45 @@ import LoginPage from '@/pages/LoginPage'
 import Layout from '@/components/layout/Layout/Layout'
 import PrivateRoute from './PrivateRoute'
 import PublicOnlyRoute from './PublicOnlyRoute'
+import { ROUTES } from '@/shared/consts/routes'
+import ThankOrderPage from '../ThankOrderPage'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: ROUTES.home,
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: ROUTES.home,
         element: <HomePage />,
         children: [
           {
-            path: 'products/:productId',
+            path: ROUTES.product,
           },
         ],
       },
       {
-        path: 'register',
+        path: ROUTES.register,
         element: <PublicOnlyRoute Component={<RegisterPage />} />,
       },
       {
-        path: 'login',
+        path: ROUTES.login,
         element: <PublicOnlyRoute Component={<LoginPage />} />,
       },
       {
-        path: 'cart',
+        path: ROUTES.cart,
         element: <PrivateRoute Component={<CartPage />} />,
       },
       {
-        path: 'cart/thank',
-        element: <PrivateRoute Component={<CartPage />} />,
+        path: ROUTES.thankOrder,
+        element: <ThankOrderPage />,
       },
       {
-        path: 'profile',
+        path: ROUTES.profile,
         element: <PrivateRoute Component={<ProfilePage />} />,
       },
       {
-        path: 'profile/edit',
+        path: ROUTES.editProfile,
         element: <PrivateRoute Component={<RedactProfilePage />} />,
       },
       {

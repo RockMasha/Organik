@@ -1,3 +1,4 @@
-export const defaultErrorMessage = 'Opsss... Something went wrong'
-
-export const unexpectedErrorMessage = 'An unexpected error occurred'
+export const errorMessages = {
+  default: 'Opsss... Something went wrong',
+  unexpected: 'An unexpected error occurred',
+}

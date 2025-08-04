@@ -10,7 +10,7 @@ const Div = styled.div`
   @media (min-width: 1440px) {
     padding: 0 30px;
   }
-  @media (min-width: 1440px) {
+  @media (min-width: 1920px) {
     padding: 0 260px;
   }
 `

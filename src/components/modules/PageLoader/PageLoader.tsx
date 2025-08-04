@@ -1,5 +1,5 @@
 import { Backdrop } from '@/components/ui/Backdrop'
-import MainLoader from '@/components/ui/Loaders/MainLoader/MainLoader'
+import MainLoader from '@/components/ui/loaders/MainLoader/MainLoader'
 
 function PageLoader() {
   return (

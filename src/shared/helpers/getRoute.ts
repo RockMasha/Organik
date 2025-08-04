@@ -1,4 +1,4 @@
-import { ROUTES } from '../consts/routes'
+import { ROUTES } from '../consts/ROUTES'
 
 type RouteWithId = {
   [K in keyof typeof ROUTES]: (typeof ROUTES)[K] extends `${infer _Start}:id${infer _End}`

@@ -9,7 +9,7 @@ import LoginPage from '@/pages/LoginPage'
 import Layout from '@/components/layout/Layout/Layout'
 import PrivateRoute from './PrivateRoute'
 import PublicOnlyRoute from './PublicOnlyRoute'
-import { ROUTES } from '@/shared/consts/routes'
+import { ROUTES } from '@/shared/consts/ROUTES'
 import ThankOrderPage from '../ThankOrderPage'
 
 const router = createBrowserRouter([

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import type { Color } from './CircleLoader'
+import type { Color } from './CircleLoader.tsx'
 
 interface ColorProps {
   color?: Color | undefined

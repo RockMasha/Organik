@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 import CircleLoader, {
   type Color as LoaderColor,
-} from '@/components/ui/Loaders/CircleLoader/CircleLoader'
+} from './loaders/CircleLoader/CircleLoader'
 import ArrowIcon from '@/assets/icons/arrow.svg?react'
 
 const buttonVariants = cva(

@@ -1,4 +1,4 @@
-import { categories } from '@/shared/consts/Categories'
+import { categories } from '@/shared/consts/categories'
 import type { Category } from '../modules/product/Category'
 
 export function isCategory(value: unknown): boolean {

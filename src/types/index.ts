@@ -13,7 +13,7 @@ export { UserSchema, type User } from './modules/user/User'
 export type { NullableElement } from './modules/elements/NullableElement'
 
 // guards
-export { isCategory } from './guards/isCategory'
+// export { isCategory } from './guards/isCategory'
 export { includesLiteral } from './guards/includesLiteral'
 
 // other

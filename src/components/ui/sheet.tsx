@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils'
 import type { ComponentChildren, VNode } from 'preact'
 import type { JSX } from 'preact/jsx-runtime'
 import React from 'react'
-
 const getPortalRoot = () => {
   let element = document.getElementById('sheet-portal-root')
   if (!element) {
@@ -57,6 +56,7 @@ export function Sheet({
       if (typedChild.type === SheetClose) {
         return React.cloneElement(typedChild, {
           onClick: () => setIsOpen(false),
+          
         })
       }
     }
@@ -76,7 +76,7 @@ export function SheetTrigger(props: JSX.HTMLAttributes<HTMLButtonElement>) {
 }
 
 export function SheetClose(props: JSX.HTMLAttributes<HTMLButtonElement>) {
-  return <button type="button" data-slot="sheet-close" {...props} />
+  return <button type="button" фdata-slot="sheet-close" {...props} />
 }
 
 export function SheetPortal({ children }: { children?: ComponentChildren }) {
@@ -162,7 +162,7 @@ export function SheetContent({
             role="dialog"
             aria-modal="true"
             className={cn(
-              'bg-background flex flex-col gap-4 shadow-lg h-full w-full',
+              'bg-white flex flex-col gap-4 shadow-lg h-full w-full',
               side === 'right' && 'border-l',
               side === 'left' && 'border-r',
               side === 'top' && 'border-b',

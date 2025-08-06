@@ -15,8 +15,8 @@ const Div = styled.div`
   }
 `
 
-function Container({ children }: ChildrenProps) {
-  return <Div>{children}</Div>
+function Container({ children, className }: ChildrenProps & { className?: string }) {
+  return <Div className={className}>{children}</Div>
 }
 
 export default Container

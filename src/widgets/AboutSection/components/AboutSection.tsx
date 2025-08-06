@@ -3,7 +3,7 @@ import { Section } from './AboutSection.styled'
 
 function AboutSection() {
   return (
-    <Section>
+    <Section id='about'>
       <Container>
         <h2>AboutSection</h2>
       </Container>

@@ -67,6 +67,8 @@ const navigationMenuTriggerStyle = cva(
         yellow: 'bg-yellow-300 text-navy-100 hover:bg-white-100',
         transparent:
           'bg-white-200 text-navy-100 border-navy-100 border-2 hover:bg-navy-100 hover:text-white-100',
+        transparent_without_bd:
+          'bg-white-100 text-navy-100 hover:text-white-100',
       },
     },
     defaultVariants: {

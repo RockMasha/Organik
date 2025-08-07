@@ -1,6 +1,6 @@
-import { errorMessages } from '../consts/errorMessages'
-import { showErrorToast } from './toasts/showErrorToast'
-import { HTTPError } from 'ky'
+// import { errorMessages } from '../consts/errorMessages'
+// import { showErrorToast } from './toasts/showErrorToast'
+// import { HTTPError } from 'ky'
 
 export function processingRequestThunks(
   error: unknown,
@@ -8,16 +8,16 @@ export function processingRequestThunks(
 ) {
   console.error('❗ error:', error)
 
-  let errorMessage = 'default'
+  // let errorMessage = 'default'
 
-  if (error instanceof HTTPError) {
-    if (error.response.status === 400) {
-      errorMessage = 'existedUser'
-    }
-  }
+  // if (error instanceof HTTPError) {
+  //   if (error.response.status === 400) {
+  //     errorMessage = 'existedUser'
+  //   }
+  // }
 
-  const messageForToast = errorMessages[errorMessage] || errorMessages.default
-  showErrorToast(messageForToast)
+  // const messageForToast = errorMessages[errorMessage] || errorMessages.default
+  // showErrorToast(messageForToast)
 
   return defaultValue
 }

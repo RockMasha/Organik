@@ -1,6 +1,6 @@
 import { refreshUser } from '@/api/refreshUser'
 import { registerUser } from '@/features/RegisterForm/api/registerUser'
-import type { User } from '@/types'
+import type { ResponseUser, User } from '@/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 interface UserSliceState {
@@ -34,7 +34,10 @@ const userSlice = createSlice({
       state.token = null
     }
 
-    const handleAuthFulfilled = (state: typeof initialState, action) => {
+    const handleAuthFulfilled = (
+      state: typeof initialState,
+      action: PayloadAction<ResponseUser>
+    ) => {
       state.isLoading = false
       state.isLoggedIn = true
       state.date.email = action.payload.user.email

@@ -1,6 +1,6 @@
 import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
-import { UserSchema } from '@/types'
+import { ResponseUserSchema } from '@/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { UserRegisterSchema, type UserRegister } from '../consts/consts'
 import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
@@ -13,8 +13,7 @@ export const registerUser = createAsyncThunk(
       const answer = await api
         .post(ENDPOINTS.user, { json: parseFormData })
         .json()
-      const parseResult = UserSchema.parse(answer)
-
+      const parseResult = ResponseUserSchema.parse(answer)
       return parseResult
     } catch (error) {
       const message = processingRequestThunks(error)

@@ -1,4 +1,5 @@
 import { refreshUser } from '@/api/refreshUser'
+import { registerUser } from '@/features/RegisterForm/api/registerUser'
 import type { User } from '@/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
@@ -33,12 +34,12 @@ const userSlice = createSlice({
       state.token = null
     }
 
-    // const handleAuthFulfilled = (state: typeof initialState, action) => {
-    //   state.isLoading = false
-    //   state.isLoggedIn = true
-    //   state.user.email = action.payload.user.email
-    //   state.token = action.payload.token
-    // }
+    const handleAuthFulfilled = (state: typeof initialState, action) => {
+      state.isLoading = false
+      state.isLoggedIn = true
+      state.date.email = action.payload.user.email
+      state.token = action.payload.token
+    }
 
     const handleUpdateFulfilled = (
       state: typeof initialState,
@@ -50,10 +51,10 @@ const userSlice = createSlice({
     }
 
     builder
-      //     // Реєстрація
-      //     .addCase(registerUser.pending, handlePending)
-      //     .addCase(registerUser.fulfilled, handleAuthFulfilled)
-      //     .addCase(registerUser.rejected, handleRejected)
+      // Реєстрація
+      .addCase(registerUser.pending, handlePending)
+      .addCase(registerUser.fulfilled, handleAuthFulfilled)
+      .addCase(registerUser.rejected, handleRejected)
 
       //     // Вхід
       //     .addCase(loginUser.pending, handlePending)

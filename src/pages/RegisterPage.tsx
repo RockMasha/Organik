@@ -1,7 +1,9 @@
+import { RegisterSection } from '@/widgets/RegisterSection'
+
 function RegisterPage() {
   return (
     <>
-      <h1>RegisterPage</h1>
+      <RegisterSection></RegisterSection>
     </>
   )
 }

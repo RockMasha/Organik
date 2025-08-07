@@ -25,8 +25,8 @@ export const UserSchema = z.object({
     .max(200, 'Max 200 characters.')
     .nullable(),
   id: z.number(),
-  createdAt: z.date(),
-  updatedAt: z.date(),
+  createdAt: z.string().transform((str) => new Date(str)),
+  updatedAt: z.string().transform((str) => new Date(str)),
 })
 
 export type User = z.infer<typeof UserSchema>

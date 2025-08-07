@@ -8,6 +8,10 @@ export { CategorySchema, type Category } from './modules/product/Category'
 
 // user
 export { UserSchema, type User } from './modules/user/User'
+export {
+  ResponseUserSchema,
+  type ResponseUser,
+} from './modules/user/ResponseUser'
 
 // elements
 export type { NullableElement } from './modules/elements/NullableElement'

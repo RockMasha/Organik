@@ -1,5 +1,5 @@
 import { toast } from 'sonner'
 
-export function showErrorToast(message = 'success') {
+export function showSuccessToast(message = 'success') {
   toast.success(message)
 }

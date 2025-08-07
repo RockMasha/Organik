@@ -5,14 +5,16 @@ import CartIcon from '@/assets/icons/cart-icon.svg?react'
 import LogoIcon from '@/assets/icons/logo.svg?react'
 import MenuIcon from '@/assets/icons/menu.svg?react'
 import AccountIcon from '@/assets/icons/account.svg?react'
+
 import {
   NavigationMenu,
+  NavigationMenuContent,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 import { NavLink } from 'react-router-dom'
 
-//baze
+//base
 export const StyledHeader = styled.header`
   padding-top: calc(20px + (40 - 20) * (100vw - 320px) / (768 - 320));
   @media screen and (min-width: 768px) {
@@ -28,9 +30,8 @@ export const StyledContainer = styled(Container)`
   flex-wrap: wrap;
   text-align: center;
   align-items: center;
-  justify-content: center;
   row-gap: 20px;
-  column-gap: calc(20px + (268 - 20) * (100vw - 320px) / (768 - 320));
+  column-gap: calc(0px + (268 - 0) * (100vw - 480px) / (768 - 480));
   @media screen and (min-width: 768px) {
     row-gap: 0;
     column-gap: 0;
@@ -51,11 +52,19 @@ export const SheetAuthLink = styled(Link)`
 `
 export const StyledAuthLink = styled(Link)`
   display: none;
+  color: #274c5b;
+  font-family: Roboto;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  :hover {
+    color: var(--color-green-200);
+  }
   @media screen and (min-width: 1440px) {
     display: block;
   }
 `
-export const StyledP = styled.h1`
+export const StyledText = styled.h1`
   color: #274c5b;
   font-family: 'Roboto';
   font-size: 38px;
@@ -98,6 +107,16 @@ export const SheetWrapper = styled.div`
 `
 
 //nav
+export const StyledNavigationMenuContent = styled(NavigationMenuContent)`
+  padding: 15px 20px;
+  border: 2px var(--color-green-200) solid;
+  border-radius: 16px;
+`
+export const StyledDropList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+`
 export const StyledNavigation = styled(NavigationMenu)`
   display: none;
   width: 100%;
@@ -130,6 +149,9 @@ export const StyledNavText = styled(NavLink)`
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
+  :hover {
+    color: var(--color-green-200);
+  }
 `
 
 export const StyledNavTextTrigger = styled(NavigationMenuTrigger)`
@@ -146,9 +168,6 @@ export const StyledDiv = styled.div`
   text-align: center;
   align-items: center;
   gap: 20px;
-  @media screen and (min-width: 1440px) {
-    gap: 50px;
-  }
 `
 export const StyledCart = styled(CartIcon)`
   width: 56px;

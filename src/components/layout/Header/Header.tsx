@@ -5,10 +5,12 @@ import { useState } from 'react'
 import {
   StyledHeader,
   StyledContainer,
-  StyledP,
+  StyledText,
   StyledLink,
   StyledLogo,
+  StyledDropList,
   StyledCart,
+  StyledNavigationMenuContent,
   StyledDiv,
   StyledMenu,
   SheetWrapper,
@@ -19,11 +21,9 @@ import {
   StyledNavigationSheet,
   StyledNavigationListSheet,
   SheetAuthLink,
-  // StyledAuthLink,
 } from '@/components/layout/Header/Header.styled'
 import {
   NavigationMenuItem,
-  NavigationMenuContent,
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu'
 import {
@@ -38,53 +38,50 @@ function Header() {
   const [open, setOpen] = useState(false)
   const handleClose = () => {
     setOpen(false)
-    console.log(43)
   }
   return (
     <StyledHeader>
       <StyledContainer>
-        <StyledDiv>
-          <StyledLink to="/">
-            <StyledLogo />
-            <StyledP>Organick</StyledP>
-          </StyledLink>
+        <StyledLink to="/">
+          <StyledLogo />
+          <StyledText>Organick</StyledText>
+        </StyledLink>
+        {/* nav-menu */}
+        <StyledNavigation>
+          <StyledNavigationList>
+            <NavigationMenuItem>
+              <StyledNavTextTrigger variant="transparent_without_bd">
+                Pages
+              </StyledNavTextTrigger>
+              <StyledNavigationMenuContent>
+                <StyledDropList>
+                  <li>
+                    <StyledNavText to="/">Home</StyledNavText>
+                  </li>
+                  <li>
+                    <StyledNavText to="/cart">Cart</StyledNavText>
+                  </li>
+                </StyledDropList>
+              </StyledNavigationMenuContent>
+            </NavigationMenuItem>
 
-          <StyledNavigation>
-            <StyledNavigationList>
-              <NavigationMenuItem>
-                <StyledNavTextTrigger variant="transparent_without_bd">
-                  Pages
-                </StyledNavTextTrigger>
-                <NavigationMenuContent>
-                  <ul>
-                    <li>
-                      <NavigationMenuLink href="/">Home</NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink href="/cart">Cart</NavigationMenuLink>
-                    </li>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+            <NavigationMenuItem>
+              <StyledNavText to="/#hero">Welcome</StyledNavText>
+            </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <StyledNavText to="/#about">About us</StyledNavText>
-              </NavigationMenuItem>
+            <NavigationMenuItem>
+              <StyledNavText to="/#about">About us</StyledNavText>
+            </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <StyledNavText to="/#categories">Categories</StyledNavText>
-              </NavigationMenuItem>
+            <NavigationMenuItem>
+              <StyledNavText to="/#categories">Categories</StyledNavText>
+            </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <StyledNavText to="/#hero">Hero</StyledNavText>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <StyledNavText to="/#products">Products</StyledNavText>
-              </NavigationMenuItem>
-            </StyledNavigationList>
-          </StyledNavigation>
-        </StyledDiv>
+            <NavigationMenuItem>
+              <StyledNavText to="/#products">Products</StyledNavText>
+            </NavigationMenuItem>
+          </StyledNavigationList>
+        </StyledNavigation>
 
         <StyledDiv>
           <AuthLink />
@@ -99,58 +96,66 @@ function Header() {
           <SheetWrapper>
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger>
-                  <StyledMenu />
+                <StyledMenu />
               </SheetTrigger>
 
+              {/* side-bar */}
               <SheetContent side="right" open={open} onClose={handleClose}>
                 <SheetHeader>
                   <SheetTitle>
                     <StyledLink to="/" onClick={handleClose}>
                       <StyledLogo />
-                      <StyledP>Organick</StyledP>
+                      <StyledText>Organick</StyledText>
                     </StyledLink>
 
                     <SheetAuthLink />
                   </SheetTitle>
 
+                  {/* Side-bar nav menu */}
                   <StyledNavigationSheet>
                     <StyledNavigationListSheet>
                       <NavigationMenuItem>
                         <StyledNavTextTrigger variant="transparent_without_bd">
                           Pages
                         </StyledNavTextTrigger>
-                        <NavigationMenuContent>
-                          <ul>
-                            <li >
-                              <NavigationMenuLink href="/" onClick={handleClose}>
+                        <StyledNavigationMenuContent>
+                          <StyledDropList>
+                            <li>
+                              <StyledNavText to="/" onClick={handleClose}>
                                 Home
-                              </NavigationMenuLink>
+                              </StyledNavText>
                             </li>
-                            <li >
-                              <NavigationMenuLink href="/cart" onClick={handleClose}>
+                            <li>
+                              <StyledNavText to="/cart" onClick={handleClose}>
                                 Cart
-                              </NavigationMenuLink>
+                              </StyledNavText>
                             </li>
-                          </ul>
-                        </NavigationMenuContent>
+                          </StyledDropList>
+                        </StyledNavigationMenuContent>
                       </NavigationMenuItem>
 
-                      <NavigationMenuItem >
-                        <StyledNavText to="/#about" onClick={handleClose}>About us</StyledNavText>
+                      <NavigationMenuItem>
+                        <StyledNavText to="/#hero" onClick={handleClose}>
+                          Welcome
+                        </StyledNavText>
                       </NavigationMenuItem>
 
-                      <NavigationMenuItem >
+                      <NavigationMenuItem>
+                        <StyledNavText to="/#about" onClick={handleClose}>
+                          About us
+                        </StyledNavText>
+                      </NavigationMenuItem>
+
+                      <NavigationMenuItem>
                         <StyledNavText to="/#categories" onClick={handleClose}>
                           Categories
                         </StyledNavText>
                       </NavigationMenuItem>
 
-                      <NavigationMenuItem  >
-                        <StyledNavText to="/#hero" onClick={handleClose}>Hero</StyledNavText>
-                      </NavigationMenuItem>
-
-                      <NavigationMenuItem >
-                        <StyledNavText to="/#products" onClick={handleClose}>Products</StyledNavText>
+                      <NavigationMenuItem>
+                        <StyledNavText to="/#products" onClick={handleClose}>
+                          Products
+                        </StyledNavText>
                       </NavigationMenuItem>
                     </StyledNavigationListSheet>
                   </StyledNavigationSheet>

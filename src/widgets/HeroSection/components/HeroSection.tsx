@@ -3,7 +3,7 @@ import { Section } from './HeroSection.styled'
 
 function HeroSection() {
   return (
-    <Section id='hero'>
+    <Section id="hero">
       <Container>
         <h2>HeroSection</h2>
       </Container>

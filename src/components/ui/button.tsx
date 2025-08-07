@@ -24,8 +24,8 @@ const buttonVariants = cva(
         flattened: 'px-10 py-4 ',
         sm: 'px-7 py-4 text-[18px]',
         icon: 'size-9 rounded-full',
-        box:'bd-4 w-15 h-15',
-        half_rounded:'rounded-[33px] pt-1.75 pb-1.75 pr-6 pl-2.75',
+        box: 'bd-4 w-15 h-15',
+        half_rounded: 'rounded-[33px] pt-1.75 pb-1.75 pr-6 pl-2.75',
       },
       arrow: {
         true: '',

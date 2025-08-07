@@ -3,7 +3,7 @@ import { Section } from './EcoFriendlySection.styled'
 
 function EcoFriendlySection() {
   return (
-    <Section id='ecoFriendly'>
+    <Section id="ecoFriendly">
       <Container>
         <h2>EcoFriendlySection</h2>
       </Container>

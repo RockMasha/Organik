@@ -56,7 +56,6 @@ export function Sheet({
       if (typedChild.type === SheetClose) {
         return React.cloneElement(typedChild, {
           onClick: () => setIsOpen(false),
-          
         })
       }
     }
@@ -76,7 +75,7 @@ export function SheetTrigger(props: JSX.HTMLAttributes<HTMLButtonElement>) {
 }
 
 export function SheetClose(props: JSX.HTMLAttributes<HTMLButtonElement>) {
-  return <button type="button" фdata-slot="sheet-close" {...props} />
+  return <button type="button" data-slot="sheet-close" {...props} />
 }
 
 export function SheetPortal({ children }: { children?: ComponentChildren }) {

@@ -15,7 +15,10 @@ const Div = styled.div`
   }
 `
 
-function Container({ children, className }: ChildrenProps & { className?: string }) {
+function Container({
+  children,
+  className,
+}: ChildrenProps & { className?: string }) {
   return <Div className={className}>{children}</Div>
 }
 

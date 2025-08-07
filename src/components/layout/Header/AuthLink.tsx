@@ -10,9 +10,7 @@ function AuthLink() {
       <StyledAccount />
     </StyledLink>
   ) : (
-    <StyledAuthLink to="/login">
-      Увійти
-    </StyledAuthLink>
+    <StyledAuthLink to="/login">Увійти</StyledAuthLink>
   )
 }
 

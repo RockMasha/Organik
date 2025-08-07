@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux'
-import type { RootState } from '@/types'
 import { StyledLink, StyledAccount, StyledAuthLink } from './Header.styled'
+import { selectToken } from '@/store'
 
 function AuthLink() {
-  const token = useSelector((state: RootState) => state.user.token)
+  const token = useSelector(selectToken)
 
   return token ? (
     <StyledLink to="/profile">

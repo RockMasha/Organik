@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 import Container from '@/components/ui/Container'
 import CartIcon from '@/assets/icons/cart-icon.svg?react'
-import LogoIcon from '@/assets/icons/logo.svg?react'
 import MenuIcon from '@/assets/icons/menu.svg?react'
 import AccountIcon from '@/assets/icons/account.svg?react'
 
@@ -13,15 +12,15 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 import { NavLink } from 'react-router-dom'
+import responsiveSizing from '@/styles/helpers/resonsiceSizing'
 
-//base
 export const StyledHeader = styled.header`
-  padding-top: calc(20px + (40 - 20) * (100vw - 320px) / (768 - 320));
+  padding-top: ${responsiveSizing(20, 40, 320, 768)};
   @media screen and (min-width: 768px) {
     padding-top: 40px;
   }
   @media screen and (min-width: 1440px) {
-    padding-top: calc(40px + (50 - 40) * (100vw - 1440px) / (1920 - 1440));
+    padding-top: ${responsiveSizing(40, 50, 1440)};
   }
 `
 
@@ -30,15 +29,9 @@ export const StyledContainer = styled(Container)`
   flex-wrap: wrap;
   text-align: center;
   align-items: center;
-  row-gap: 20px;
-  column-gap: calc(0px + (268 - 0) * (100vw - 480px) / (768 - 480));
-  @media screen and (min-width: 768px) {
-    row-gap: 0;
-    column-gap: 0;
-    justify-content: space-between;
-  }
+  justify-content: space-between;
 `
-//logo
+
 export const StyledLink = styled(Link)`
   display: flex;
   gap: 8.2px;
@@ -46,41 +39,15 @@ export const StyledLink = styled(Link)`
   align-items: center;
 `
 
-//authlink
-export const SheetAuthLink = styled(Link)`
-  display: block;
-`
 export const StyledAuthLink = styled(Link)`
-  display: none;
-  color: #274c5b;
-  font-family: Roboto;
+  color: var(--color-navy-100);
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
   :hover {
     color: var(--color-green-200);
   }
-  @media screen and (min-width: 1440px) {
-    display: block;
-  }
-`
-export const StyledText = styled.h1`
-  color: #274c5b;
-  font-family: 'Roboto';
-  font-size: 38px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`
-export const StyledLogo = styled(LogoIcon)`
-  width: 37px;
-  height: 53px;
-  path {
-    stroke: #7eb693;
-  }
 `
 
-//side-bar
 export const StyledMenu = styled(MenuIcon)`
   background-color: var(--color-green-200);
   color: var(--color-white-100);
@@ -94,57 +61,55 @@ export const StyledAccount = styled(AccountIcon)`
   width: 56px;
   height: 56px;
   border-radius: 100px;
-  background: #274c5b;
+  background: var(--color-navy-100);
   padding: 0 16px;
   path {
-    fill: white;
-  }
-`
-export const SheetWrapper = styled.div`
-  @media screen and (min-width: 1440px) {
-    display: none;
+    fill: var(--color-white-100);
   }
 `
 
-//nav
+export const SheetWrapper = styled.div``
+
 export const StyledNavigationMenuContent = styled(NavigationMenuContent)`
   padding: 15px 20px;
   border: 2px var(--color-green-200) solid;
   border-radius: 16px;
 `
+
 export const StyledDropList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 5px;
 `
+
 export const StyledNavigation = styled(NavigationMenu)`
-  display: none;
+  display: flex;
   width: 100%;
   justify-content: center;
-
-  @media screen and (min-width: 1440px) {
-    display: flex;
-  }
 `
+
 export const StyledNavigationSheet = styled(NavigationMenu)`
   display: block;
+  margin-top: 20px;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: center;
-
   @media screen and (min-width: 1440px) {
     display: none;
   }
 `
+
 export const StyledNavigationList = styled(NavigationMenuList)`
   gap: 30px;
 `
+
 export const StyledNavigationListSheet = styled(NavigationMenuList)`
-  gap: 30px;
-  display: block;
+  align-items: start;
+  flex-direction: column;
+  gap: 10px;
 `
+
 export const StyledNavText = styled(NavLink)`
-  color: #274c5b;
+  color: var(--color-navy-100);
   font-family: Roboto;
   font-size: 20px;
   font-style: normal;
@@ -155,13 +120,13 @@ export const StyledNavText = styled(NavLink)`
 `
 
 export const StyledNavTextTrigger = styled(NavigationMenuTrigger)`
-  color: #274c5b;
+  color: var(--color-navy-100);
   font-family: Roboto;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
 `
-//group
+
 export const StyledDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -169,13 +134,14 @@ export const StyledDiv = styled.div`
   align-items: center;
   gap: 20px;
 `
+
 export const StyledCart = styled(CartIcon)`
   width: 56px;
   height: 56px;
   border-radius: 100px;
-  background: #274c5b;
+  background: var(--color-navy-100);
   padding: 0 16px;
   path {
-    stroke: white;
+    stroke: var(--color-white-100);
   }
 `

@@ -16,12 +16,16 @@ const buttonVariants = cva(
           'bg-yellow-100 text-navy-100 hover:bg-white-100 hover:border-2 hover:border-yellow-100',
         transparent:
           'bg-white-200 text-navy-100 border-navy-100 border-2 hover:bg-navy-100 hover:text-white-100',
+        green:
+          'bg-green-200 text-white-100 hover:bg-white-100 hover:border-2 hover:border-green-200',
       },
       size: {
         default: 'px-10 py-6 ',
         flattened: 'px-10 py-4 ',
         sm: 'px-7 py-4 text-[18px]',
         icon: 'size-9 rounded-full',
+        box: 'bd-4 w-15 h-15',
+        half_rounded: 'rounded-[33px] pt-1.75 pb-1.75 pr-6 pl-2.75',
       },
       arrow: {
         true: '',

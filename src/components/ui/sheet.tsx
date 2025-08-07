@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils'
 import type { ComponentChildren, VNode } from 'preact'
 import type { JSX } from 'preact/jsx-runtime'
 import React from 'react'
-
 const getPortalRoot = () => {
   let element = document.getElementById('sheet-portal-root')
   if (!element) {
@@ -162,7 +161,7 @@ export function SheetContent({
             role="dialog"
             aria-modal="true"
             className={cn(
-              'bg-background flex flex-col gap-4 shadow-lg h-full w-full',
+              'bg-white flex flex-col gap-4 shadow-lg h-full w-full',
               side === 'right' && 'border-l',
               side === 'left' && 'border-r',
               side === 'top' && 'border-b',

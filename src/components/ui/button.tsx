@@ -5,6 +5,9 @@ import CircleLoader, {
   type Color as LoaderColor,
 } from './loaders/CircleLoader/CircleLoader'
 import ArrowIcon from '@/assets/icons/arrow.svg?react'
+import { Link } from 'react-router-dom'
+import { getRoute } from '@/shared/helpers/getRoute'
+import type { RouteWithoutId } from '@/types'
 
 const buttonVariants = cva(
   'inline-flex items-center border-2 border-transparent justify-center gap-2.5 whitespace-nowrap rounded-xl text-[20px] font-medium transition-all disabled:pointer-events-none disabled:opacity-50 shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] group',
@@ -91,4 +94,43 @@ function Button({
   )
 }
 
-export { Button, buttonVariants }
+interface LinkProps
+  extends React.ComponentProps<'a'>,
+    VariantProps<typeof buttonVariants> {
+  loader?: boolean
+  arrow?: boolean
+  link: RouteWithoutId
+}
+
+function LinkButton({
+  className,
+  variant,
+  size,
+  loader,
+  children,
+  arrow,
+  link,
+  ...props
+}: LinkProps) {
+  const resolvedLoaderColor = getLoaderColor(variant)
+
+  return (
+    <Link
+      className={cn(buttonVariants({ variant, size, className }))}
+      to={getRoute(link)}
+      {...props}
+    >
+      <>
+        {children}
+        {loader && <CircleLoader size="20px" color={resolvedLoaderColor} />}
+        {arrow && !loader && (
+          <div className="transition-transform group-hover:translate-x-1 flex items-center p-[5px] justify-center w-5 h-5 bg-navy-200 rounded-full text-white-100 ">
+            <ArrowIcon />
+          </div>
+        )}
+      </>
+    </Link>
+  )
+}
+
+export { Button, buttonVariants, LinkButton }

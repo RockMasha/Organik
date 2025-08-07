@@ -1,16 +1,5 @@
+import type { RouteWithId, RouteWithoutId } from '@/types'
 import { ROUTES } from '../consts/ROUTES'
-
-type RouteWithId = {
-  [K in keyof typeof ROUTES]: (typeof ROUTES)[K] extends `${infer _Start}:id${infer _End}`
-    ? K
-    : never
-}[keyof typeof ROUTES]
-
-type RouteWithoutId = {
-  [K in keyof typeof ROUTES]: (typeof ROUTES)[K] extends `${infer _Start}:id${infer _End}`
-    ? never
-    : K
-}[keyof typeof ROUTES]
 
 type GetRoute = {
   (route: RouteWithoutId, id?: number): string

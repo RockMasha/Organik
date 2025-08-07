@@ -12,8 +12,13 @@ export { UserSchema, type User } from './modules/user/User'
 // elements
 export type { NullableElement } from './modules/elements/NullableElement'
 
+// routes
+export type { Routes } from './modules/routes/Routes'
+export type { RouteWithoutId } from './modules/routes/RouteWithoutId'
+export type { RouteWithId } from './modules/routes/RouteWithId'
+
 // guards
-// export { isCategory } from './guards/isCategory'
+export { isCategory } from './guards/isCategory'
 export { includesLiteral } from './guards/includesLiteral'
 
 // other

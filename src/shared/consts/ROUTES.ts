@@ -6,5 +6,5 @@ export const ROUTES = {
   thankOrder: 'cart/thank',
   profile: 'profile',
   editProfile: 'profile/edit',
-  product: 'products/:productId',
+  product: 'products/:id',
 } as const

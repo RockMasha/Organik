@@ -59,22 +59,22 @@ function Footer() {
               </StyledText>
               <StyledSocialList>
                 <li>
-                  <StyledSocialLink href="">
+                  <StyledSocialLink href="#">
                     <StyledFacelogo />
                   </StyledSocialLink>
                 </li>
                 <li>
-                  <StyledSocialLink href="">
+                  <StyledSocialLink href="#">
                     <StyledTwitterlogo />
                   </StyledSocialLink>
                 </li>
                 <li>
-                  <StyledSocialLink href="">
+                  <StyledSocialLink href="#">
                     <StyledInstlogo />
                   </StyledSocialLink>
                 </li>
                 <li>
-                  <StyledSocialLink href="">
+                  <StyledSocialLink href="#">
                     <StyledPinterestlogo />
                   </StyledSocialLink>
                 </li>

@@ -7,7 +7,7 @@ import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunk
 
 export const registerUser = createAsyncThunk(
   'auth/register',
-  async (formData, thunkApi) => {
+  async (formData: UserRegister, thunkApi) => {
     try {
       const parseFormData = UserRegisterSchema.parse(formData)
       const answer = await api

@@ -41,3 +41,7 @@ const RegisterForm = () => {
 }
 
 export default RegisterForm
+
+function a(b) {
+  return 1
+}

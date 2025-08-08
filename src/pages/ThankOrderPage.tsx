@@ -1,9 +1,6 @@
+import { ThankForOrderSection } from '@/widgets/ThankForOrderSection'
 function ThankOrderPage() {
-  return (
-    <>
-      <h1>RegisterPage</h1>
-    </>
-  )
+  return <ThankForOrderSection />
 }
 
 export default ThankOrderPage

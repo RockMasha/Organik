@@ -1,8 +1,8 @@
-import { NotFoundSection } from "@/widgets/NotFoundSection"
+import { NotFoundSection } from '@/widgets/NotFoundSection'
 function NotFoundPage() {
   return (
     <>
-      <NotFoundSection/>
+      <NotFoundSection />
     </>
   )
 }

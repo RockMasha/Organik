@@ -25,13 +25,13 @@ export const Section = styled.section`
     ${responsiveSizing(20, 840, 768, 1440)};
 
     background-image: image-set(
-    url('/images/404/404-768-1x.avif') type('image/avif') 1x,
-    url('/images/404/404-768-2x.avif') type('image/avif') 2x,
-    url('/images/404/404-768-1x.webp') type('image/webp') 1x,
-    url('/images/404/404-768-2x.webp') type('image/webp') 2x,
-    url('/images/404/404-768-1x.jpg') 1x,
-    url('/images/404/404-768-2x.jpg') 2x
-  );
+      url('/images/404/404-768-1x.avif') type('image/avif') 1x,
+      url('/images/404/404-768-2x.avif') type('image/avif') 2x,
+      url('/images/404/404-768-1x.webp') type('image/webp') 1x,
+      url('/images/404/404-768-2x.webp') type('image/webp') 2x,
+      url('/images/404/404-768-1x.jpg') 1x,
+      url('/images/404/404-768-2x.jpg') 2x
+    );
   }
 
   @media screen and (min-width: 1440px) {
@@ -39,23 +39,23 @@ export const Section = styled.section`
       ${responsiveSizing(840, 1105, 1440, 1920)};
     text-align: left;
     background-image: image-set(
-    url('/images/404/404-1440-1x.avif') type('image/avif') 1x,
-    url('/images/404/404-1440-2x.avif') type('image/avif') 2x,
-    url('/images/404/404-1440-1x.webp') type('image/webp') 1x,
-    url('/images/404/404-1440-2x.webp') type('image/webp') 2x,
-    url('/images/404/404-1440-1x.jpg') 1x,
-    url('/images/404/404-1440-2x.jpg') 2x
-  );
-  @media screen and (min-width: 1920px){
-    background-image: image-set(
-    url('/images/404/404-1920-1x.avif') type('image/avif') 1x,
-    url('/images/404/404-1920-2x.avif') type('image/avif') 2x,
-    url('/images/404/404-1920-1x.webp') type('image/webp') 1x,
-    url('/images/404/404-1920-2x.webp') type('image/webp') 2x,
-    url('/images/404/404-1920-1x.jpg') 1x,
-    url('/images/404/404-1920-2x.jpg') 2x
-  );
-  }
+      url('/images/404/404-1440-1x.avif') type('image/avif') 1x,
+      url('/images/404/404-1440-2x.avif') type('image/avif') 2x,
+      url('/images/404/404-1440-1x.webp') type('image/webp') 1x,
+      url('/images/404/404-1440-2x.webp') type('image/webp') 2x,
+      url('/images/404/404-1440-1x.jpg') 1x,
+      url('/images/404/404-1440-2x.jpg') 2x
+    );
+    @media screen and (min-width: 1920px) {
+      background-image: image-set(
+        url('/images/404/404-1920-1x.avif') type('image/avif') 1x,
+        url('/images/404/404-1920-2x.avif') type('image/avif') 2x,
+        url('/images/404/404-1920-1x.webp') type('image/webp') 1x,
+        url('/images/404/404-1920-2x.webp') type('image/webp') 2x,
+        url('/images/404/404-1920-1x.jpg') 1x,
+        url('/images/404/404-1920-2x.jpg') 2x
+      );
+    }
   }
 `
 export const StyledText = styled(Text)`

@@ -6,9 +6,11 @@ export function getErrorMessage(errorMessage?: string) {
   }
 
   switch (errorMessage) {
-    case 'Unauthorized':
-      return 'Not logined. Please, logging'
+    case 'Rejected':
+      return errorMessages.existedUser
+    case 'Unexpected':
+      return errorMessages.unexpected
+    default:
+      return errorMessage
   }
-
-  return errorMessage
 }

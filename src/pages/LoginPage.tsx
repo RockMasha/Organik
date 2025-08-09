@@ -1,7 +1,9 @@
+import { LoginSection } from '@/widgets/LoginSection'
+
 function LoginPage() {
   return (
     <>
-      <h1>LoginPage</h1>
+      <LoginSection></LoginSection>
     </>
   )
 }

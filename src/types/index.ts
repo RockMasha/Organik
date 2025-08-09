@@ -24,6 +24,7 @@ export type { RouteWithId } from './modules/routes/RouteWithId'
 // guards
 export { isCategory } from './guards/isCategory'
 export { includesLiteral } from './guards/includesLiteral'
+export { checkContextConnection } from './guards/checkContextConnection'
 
 // other
 export type { RootState } from './modules/RootState'

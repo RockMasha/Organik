@@ -5,10 +5,14 @@ export function getErrorMessage(errorMessage?: string) {
     return errorMessages.default
   }
 
-  switch (errorMessage) {
-    case 'Unauthorized':
-      return 'Not logined. Please, logging'
-  }
+  console.log('errorMessage: ', errorMessage)
 
-  return errorMessage
+  switch (errorMessage) {
+    case 'Rejected':
+      return errorMessages.existedUser
+    case 'Unexpected':
+      return errorMessages.unexpected
+    default:
+      return errorMessage
+  }
 }

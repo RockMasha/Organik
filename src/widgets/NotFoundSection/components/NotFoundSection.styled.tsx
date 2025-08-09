@@ -59,8 +59,6 @@ export const Section = styled.section`
   }
 `
 export const StyledText = styled(Text)`
-  font-family: 'Open Sans';
-  font-weight: 400;
   letter-spacing: 0.36px;
   margin-top: 10px;
 `

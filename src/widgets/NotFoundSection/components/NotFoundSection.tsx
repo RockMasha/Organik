@@ -11,7 +11,7 @@ function NotFoundSection() {
         <StyledText type={'normal'}>
           The page you are looking for doesn't exist or has been moved
         </StyledText>
-        <StyledButton variant={'blue'} arrow={true} size={'default'}><Link to='/'>Go To Home Page</Link></StyledButton>
+        <StyledButton variant={'blue'} arrow={true} size={'flattened'}><Link to='/'>Go To Home Page</Link></StyledButton>
     </Section>
   )
 }

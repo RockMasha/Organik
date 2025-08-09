@@ -7,7 +7,7 @@ import {
 function ThankForOrderSection() {
   return (
     <Section>
-      <StyledTitle>Thank you for your order</StyledTitle>
+      <StyledTitle type={'h1'}>Thank you for your order</StyledTitle>
       <StyledPicture name={'thank-for-order'} />
     </Section>
   )

@@ -4,3 +4,10 @@
 body {
   font-family: Roboto;
 }
+
+@theme {
+  --breakpoint-phone: 320px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-laptop: 1440px;
+  --breakpoint-desktop: 1920px;
+}

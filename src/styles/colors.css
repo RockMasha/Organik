@@ -26,6 +26,7 @@
   --color-yellow-200: #fff4cd;
 
   --color-black-100: #0b0b0b;
+  --color-black-200: #1e1e1e;
 }
 
 @theme {
@@ -53,4 +54,5 @@
   --color-yellow-200: #fff4cd;
 
   --color-black-100: #0b0b0b;
+  --color-black-200: #1e1e1e;
 }

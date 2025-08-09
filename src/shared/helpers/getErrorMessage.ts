@@ -5,8 +5,6 @@ export function getErrorMessage(errorMessage?: string) {
     return errorMessages.default
   }
 
-  console.log('errorMessage: ', errorMessage)
-
   switch (errorMessage) {
     case 'Rejected':
       return errorMessages.existedUser

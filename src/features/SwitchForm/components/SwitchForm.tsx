@@ -8,7 +8,6 @@ import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'
 import { ButtonStyled } from '@/components/modules/FormFieldFull/FormFieldFull.styled'
 import { loginUser } from '../api/loginUser'
 import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
-import type { ResponseUserSchema } from '@/types'
 
 type UserRegister = z.infer<typeof UserRegisterSchema>
 
@@ -28,17 +27,12 @@ const SwitchForm = ({ formType }: SwitchFormProps) => {
 
   const onRegisterSubmit = async (data: UserRegister) => {
     const action = await dispatch(registerUser(data))
-    const result = processingRequestThunks(action)
-    console.log(result)
+    processingRequestThunks(await action.payload)
   }
 
   const onLoginSubmit = async (data: UserRegister) => {
     const action = await dispatch(loginUser(data))
-    const result = processingRequestThunks(action)
-    console.log(result)
-    // const action = await dispatch(loginUser(data))
-    // const result = processingRequestThunks<typeof ResponseUserSchema>(action)
-    // console.log(result)
+    processingRequestThunks(await action.payload)
   }
 
   return (

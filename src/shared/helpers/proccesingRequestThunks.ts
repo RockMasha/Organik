@@ -1,10 +1,14 @@
 import { showErrorToast } from './toasts/showErrorToast'
-import type { RequestResponse } from '@/types'
-import { getErrorMessage } from './getErrorMessage'
-export function processingRequestThunks<T>(data: T) {
-  if (data?.error?.message) {
-    const errorText = getErrorMessage(data.error.message)
-    showErrorToast(errorText)
+import { type AppError } from '@/types'
+
+export function processingRequestThunks<T>(data: T): T | void {
+  console.log(data)
+
+  const candidate = data as Partial<AppError>
+
+  const maybeErrorMessage = candidate?.message
+  if (maybeErrorMessage) {
+    showErrorToast(maybeErrorMessage)
     return
   }
 

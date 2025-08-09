@@ -2,8 +2,6 @@ import { showErrorToast } from './toasts/showErrorToast'
 import { type AppError } from '@/types'
 
 export function processingRequestThunks<T>(data: T): T | void {
-  console.log(data)
-
   const candidate = data as Partial<AppError>
 
   const maybeErrorMessage = candidate?.message

@@ -8,6 +8,7 @@ import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'
 import { ButtonStyled } from '@/components/modules/FormFieldFull/FormFieldFull.styled'
 import { loginUser } from '../api/loginUser'
 import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
+import useLoading from '@/shared/hooks/useLoading'
 
 type UserRegister = z.infer<typeof UserRegisterSchema>
 
@@ -16,6 +17,7 @@ type SwitchFormProps = {
 }
 
 const SwitchForm = ({ formType }: SwitchFormProps) => {
+  const [loading, startLoading] = useLoading()
   const dispatch = useAppDispatch()
   const methods = useForm<UserRegister>({
     resolver: zodResolver(UserRegisterSchema),
@@ -25,15 +27,17 @@ const SwitchForm = ({ formType }: SwitchFormProps) => {
     },
   })
 
-  const onRegisterSubmit = async (data: UserRegister) => {
-    const action = await dispatch(registerUser(data))
-    processingRequestThunks(await action.payload)
-  }
+  const onRegisterSubmit = (data: UserRegister) =>
+    startLoading(async () => {
+      const action = await dispatch(registerUser(data))
+      processingRequestThunks(action)
+    })
 
-  const onLoginSubmit = async (data: UserRegister) => {
-    const action = await dispatch(loginUser(data))
-    processingRequestThunks(await action.payload)
-  }
+  const onLoginSubmit = (data: UserRegister) =>
+    startLoading(async () => {
+      const action = await dispatch(loginUser(data))
+      processingRequestThunks(action)
+    })
 
   return (
     <FormProvider {...methods}>
@@ -48,7 +52,7 @@ const SwitchForm = ({ formType }: SwitchFormProps) => {
             label="Пароль"
             inputType="password"
           ></FormFieldFull>
-          <ButtonStyled size="sm" type="submit">
+          <ButtonStyled size="sm" type="submit" loader={true}>
             Зареєструватися
           </ButtonStyled>
         </form>
@@ -63,7 +67,7 @@ const SwitchForm = ({ formType }: SwitchFormProps) => {
             label="Пароль"
             inputType="password"
           ></FormFieldFull>
-          <ButtonStyled size="sm" type="submit">
+          <ButtonStyled size="flatted" type="submit" loader={loading}>
             Увійти
           </ButtonStyled>
         </form>

@@ -1,12 +1,15 @@
 import Container from '@/components/ui/Container'
-import { SectionStyled, StyledTitle } from './RegisterSection.styled'
+import { SectionStyled } from './RegisterSection.styled'
 import { SwitchForm } from '@/features/SwitchForm'
+import Title from '@/components/ui/Title'
 
 function RegisterSection() {
   return (
     <SectionStyled>
       <Container>
-        <StyledTitle>Welcome To Organick</StyledTitle>
+        <Title type="h1" className="text-center">
+          Welcome To Organick
+        </Title>
         <SwitchForm formType="registration" />
       </Container>
     </SectionStyled>

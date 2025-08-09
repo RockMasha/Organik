@@ -10,9 +10,7 @@ export const FormLabelStyled = styled(FormLabel)`
 export const InputStyled = styled(Input)`
   height: ${responsiveSizing(36, 80)};
   font-size: ${responsiveSizing(14, 32)};
-  color: var(--color-gray-200);
   border-radius: 16px;
-  border: 1px solid var(--color-green-200);
 `
 
 export const ButtonStyled = styled(Button)`

@@ -24,7 +24,7 @@ const FormFieldFull = ({ name, label, inputType }: FormFieldFullProps) => {
         <FormItem className="mb-4">
           <FormLabelStyled className="text-[20px]">{label}</FormLabelStyled>
           <FormControl>
-            <InputStyled type={inputType} {...field} />
+            <InputStyled variant="transparent" type={inputType} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>

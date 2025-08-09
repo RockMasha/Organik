@@ -2,11 +2,12 @@ import type { Image } from '@/types'
 
 interface PictureProps {
   name: Image
+  className?: string // добавляем сюда
 }
 
-const Picture = ({ name }: PictureProps) => {
+const Picture = ({ name, className }: PictureProps) => {
   return (
-    <picture>
+    <picture className={className}>
       <source
         srcSet={`/images/${name}/${name}-1920-1x.avif 1x, /images/${name}/${name}-1920-2x.avif 2x`}
         type="image/avif"

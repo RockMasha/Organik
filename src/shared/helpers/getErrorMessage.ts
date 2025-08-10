@@ -6,7 +6,7 @@ export function getErrorMessage(errorMessage?: string) {
   }
 
   switch (errorMessage) {
-    case 'Rejected':
+    case 'This email already exist':
       return errorMessages.existedUser
     case 'Unexpected':
       return errorMessages.unexpected

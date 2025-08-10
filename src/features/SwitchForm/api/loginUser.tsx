@@ -2,7 +2,7 @@ import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { ResponseUserSchema } from '@/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { UserRegisterSchema, type UserRegister } from '../consts/consts'
+import { UserRegisterSchema, type UserRegister } from '../consts/userConsts'
 import { handelStringError } from '@/shared/helpers/handleStringError'
 
 export const loginUser = createAsyncThunk(
@@ -16,7 +16,8 @@ export const loginUser = createAsyncThunk(
       const parseResult = ResponseUserSchema.parse(answer)
       return parseResult
     } catch (error) {
-      return thunkApi.rejectWithValue(handelStringError(error))
+      const payload = await handelStringError(error)
+      return thunkApi.rejectWithValue(payload)
     }
   }
 )

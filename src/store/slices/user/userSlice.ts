@@ -1,6 +1,6 @@
 import { refreshUser } from '@/api/refreshUser'
-import { loginUser } from '@/features/SwitchForm/api/loginUser'
-import { registerUser } from '@/features/SwitchForm/api/registerUser'
+import { loginUser } from '@/features/AuthForm/api/loginUser'
+import { registerUser } from '@/features/AuthForm/api/registerUser'
 import type { ResponseUser, User } from '@/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 

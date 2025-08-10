@@ -1,25 +1,22 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { UserRegisterSchema } from '../consts/userConsts'
+import { UserRegisterSchema } from '../consts/userChema'
 import type z from 'zod'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'
 import { ButtonStyled } from '@/components/modules/FormFieldFull/FormFieldFull.styled'
 import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
 import useLoading from '@/shared/hooks/useLoading'
-import type { registerUser } from '../api/registerUser'
-import type { loginUser } from '../api/loginUser'
+import { registerUser } from '../api/registerUser'
+import { loginUser } from '../api/loginUser'
 
 type UserRegister = z.infer<typeof UserRegisterSchema>
 
-type AuthThunk = typeof registerUser | typeof loginUser
-
-type SwitchFormProps = {
-  functionType: AuthThunk
-  buttonText: 'Зареєструватися' | 'Увійти'
+type AuthFormProps = {
+  type: 'register' | 'login'
 }
 
-const SwitchForm = ({ functionType, buttonText }: SwitchFormProps) => {
+const AuthForm = ({ type }: AuthFormProps) => {
   const [loading, startLoading] = useLoading()
   const dispatch = useAppDispatch()
   const methods = useForm<UserRegister>({
@@ -27,12 +24,19 @@ const SwitchForm = ({ functionType, buttonText }: SwitchFormProps) => {
     defaultValues: {
       email: '',
       password: '',
+      checkPassword: '',
     },
   })
 
+  const authFunctions = {
+    register: registerUser,
+    login: loginUser,
+  }
+
   const onSubmit = (data: UserRegister) =>
     startLoading(async () => {
-      const action = await dispatch(functionType(data))
+      const { email, password } = data
+      const action = await dispatch(authFunctions[type]({ email, password }))
       processingRequestThunks(action)
     })
 
@@ -48,12 +52,19 @@ const SwitchForm = ({ functionType, buttonText }: SwitchFormProps) => {
           label="Пароль"
           inputType="password"
         ></FormFieldFull>
+        {type === 'register' ? (
+          <FormFieldFull
+            name="checkPassword"
+            label="Повторіть пароль"
+            inputType="password"
+          ></FormFieldFull>
+        ) : null}
         <ButtonStyled size="sm" type="submit" loader={loading}>
-          {buttonText}
+          {type === 'register' ? 'Зареєструватися' : 'Увійти'}
         </ButtonStyled>
       </form>
     </FormProvider>
   )
 }
 
-export default SwitchForm
+export default AuthForm

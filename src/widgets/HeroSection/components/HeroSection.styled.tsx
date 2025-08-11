@@ -84,16 +84,13 @@ export const StyledContainer = styled(Container)`
 `
 export const StyledTitle = styled(Title)`
   margin-top: ${responsiveSizing(15, 30, 320, 768)};
-  line-height: 43.2px;
-  height: calc(3 * 43.2px);
+  width: ${responsiveSizing(260, 380, 320, 768)};
   @media screen and (min-width: 768px) {
-    height: calc(3 * 66px);
-    line-height: 66px;
+    width: ${responsiveSizing(380, 500, 768, 1440)};
     margin-top: 30px;
   }
   @media screen and (min-width: 1440px) {
-    height: calc(3 * 84px);
-    line-height: 84px;
+    width: 500px;
   }
 `
 export const StyledButton = styled(Button)`

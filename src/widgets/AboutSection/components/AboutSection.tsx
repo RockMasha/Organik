@@ -11,7 +11,6 @@ import {
   StyledMainPart,
 } from './AboutSection.styled'
 import Picture from '@/components/ui/Picture'
-import { Button } from '@/components/ui/button'
 import Text from '@/components/ui/Text'
 import Title from '@/components/ui/Title'
 

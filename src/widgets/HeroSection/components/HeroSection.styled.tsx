@@ -4,7 +4,6 @@ import Title from '@/components/ui/Title'
 import { Button } from '@/components/ui/button'
 import Container from '@/components/ui/Container'
 export const Section = styled.section`
-  margin-top: ${responsiveSizing(30, 47, 320, 768)};
   text-align: left;
   background-size: cover;
   background-image: image-set(
@@ -21,7 +20,6 @@ export const Section = styled.section`
   );
   background-repeat: no-repeat;
   @media screen and (min-width: 768px) {
-    margin-top: ${responsiveSizing(47, 40, 768, 1440)};
     background-image: image-set(
       url('/images/choose-the-best/choose-the-best-768-1x.avif')
         type('image/avif') 1x,
@@ -37,7 +35,6 @@ export const Section = styled.section`
   }
 
   @media screen and (min-width: 1440px) {
-    margin-top: ${responsiveSizing(40, 58, 1440, 1920)};
     text-align: left;
     background-image: image-set(
       url('/images/choose-the-best/choose-the-best-1440-1x.avif')

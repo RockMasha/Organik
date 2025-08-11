@@ -14,6 +14,7 @@ export const StyledGroup = styled.div`
   text-align: left;
   @media screen and (min-width: 1440px) {
     display: flex;
+    justify-content: center;
     gap: 20px;
     text-align: right;
   }

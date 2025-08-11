@@ -16,11 +16,18 @@ import responsiveSizing from '@/styles/helpers/resonsiceSizing'
 
 export const StyledHeader = styled.header`
   padding-top: ${responsiveSizing(20, 40, 320, 768)};
+  padding-bottom: ${responsiveSizing(30, 47, 320, 768)};
   @media screen and (min-width: 768px) {
     padding-top: 40px;
+    padding-bottom: ${responsiveSizing(47, 40, 768, 1440)};
   }
   @media screen and (min-width: 1440px) {
+    padding-bottom: ${responsiveSizing(40, 58, 1440, 1920)};
     padding-top: ${responsiveSizing(40, 50, 1440)};
+  }
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 58px;
+    padding-top: 50px;
   }
 `
 

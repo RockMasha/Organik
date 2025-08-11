@@ -14,7 +14,7 @@ function HeroSection() {
         <StyledTitle type="h1">
           Welcome to the world of nature and organic.
         </StyledTitle>
-        <StyledButton size={'flattened'} variant={'yellow'} arrow={true}>
+        <StyledButton size={'default'} variant={'yellow'} arrow={true}>
           Explore Now
         </StyledButton>
       </StyledContainer>

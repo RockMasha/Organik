@@ -1,23 +1,15 @@
-// import { errorMessages } from '../consts/errorMessages'
-// import { showErrorToast } from './toasts/showErrorToast'
-// import { HTTPError } from 'ky'
+import { showErrorToast } from './toasts/showErrorToast'
+import { type AppError } from '@/types'
 
-export function processingRequestThunks(
-  error: unknown,
-  defaultValue?: unknown
-) {
-  console.error('❗ error:', error)
+export function processingRequestThunks<T>(data: T): T | void {
+  const action = data as { payload?: Partial<AppError> }
 
-  // let errorMessage = 'default'
+  const maybeErrorMessage = action.payload?.message
 
-  // if (error instanceof HTTPError) {
-  //   if (error.response.status === 400) {
-  //     errorMessage = 'existedUser'
-  //   }
-  // }
+  if (maybeErrorMessage) {
+    showErrorToast(maybeErrorMessage)
+    return
+  }
 
-  // const messageForToast = errorMessages[errorMessage] || errorMessages.default
-  // showErrorToast(messageForToast)
-
-  return defaultValue
+  return data
 }

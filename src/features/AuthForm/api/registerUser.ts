@@ -2,8 +2,8 @@ import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { ResponseUserSchema } from '@/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { UserRegisterSchema, type UserRegister } from '../consts/consts'
-import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
+import { UserRegisterSchema, type UserRegister } from '../consts/userSchema'
+import { handelAppError } from '@/shared/helpers/handelAppError'
 
 export const registerUser = createAsyncThunk(
   'auth/register',
@@ -16,8 +16,8 @@ export const registerUser = createAsyncThunk(
       const parseResult = ResponseUserSchema.parse(answer)
       return parseResult
     } catch (error) {
-      const message = processingRequestThunks(error)
-      return thunkApi.rejectWithValue(message)
+      const payload = await handelAppError(error)
+      return thunkApi.rejectWithValue(payload)
     }
   }
 )

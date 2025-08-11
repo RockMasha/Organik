@@ -10,9 +10,10 @@ import { FormLabelStyled, InputStyled } from './FormFieldFull.styled'
 type FormFieldFullProps = {
   name: string
   label: string
+  inputType?: string
 }
 
-const FormFieldFull = ({ name, label }: FormFieldFullProps) => {
+const FormFieldFull = ({ name, label, inputType }: FormFieldFullProps) => {
   const { control } = useFormContext()
 
   return (
@@ -23,7 +24,7 @@ const FormFieldFull = ({ name, label }: FormFieldFullProps) => {
         <FormItem className="mb-4">
           <FormLabelStyled className="text-[20px]">{label}</FormLabelStyled>
           <FormControl>
-            <InputStyled {...field} />
+            <InputStyled variant="transparent" type={inputType} {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>

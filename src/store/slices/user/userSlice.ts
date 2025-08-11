@@ -1,5 +1,6 @@
 import { refreshUser } from '@/api/refreshUser'
-import { registerUser } from '@/features/RegisterForm/api/registerUser'
+import { loginUser } from '@/features/AuthForm/api/loginUser'
+import { registerUser } from '@/features/AuthForm/api/registerUser'
 import type { ResponseUser, User } from '@/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
@@ -59,12 +60,12 @@ const userSlice = createSlice({
       .addCase(registerUser.fulfilled, handleAuthFulfilled)
       .addCase(registerUser.rejected, handleRejected)
 
-      //     // Вхід
-      //     .addCase(loginUser.pending, handlePending)
-      //     .addCase(loginUser.fulfilled, handleAuthFulfilled)
-      //     .addCase(loginUser.rejected, handleRejected)
+      // Вхід
+      .addCase(loginUser.pending, handlePending)
+      .addCase(loginUser.fulfilled, handleAuthFulfilled)
+      .addCase(loginUser.rejected, handleRejected)
 
-      //     // рефреш
+      // рефреш
       .addCase(refreshUser.pending, handlePending)
       .addCase(refreshUser.fulfilled, handleUpdateFulfilled)
       .addCase(refreshUser.rejected, handleRejected)

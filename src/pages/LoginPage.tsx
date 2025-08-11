@@ -1,8 +1,10 @@
+import { LoginSection } from '@/widgets/LoginSection'
+
 function LoginPage() {
   return (
-    <>
-      <h1>LoginPage</h1>
-    </>
+    <main>
+      <LoginSection></LoginSection>
+    </main>
   )
 }
 

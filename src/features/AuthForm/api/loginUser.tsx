@@ -2,7 +2,7 @@ import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { ResponseUserSchema } from '@/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { UserRegisterSchema, type UserRegister } from '../consts/userChema'
+import { UserRegisterSchema, type UserRegister } from '../consts/userSchema'
 import { handelAppError } from '@/shared/helpers/handelAppError'
 
 export const loginUser = createAsyncThunk(

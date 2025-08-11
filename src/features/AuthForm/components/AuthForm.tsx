@@ -1,6 +1,6 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { UserRegisterSchema } from '../consts/userChema'
+import { UserRegisterSchema } from '../consts/userSchema'
 import type z from 'zod'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'

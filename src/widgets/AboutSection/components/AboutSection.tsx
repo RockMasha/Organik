@@ -9,6 +9,8 @@ import {
   StyledButton,
   StyledDivText,
   StyledMainPart,
+  StyledAdvantageList,
+  StyledAdvantage,
 } from './AboutSection.styled'
 import Picture from '@/components/ui/Picture'
 import Text from '@/components/ui/Text'
@@ -32,29 +34,36 @@ function AboutSection() {
             perfect nutrition.
           </StyledText>
 
-          <StyledDiv>
-            <StyledOrganicIcon />
-            <div>
-              <Title type={'h3-thin'}>Organic Foods Only</Title>
-              <StyledDivText type={'normal'}>
-                The Product that you ordered will be verified that we have or
-                not if have we will start to move on with the next step.
-              </StyledDivText>
-            </div>
-          </StyledDiv>
+          <StyledAdvantageList>
+            <li>
+              <StyledDiv>
+                <StyledOrganicIcon />
+                <StyledAdvantage>
+                  <Title type={'h3-thin'}>Organic Foods Only</Title>
+                  <StyledDivText type={'normal'}>
+                    The Product that you ordered will be verified that we have
+                    or not if have we will start to move on with the next step.
+                  </StyledDivText>
+                </StyledAdvantage>
+              </StyledDiv>
+            </li>
 
-          <StyledDiv>
-            <StyledIconQuality />
-            <div>
-              <Title type={'h3-thin'}>Quality Standards</Title>
-              <StyledDivText type={'normal'}>
-                Once your product is packed it will be delivered to your nearby
-                locality you can directly visit the to buy the product.
-              </StyledDivText>
-            </div>
-          </StyledDiv>
+            <li>
+              <StyledDiv>
+                <StyledIconQuality />
+                <StyledAdvantage>
+                  <Title type={'h3-thin'}>Quality Standards</Title>
+                  <StyledDivText type={'normal'}>
+                    Once your product is packed it will be delivered to your
+                    nearby locality you can directly visit the to buy the
+                    product.
+                  </StyledDivText>
+                </StyledAdvantage>
+              </StyledDiv>
+            </li>
+          </StyledAdvantageList>
 
-          <StyledButton size={'flattened'} variant={'blue'} arrow={true}>
+          <StyledButton size={'default'} variant={'blue'} arrow={true}>
             Shop Now
           </StyledButton>
         </StyledMainPart>

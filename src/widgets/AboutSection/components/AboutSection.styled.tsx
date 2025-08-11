@@ -5,11 +5,11 @@ import responsiveSizing from '@/styles/shared/resonsiceSizing'
 import { Button } from '@/components/ui/button'
 import IconOrganicFood from '@/assets/icons/organic-food-icon.svg?react'
 import Container from '@/components/ui/Container'
-import IconQuality from '@/assets/icons/quality-standart.svg?react'
+import IconQuality from '@/assets/icons/quality-icon.svg?react'
 export const Section = styled.section`
   background: var(--color-white-200);
   margin-top: ${responsiveSizing(30, 40, 320, 768)};
-  padding-top: ${responsiveSizing(110, 100, 320, 768)};
+  padding-top: ${responsiveSizing(70, 100, 320, 768)};
   padding-bottom: 110px;
   @media screen and (min-width: 768px) {
     margin-top: 40px;
@@ -56,7 +56,7 @@ export const StyledOrganicIcon = styled(IconOrganicFood)`
   height: 100px;
   padding: 27px 23.5px;
   border-radius: 20px;
-  background: #fff;
+  background: var(--color-white-100);
   path {
     stroke: var(--color-green-200);
     fill: var(--color-green-200);
@@ -67,7 +67,7 @@ export const StyledIconQuality = styled(IconQuality)`
   height: 100px;
   padding: 27px 23.5px;
   border-radius: 20px;
-  background: #fff;
+  background: var(--color-white-100);
   path {
     stroke: var(--color-green-200);
     fill: var(--color-green-200);
@@ -83,13 +83,23 @@ export const StyledMainPart = styled.div`
   }
 `
 export const StyledDiv = styled.div`
-  margin-top: 30px;
   @media screen and (min-width: 1440px) {
     display: flex;
     gap: 20px;
   }
 `
-
+export const StyledAdvantageList = styled.ul`
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+`
+export const StyledAdvantage = styled.div`
+  margin-top: ${responsiveSizing(5, 15, 320, 768)};
+  @media screen and (min-width: 1440px) {
+    margin-top: 15px;
+  }
+`
 export const StyledButton = styled(Button)`
   margin-top: 50px;
 `

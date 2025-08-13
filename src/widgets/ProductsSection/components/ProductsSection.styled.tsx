@@ -4,6 +4,7 @@ import responsiveSizing from '@/styles/shared/resonsiceSizing'
 import styled from '@emotion/styled'
 
 export const Section = styled.section`
+  position: relative;
   padding-top: ${responsiveSizing(100, 176)};
   padding-bottom: ${responsiveSizing(85, 200)};
 `

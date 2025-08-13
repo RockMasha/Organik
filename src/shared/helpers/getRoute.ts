@@ -7,7 +7,7 @@ type GetRoute = {
 }
 
 export const getRoute: GetRoute = (route: keyof typeof ROUTES, id?: number) => {
-  const point = ROUTES[route]
+  const point = ROUTES[route] !== '/' ? ROUTES[route] : ''
 
   if (point.includes(':id')) {
     return point.replace(':id', String(id))

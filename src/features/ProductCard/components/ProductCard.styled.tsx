@@ -42,19 +42,3 @@ export const ProductPriceBox = styled.div`
   align-items: flex-end;
   gap: 8px;
 `
-
-export const ProductPrice = styled.p`
-  font-family: 'Open Sans';
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--color-navy-100);
-`
-
-export const ProductOldPrice = styled.p`
-  color: var(--color-gray-300);
-  font-family: 'Open Sans';
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: line-through;
-  text-decoration-thickness: 1px;
-`

@@ -13,6 +13,10 @@ export {
   type ResponseUser,
 } from './modules/user/ResponseUser'
 
+// cart
+export { CartSchema, type Cart } from './modules/cart/Cart'
+export { CartProductSchema, type CartProduct } from './modules/cart/CartProduct'
+
 // elements
 export type { NullableElement } from './modules/elements/NullableElement'
 

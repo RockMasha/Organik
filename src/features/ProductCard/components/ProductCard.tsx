@@ -3,39 +3,60 @@ import {
   ProductBadge,
   ProductImg,
   ProductItem,
-  ProductOldPrice,
-  ProductPrice,
   ProductPriceBox,
   ProductTitle,
   ProductValueContainer,
 } from './ProductCard.styled'
 import responsiveSizing from '@/styles/helpers/resonsiceSizing'
 import type { Product } from '@/types'
-import { getPriceWithDiscount } from '../helpers/getPriceWithDiscount'
+import { getPriceWithDiscount } from '@/shared/helpers/getPriceWithDiscount'
+import PriceText from '@/components/ui/PriceText'
+import { Link } from 'react-router-dom'
+import { getRoute } from '@/shared/helpers/getRoute'
 
-function ProductCard({ data }: { data: Product }) {
-  const { id, name, price, discount, img, rate, category } = data
+type CardVariant = 'item' | 'link'
+
+interface ProductCardProps {
+  data: Product
+  variant?: CardVariant
+}
+
+function ProductCard({ data, variant }: ProductCardProps) {
+  return (
+    <ProductItem data-id={data.id}>
+      {(variant === 'item' || !variant) && <ProductCardInner data={data} />}
+      {variant === 'link' && (
+        <Link to={`${getRoute('product', data.id)}#product-modal`}>
+          <ProductCardInner data={data} />
+        </Link>
+      )}
+    </ProductItem>
+  )
+}
+
+function ProductCardInner({ data }: { data: Product }) {
+  const { name, price, discount, img, rate, category } = data
 
   return (
-    <ProductItem data-id={id}>
+    <>
       <ProductBadge>{category.name}</ProductBadge>
       <ProductImg src={img} />
       <ProductTitle type="h4">{name}</ProductTitle>
       <ProductValueContainer>
         <ProductPriceBox>
           {discount !== 0 && (
-            <ProductOldPrice>
+            <PriceText minWidth={15} maxWidth={15}>
               ${getPriceWithDiscount(price, discount)}
-            </ProductOldPrice>
+            </PriceText>
           )}
-          <ProductPrice>${price}</ProductPrice>
+          <PriceText type="crossed" minWidth={18} maxWidth={18}>
+            ${price}
+          </PriceText>
         </ProductPriceBox>
         <StarRate rating={rate} size={responsiveSizing(16, 20)} />
       </ProductValueContainer>
-    </ProductItem>
+    </>
   )
 }
 
 export default ProductCard
-
-// ""

@@ -10,6 +10,7 @@ import type { SetState } from '@/types/modules/setStates/SetState'
 
 interface ProductsListContextValue {
   products: Product[]
+  limit: number
 }
 
 const ProductsListContext = createContext<ProductsListContextValue | null>(null)
@@ -51,7 +52,7 @@ export function ProductsContextProvider({ children }: ChildrenProps) {
   }, [page])
 
   return (
-    <ProductsListContext.Provider value={{ products }}>
+    <ProductsListContext.Provider value={{ products, limit }}>
       <ProductsPagesContext.Provider
         value={{ page, totalItems, setPage, limit }}
       >

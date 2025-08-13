@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute'
 import PublicOnlyRoute from './PublicOnlyRoute'
 import { ROUTES } from '@/shared/consts/ROUTES'
 import ThankOrderPage from '../ThankOrderPage'
+import { ProductModal } from '@/features/ProductModal'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: ROUTES.product,
+            element: <ProductModal />,
           },
         ],
       },

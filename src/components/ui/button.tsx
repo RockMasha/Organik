@@ -73,11 +73,17 @@ function Button({
   ...props
 }: ButtonProps) {
   const resolvedLoaderColor = getLoaderColor(variant)
+  const btnSize =
+    window.innerWidth > 767
+      ? size
+      : size === 'icon' || size === 'half_rounded'
+        ? size
+        : 'sm'
 
   return (
     <button
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size: btnSize, className }))}
       disabled={disabled || loader}
       {...props}
     >

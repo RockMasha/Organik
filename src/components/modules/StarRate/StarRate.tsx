@@ -7,13 +7,14 @@ import {
 interface StarRatingProps {
   rating: number
   size: string
+  className?: string
 }
 
-const StarRate = ({ rating, size }: StarRatingProps) => {
+const StarRate = ({ rating, size, className }: StarRatingProps) => {
   const widthPercent = (rating / 5) * 100
 
   return (
-    <StarsWrapper size={size}>
+    <StarsWrapper size={size} className={className}>
       <StarRatingFillSvg widthPercent={widthPercent} />
       <StarRatingEmptySvg />
     </StarsWrapper>

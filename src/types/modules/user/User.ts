@@ -1,9 +1,9 @@
 import { z } from 'zod'
-import { CartSchema } from './Cart'
+import { UserCartSchema } from './UserCart'
 
 export const UserSchema = z.object({
   email: z.email('Invalid email format.'),
-  cart: CartSchema,
+  cart: UserCartSchema,
   first_name: z
     .string()
     .min(2, 'Min 2 characters.')

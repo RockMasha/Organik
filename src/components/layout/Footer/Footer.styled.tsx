@@ -1,9 +1,5 @@
 import styled from '@emotion/styled'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
-import Twitterlogo from '@/assets/icons/twitter.svg?react'
-import Instlogo from '@/assets/icons/instagram.svg?react'
-import Facelogo from '@/assets/icons/facebook.svg?react'
-import Pinterestlogo from '@/assets/icons/pinterest.svg?react'
 
 export const StyledFooter = styled.footer`
   padding-top: ${responsiveSizing(70, 80)};
@@ -82,6 +78,16 @@ export const StyledText = styled.p`
   }
 `
 
+export const StyledSocialList = styled.ul`
+  display: flex;
+  gap: ${responsiveSizing(10, 20)};
+  margin-top: ${responsiveSizing(25, 35)};
+  @media screen and (min-width: 1440px) {
+    justify-content: center;
+    margin-top: 60px;
+  }
+`
+
 export const StyledSocialLink = styled.a`
   display: flex;
   justify-content: center;
@@ -90,48 +96,12 @@ export const StyledSocialLink = styled.a`
   height: 50px;
   border-radius: 100px;
   background: var(--color-gray-700);
-`
-
-// Icon styles
-export const StyledInstlogo = styled(Instlogo)`
-  width: 20px;
-  height: 19px;
-  path {
-    fill: var(--color-navy-100);
-  }
-`
-
-export const StyledFacelogo = styled(Facelogo)`
-  width: 20px;
-  height: 19px;
-  path {
-    fill: var(--color-navy-100);
-  }
-`
-
-export const StyledPinterestlogo = styled(Pinterestlogo)`
-  width: 20px;
-  height: 19px;
-  path {
-    fill: var(--color-navy-100);
-  }
-`
-
-export const StyledTwitterlogo = styled(Twitterlogo)`
-  width: 20px;
-  height: 19px;
-  path {
-    fill: var(--color-navy-100);
-  }
-`
-
-export const StyledSocialList = styled.ul`
-  display: flex;
-  gap: ${responsiveSizing(10, 20)};
-  margin-top: ${responsiveSizing(25, 35)};
-  @media screen and (min-width: 1440px) {
-    justify-content: center;
-    margin-top: 60px;
+  svg {
+    width: 20px;
+    height: 19px;
+    path {
+      fill: var(--color-navy-100);
+    }
   }
 `
 

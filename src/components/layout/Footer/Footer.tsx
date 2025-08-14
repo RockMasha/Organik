@@ -11,16 +11,17 @@ import {
   StyledPrivacyList,
   StyledPrivacyItem,
   StyledSocialLink,
-  StyledTwitterlogo,
-  StyledFacelogo,
-  StyledPinterestlogo,
-  StyledInstlogo,
   StyledSocialList,
   StyledUtilityList,
   StyledUtilityItem,
   StyledUtility,
   StyledOrganic,
 } from './Footer.styled'
+import TwitterLogo from '@/assets/icons/twitter.svg?react'
+import InstagramLogo from '@/assets/icons/instagram.svg?react'
+import FacebookLogo from '@/assets/icons/facebook.svg?react'
+import PintrestLogo from '@/assets/icons/pinterest.svg?react'
+
 function Footer() {
   return (
     <>
@@ -60,22 +61,22 @@ function Footer() {
               <StyledSocialList>
                 <li>
                   <StyledSocialLink href="#">
-                    <StyledFacelogo />
+                    <FacebookLogo />
                   </StyledSocialLink>
                 </li>
                 <li>
                   <StyledSocialLink href="#">
-                    <StyledTwitterlogo />
+                    <TwitterLogo />
                   </StyledSocialLink>
                 </li>
                 <li>
                   <StyledSocialLink href="#">
-                    <StyledInstlogo />
+                    <InstagramLogo />
                   </StyledSocialLink>
                 </li>
                 <li>
                   <StyledSocialLink href="#">
-                    <StyledPinterestlogo />
+                    <PintrestLogo />
                   </StyledSocialLink>
                 </li>
               </StyledSocialList>

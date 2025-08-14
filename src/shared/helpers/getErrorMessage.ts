@@ -10,6 +10,9 @@ export function getErrorMessage(errorMessage?: string) {
       return errorMessages.existedUser
     case 'Unexpected':
       return errorMessages.unexpected
+    case 'signal is aborted without reason':
+      return errorMessages.abort
+
     default:
       return errorMessage
   }

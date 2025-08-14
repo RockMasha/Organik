@@ -1,9 +1,9 @@
-import api from './kyInstance'
 import { handelError } from '@/shared/helpers/handelError'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { array, number, object } from 'zod'
 import { ProductSchema } from '@/types'
 import { ok } from 'neverthrow'
+import api from '@/api/kyInstance'
 
 export const ProductsApiSchema = object({
   data: array(ProductSchema),
@@ -16,10 +16,17 @@ interface GetProductsParams {
   category?: string
 }
 
+let controller: AbortController | null = null
 export async function getProducts(params?: GetProductsParams) {
+  if (controller) {
+    controller.abort()
+  }
+  controller = new AbortController()
   try {
     const searchParams = params ? getSearchParams(params) : {}
-    const data = await api.get(ENDPOINTS.products, { searchParams }).json()
+    const data = await api
+      .get(ENDPOINTS.products, { searchParams, signal: controller.signal })
+      .json()
     const parseResult = ProductsApiSchema.parse(data)
     return ok(parseResult)
   } catch (error) {
@@ -35,7 +42,7 @@ function getSearchParams({ page, limit, category }: GetProductsParams) {
   if (limit !== undefined) {
     searchParams.append('limit', String(limit))
   }
-  if (category !== undefined) {
+  if (category !== undefined && category !== '') {
     searchParams.append('category', String(category))
   }
   return searchParams

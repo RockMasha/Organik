@@ -26,3 +26,14 @@ export const ProductGreenText = styled(Text)`
   margin-bottom: ${responsiveSizing(2, 8)};
   text-align: center;
 `
+
+export const ProductFilterList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: ${responsiveSizing(2, 8)};
+  margin-bottom: ${responsiveSizing(10, 30)};
+  li {
+    cursor: pointer;
+  }
+`

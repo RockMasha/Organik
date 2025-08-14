@@ -1,5 +1,4 @@
 import AuthLink from './AuthLink'
-import { useState } from 'react'
 import {
   StyledHeader,
   StyledContainer,
@@ -14,7 +13,7 @@ import {
   StyledNavTextTrigger,
   StyledNavigationSheet,
   StyledNavigationListSheet,
-} from '@/components/layout/Header/Header.styled'
+} from './Header.styled'
 import { NavigationMenuItem } from '@/components/ui/navigation-menu'
 import {
   Sheet,
@@ -26,17 +25,12 @@ import {
 import MenuItem from './MenuItem'
 import Logo from '@/components/modules/Logo/Logo'
 import CartBtn from './CartBtn'
-
-const isShowPanel = () => {
-  return window.innerWidth < 1440
-}
+import useOpen from '../hooks/useOpen'
+import useWindowWidth from '@/shared/hooks/useWindowWidth'
 
 function Header() {
-  const [open, setOpen] = useState(false)
-
-  const handleClose = () => {
-    setOpen(false)
-  }
+  const { open, toggleOpen, setOpen } = useOpen()
+  const windowWidth = useWindowWidth()
 
   return (
     <StyledHeader>
@@ -44,7 +38,7 @@ function Header() {
         <Logo />
 
         {/* nav-menu */}
-        {!isShowPanel() && (
+        {windowWidth >= 1440 && (
           <StyledNavigation>
             <StyledNavigationList>
               <NavigationMenuItem>
@@ -72,20 +66,20 @@ function Header() {
 
         {/* cart btn */}
         <StyledDiv>
-          {window.innerWidth > 600 && (
+          {windowWidth > 600 && (
             <>
               <AuthLink />
               <CartBtn />
             </>
           )}
           {/* side-bar */}
-          {isShowPanel() && (
+          {windowWidth < 1440 && (
             <SheetWrapper>
               <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger>
                   <StyledMenu />
                 </SheetTrigger>
-                <SheetContent side="right" open={open} onClose={handleClose}>
+                <SheetContent side="right" open={open} onClose={toggleOpen}>
                   <SheetHeader>
                     <SheetTitle>
                       <Logo />
@@ -100,16 +94,16 @@ function Header() {
                             </>
                           )}
                         </NavigationMenuItem>
-                        <MenuItem link="hero" onClick={handleClose}>
+                        <MenuItem link="hero" onClick={toggleOpen}>
                           Welcome
                         </MenuItem>
-                        <MenuItem link="about" onClick={handleClose}>
+                        <MenuItem link="about" onClick={toggleOpen}>
                           About us
                         </MenuItem>
-                        <MenuItem link="categories" onClick={handleClose}>
+                        <MenuItem link="categories" onClick={toggleOpen}>
                           Categories
                         </MenuItem>
-                        <MenuItem link="products" onClick={handleClose}>
+                        <MenuItem link="products" onClick={toggleOpen}>
                           Products
                         </MenuItem>
                       </StyledNavigationListSheet>

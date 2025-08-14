@@ -1,7 +1,11 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { UserRegisterSchema } from '../consts/userSchema'
-import type z from 'zod'
+import {
+  UserLoginSchema,
+  UserRegisterSchema,
+  type UserLogin,
+  type UserRegister,
+} from '../consts/userSchema'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'
 import { ButtonStyled } from '@/components/modules/FormFieldFull/FormFieldFull.styled'
@@ -9,8 +13,8 @@ import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunk
 import useLoading from '@/shared/hooks/useLoading'
 import { registerUser } from '../api/registerUser'
 import { loginUser } from '../api/loginUser'
-
-type UserRegister = z.infer<typeof UserRegisterSchema>
+import { StyledRegisterLink } from './AuthForm.styled'
+import { Link, useNavigate } from 'react-router-dom'
 
 type AuthFormProps = {
   type: 'register' | 'login'
@@ -18,9 +22,12 @@ type AuthFormProps = {
 
 const AuthForm = ({ type }: AuthFormProps) => {
   const [loading, startLoading] = useLoading()
+  const navigate = useNavigate()
   const dispatch = useAppDispatch()
-  const methods = useForm<UserRegister>({
-    resolver: zodResolver(UserRegisterSchema),
+  const methods = useForm<UserRegister | UserLogin>({
+    resolver: zodResolver(
+      type === 'register' ? UserRegisterSchema : UserLoginSchema
+    ),
     defaultValues: {
       email: '',
       password: '',
@@ -37,7 +44,14 @@ const AuthForm = ({ type }: AuthFormProps) => {
     startLoading(async () => {
       const { email, password } = data
       const action = await dispatch(authFunctions[type]({ email, password }))
-      processingRequestThunks(action)
+      const response = processingRequestThunks(action)
+      if (
+        type === 'register' &&
+        response !== undefined &&
+        action.meta?.requestStatus === 'fulfilled'
+      ) {
+        navigate('/profile/edit')
+      }
     })
 
   return (
@@ -62,6 +76,12 @@ const AuthForm = ({ type }: AuthFormProps) => {
         <ButtonStyled size="sm" type="submit" loader={loading}>
           {type === 'register' ? 'Зареєструватися' : 'Увійти'}
         </ButtonStyled>
+        {type === 'login' ? (
+          <StyledRegisterLink as={Link} to="/register">
+            Не маєте акаунта?
+            <span>Зареєструватися</span>
+          </StyledRegisterLink>
+        ) : null}
       </form>
     </FormProvider>
   )

@@ -24,7 +24,7 @@ export function ProductsPagination() {
 
   return (
     <>
-      {!!totalItems && (
+      {totalItems > limit && (
         <Pagination>
           <PaginationContent>
             <PaginationItem>

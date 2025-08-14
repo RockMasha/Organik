@@ -11,5 +11,11 @@ export async function handelError(
     const errorData = await error.response.json()
     return err(new Error(getErrorMessage(errorData.message)))
   }
+
+  const errorWithMessage = error as Partial<AppError>
+  if (errorWithMessage?.message) {
+    return err(new Error(getErrorMessage(errorWithMessage.message)))
+  }
+
   return err({ message: errorMessages.unexpected })
 }

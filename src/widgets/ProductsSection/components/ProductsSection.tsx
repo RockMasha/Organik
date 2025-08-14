@@ -8,11 +8,12 @@ import { ProductsContextProvider } from '../contexts/ProductsContext'
 import { ProductsPagination } from './ProductsPagination'
 import { ProductsList } from './ProductList'
 import { Outlet } from 'react-router-dom'
-// import ProductDetailsModal from './ProductDetailsModal'
+import ProductFilter from './ProductFilter'
 
 export const Products = Object.assign(ProductsContextProvider, {
   List: ProductsList,
   Pagination: ProductsPagination,
+  Filter: ProductFilter,
 })
 
 function ProductsSection() {
@@ -23,6 +24,7 @@ function ProductsSection() {
         <ProductGreenText type="green">Categories</ProductGreenText>
         <ProductTitle type="h2">Our Products</ProductTitle>
         <Products>
+          <Products.Filter />
           <Products.List />
           <Products.Pagination />
         </Products>

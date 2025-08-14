@@ -8,7 +8,7 @@ function CartBtn() {
   return (
     <>
       {token && (
-        <Button variant={'transparent'} size={'half_rounded'}>
+        <Button variant="transparent" size="half_rounded">
           <StyledLink to="/cart">
             <StyledCart />
             Cart

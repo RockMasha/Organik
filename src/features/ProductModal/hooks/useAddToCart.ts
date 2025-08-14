@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { getRoute } from '@/shared/helpers/getRoute'
 import { showSuccessToast } from '@/shared/helpers/toasts/showSuccsesToast'
 import { addProductToCart } from '../api/addProductToCart'
-import { processingRequestResult } from '@/shared/helpers/processingRequestResult'
+import { processingRequestResult } from '@/shared/helpers/processingRequestHandlers/processingRequestResult'
 import useLoading from '@/shared/hooks/useLoading'
 
 interface UseAddToCartProps {

@@ -1,4 +1,4 @@
-import { handelError } from '@/shared/helpers/handelError'
+import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { array, number, object } from 'zod'
 import { ProductSchema } from '@/types'
@@ -30,7 +30,7 @@ export async function getProducts(params?: GetProductsParams) {
     const parseResult = ProductsApiSchema.parse(data)
     return ok(parseResult)
   } catch (error) {
-    return handelError(error)
+    return handelNeverthrowError(error)
   }
 }
 

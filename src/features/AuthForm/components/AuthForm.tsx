@@ -9,7 +9,7 @@ import {
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'
 import { ButtonStyled } from '@/components/modules/FormFieldFull/FormFieldFull.styled'
-import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
+import { processingRequestThunks } from '@/shared/helpers/processingRequestHandlers/processingRequestThunks'
 import useLoading from '@/shared/hooks/useLoading'
 import { registerUser } from '../api/registerUser'
 import { loginUser } from '../api/loginUser'

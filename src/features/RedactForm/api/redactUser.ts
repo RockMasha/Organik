@@ -2,7 +2,7 @@ import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { UserSchema } from '@/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { handelAppError } from '@/shared/helpers/handelAppError'
+import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
 import { RedactSchema, type Redact } from '../consts/RedactSchema'
 
 export const redactUser = createAsyncThunk(
@@ -16,7 +16,7 @@ export const redactUser = createAsyncThunk(
       const parseResult = UserSchema.parse(answer)
       return parseResult
     } catch (error) {
-      const payload = await handelAppError(error)
+      const payload = await handelNeverthrowError(error)
       return thunkApi.rejectWithValue(payload)
     }
   }

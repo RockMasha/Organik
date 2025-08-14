@@ -2,6 +2,7 @@ import { Section } from './NotFoundSection.styled'
 import Title from '@/components/ui/Title'
 import { StyledButton, StyledText, StyledTitle } from './NotFoundSection.styled'
 import { Link } from 'react-router-dom'
+
 function NotFoundSection() {
   return (
     <Section>

@@ -25,13 +25,16 @@ export type { Routes } from './modules/routes/Routes'
 export type { RouteWithoutId } from './modules/routes/RouteWithoutId'
 export type { RouteWithId } from './modules/routes/RouteWithId'
 
+// store
+export type { AppDispatch } from './modules/store/AppDispatch'
+export type { RootState } from './modules/store/RootState'
+
 // guards
 export { isCategory } from './guards/isCategory'
 export { includesLiteral } from './guards/includesLiteral'
 export { checkContextConnection } from './guards/checkContextConnection'
 
 // other
-export type { RootState } from './modules/RootState'
 export type { Image } from './modules/Image'
-export type { AppDispatch } from './modules/AppDispatch'
 export type { ChildrenProps } from './modules/ChildrenProps'
+export type { SetState } from './modules/SetState'

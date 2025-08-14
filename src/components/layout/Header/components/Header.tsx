@@ -27,6 +27,7 @@ import Logo from '@/components/modules/Logo/Logo'
 import CartBtn from './CartBtn'
 import useOpen from '../hooks/useOpen'
 import useWindowWidth from '@/shared/hooks/useWindowWidth'
+import { MenuIcon } from 'lucide-react'
 
 function Header() {
   const { open, toggleOpen, setOpen } = useOpen()
@@ -59,7 +60,7 @@ function Header() {
               <MenuItem link="hero">Welcome</MenuItem>
               <MenuItem link="about">About us</MenuItem>
               <MenuItem link="categories">Categories</MenuItem>
-              <MenuItem link="products">Categories</MenuItem>
+              <MenuItem link="products">Products</MenuItem>
             </StyledNavigationList>
           </StyledNavigation>
         )}
@@ -72,12 +73,15 @@ function Header() {
               <CartBtn />
             </>
           )}
+
           {/* side-bar */}
           {windowWidth < 1440 && (
             <SheetWrapper>
               <Sheet open={open} onOpenChange={setOpen}>
                 <SheetTrigger>
-                  <StyledMenu />
+                  <StyledMenu>
+                    <MenuIcon />
+                  </StyledMenu>
                 </SheetTrigger>
                 <SheetContent side="right" open={open} onClose={toggleOpen}>
                   <SheetHeader>

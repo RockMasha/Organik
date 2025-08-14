@@ -1,6 +1,6 @@
 import api from './kyInstance'
 import { ok } from 'neverthrow'
-import { handelError } from '@/shared/helpers/handelError'
+import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { array } from 'zod'
 import { CategorySchema } from '@/types'
@@ -17,6 +17,6 @@ export async function getCategories() {
       return ok([])
     }
   } catch (error) {
-    return handelError(error)
+    return handelNeverthrowError(error)
   }
 }

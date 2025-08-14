@@ -2,9 +2,7 @@ import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 import Container from '@/components/ui/Container'
 import CartIcon from '@/assets/icons/cart-icon.svg?react'
-import MenuIcon from '@/assets/icons/menu.svg?react'
 import AccountIcon from '@/assets/icons/account.svg?react'
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,19 +13,15 @@ import { NavLink } from 'react-router-dom'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 
 export const StyledHeader = styled.header`
-  padding-top: ${responsiveSizing(20, 40, 320, 768)};
-  padding-bottom: ${responsiveSizing(30, 47, 320, 768)};
-  @media screen and (min-width: 768px) {
-    padding-top: 40px;
-    padding-bottom: ${responsiveSizing(47, 40, 768, 1440)};
+  padding: 20px 0;
+  @media (min-width: 768px) {
+    padding: 30px 0;
   }
-  @media screen and (min-width: 1440px) {
-    padding-bottom: ${responsiveSizing(40, 58, 1440, 1920)};
-    padding-top: ${responsiveSizing(40, 50, 1440)};
+  @media (min-width: 1440px) {
+    padding: 40px 0;
   }
-  @media screen and (min-width: 1440px) {
-    padding-bottom: 58px;
-    padding-top: 50px;
+  @media (min-width: 1920px) {
+    padding: 50px 0;
   }
 `
 
@@ -50,25 +44,37 @@ export const StyledAuthLink = styled(Link)`
   color: var(--color-navy-100);
   font-size: 20px;
   font-weight: 500;
-  :hover {
+  &:hover {
     color: var(--color-green-200);
   }
 `
 
-export const StyledMenu = styled(MenuIcon)`
-  background-color: var(--color-green-200);
+export const StyledMenu = styled.div`
+  display: flex;
+  padding: ${responsiveSizing(7, 10, 320, 600)};
   color: var(--color-white-100);
+  background-color: var(--color-green-200);
   border-radius: 16px;
-  width: 60px;
-  height: 60px;
   transition: all 0.3s ease;
+  cursor: pointer;
+  @media (min-width: 600px) {
+    padding: 10px;
+  }
+  svg {
+    width: ${responsiveSizing(30, 45, 320, 600)};
+    height: ${responsiveSizing(30, 45, 320, 600)};
+    @media (min-width: 600px) {
+      width: 45px;
+      height: 45px;
+    }
+  }
 `
 
 export const StyledAccount = styled(AccountIcon)`
   width: 56px;
   height: 56px;
   border-radius: 100px;
-  background: var(--color-navy-100);
+  background-color: var(--color-navy-100);
   padding: 0 16px;
   path {
     fill: var(--color-white-100);
@@ -80,6 +86,7 @@ export const SheetWrapper = styled.div``
 export const StyledNavigationMenuContent = styled(NavigationMenuContent)`
   padding: 15px 20px;
   border: 2px var(--color-green-200) solid;
+  background-color: var(--color-white-100);
   border-radius: 16px;
 `
 
@@ -100,7 +107,7 @@ export const StyledNavigationSheet = styled(NavigationMenu)`
   margin-top: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  @media screen and (min-width: 1440px) {
+  @media (min-width: 1440px) {
     display: none;
   }
 `
@@ -117,9 +124,7 @@ export const StyledNavigationListSheet = styled(NavigationMenuList)`
 
 export const StyledNavText = styled(NavLink)`
   color: var(--color-navy-100);
-  font-family: Roboto;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
   :hover {
     color: var(--color-green-200);
@@ -128,9 +133,7 @@ export const StyledNavText = styled(NavLink)`
 
 export const StyledNavTextTrigger = styled(NavigationMenuTrigger)`
   color: var(--color-navy-100);
-  font-family: Roboto;
   font-size: 20px;
-  font-style: normal;
   font-weight: 500;
 `
 
@@ -143,10 +146,10 @@ export const StyledDiv = styled.div`
 `
 
 export const StyledCart = styled(CartIcon)`
-  width: 56px;
-  height: 56px;
+  width: ${responsiveSizing(50, 56)};
+  height: ${responsiveSizing(50, 56)};
   border-radius: 100px;
-  background: var(--color-navy-100);
+  background-color: var(--color-navy-100);
   padding: 0 16px;
   path {
     stroke: var(--color-white-100);

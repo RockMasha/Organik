@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { Product, CartProduct } from '@/types'
 import { getProductById } from '../api/getProductById'
 import { getProductInCart } from '../api/getProductInCart'
-import { processingRequestResult } from '@/shared/helpers/processingRequestResult'
+import { processingRequestResult } from '@/shared/helpers/processingRequestHandlers/processingRequestResult'
 
 export function useProductData(id?: string) {
   const [product, setProduct] = useState<Product | null>(null)

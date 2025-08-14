@@ -1,6 +1,6 @@
 import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
-import { handelError } from '@/shared/helpers/handelError'
+import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
 import { ProductSchema } from '@/types'
 import { ok } from 'neverthrow'
 
@@ -10,6 +10,6 @@ export async function getProductById(id: string) {
     const parseResult = ProductSchema.parse(data)
     return ok(parseResult)
   } catch (error) {
-    return handelError(error)
+    return handelNeverthrowError(error)
   }
 }

@@ -90,7 +90,7 @@ function FormLabel({
     <Label
       data-slot="form-label"
       data-error={!!error}
-      className={cn('data-[error=true]:text-orange-200', className)}
+      className={cn('data-[error=true]:text-red-100', className)}
       htmlFor={formItemId}
       {...props}
     />
@@ -132,7 +132,7 @@ function FormMessage({ className, children, ...props }: ComponentProps<'p'>) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn('text-orange-200 text-sm', className)}
+      className={cn('text-red-100 text-sm', className)}
       {...props}
     >
       {body}

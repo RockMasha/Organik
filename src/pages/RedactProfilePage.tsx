@@ -1,7 +1,11 @@
+import { RedactProfileSection } from '@/widgets/RedactProfileSection'
+
 function RedactProfilePage() {
   return (
     <>
-      <h1>RedactProfilePage</h1>
+      <main>
+        <RedactProfileSection></RedactProfileSection>
+      </main>
     </>
   )
 }

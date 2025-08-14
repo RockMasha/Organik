@@ -1,6 +1,7 @@
 import { refreshUser } from '@/api/refreshUser'
 import { loginUser } from '@/features/AuthForm/api/loginUser'
 import { registerUser } from '@/features/AuthForm/api/registerUser'
+import { redactUser } from '@/features/RedactForm/api/redactUser'
 import type { ResponseUser, User } from '@/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
@@ -39,6 +40,8 @@ const userSlice = createSlice({
       state: typeof initialState,
       action: PayloadAction<ResponseUser>
     ) => {
+      console.log(action)
+
       state.isLoading = false
       state.isLoggedIn = true
       state.date.email = action.payload.user.email
@@ -70,10 +73,10 @@ const userSlice = createSlice({
       .addCase(refreshUser.fulfilled, handleUpdateFulfilled)
       .addCase(refreshUser.rejected, handleRejected)
 
-    //     // Редагування
-    //     .addCase(redactUser.pending, handlePending)
-    //     .addCase(redactUser.fulfilled, handleUpdateFulfilled)
-    //     .addCase(redactUser.rejected, handleRejected)
+      // Редагування
+      .addCase(redactUser.pending, handlePending)
+      .addCase(redactUser.fulfilled, handleUpdateFulfilled)
+      .addCase(redactUser.rejected, handleRejected)
   },
 })
 

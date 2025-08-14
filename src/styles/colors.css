@@ -27,6 +27,8 @@
 
   --color-black-100: #0b0b0b;
   --color-black-200: #1e1e1e;
+
+  --color-red-100: #ba0f0f;
 }
 
 @theme {
@@ -55,4 +57,6 @@
 
   --color-black-100: #0b0b0b;
   --color-black-200: #1e1e1e;
+
+  --color-red-100: #ba0f0f;
 }

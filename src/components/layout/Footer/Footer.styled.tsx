@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import Twitterlogo from '@/assets/icons/twitter.svg?react'
 import Instlogo from '@/assets/icons/instagram.svg?react'
 import Facelogo from '@/assets/icons/facebook.svg?react'

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Picture from '@/components/ui/Picture'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import Title from '@/components/ui/Title'
 export const Section = styled.section`
   margin-top: ${responsiveSizing(30, 40)};

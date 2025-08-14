@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Text from '@/components/ui/Text'
 import Title from '@/components/ui/Title'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import { Button } from '@/components/ui/button'
 import IconOrganicFood from '@/assets/icons/organic-food-icon.svg?react'
 import Container from '@/components/ui/Container'

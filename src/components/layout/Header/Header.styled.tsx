@@ -12,7 +12,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 import { NavLink } from 'react-router-dom'
-import responsiveSizing from '@/styles/helpers/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 
 export const StyledHeader = styled.header`
   padding-top: ${responsiveSizing(20, 40, 320, 768)};

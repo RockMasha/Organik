@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import Title from '@/components/ui/Title'
 import { Button } from '@/components/ui/button'
 import Container from '@/components/ui/Container'

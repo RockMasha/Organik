@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import Text from '@/components/ui/Text'
 import { Button } from '@/components/ui/button'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 export const Section = styled.section`
   margin-top: 30px;
   padding: ${responsiveSizing(60, 100, 768, 1440)} 20px

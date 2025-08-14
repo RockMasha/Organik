@@ -1,6 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import Title from '@/components/ui/Title'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
 export const ProductItem = styled.li`

@@ -1,4 +1,4 @@
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import type { ChildrenProps } from '@/types'
 import styled from '@emotion/styled'
 

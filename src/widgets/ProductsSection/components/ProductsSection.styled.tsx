@@ -1,6 +1,6 @@
 import Text from '@/components/ui/Text'
 import Title from '@/components/ui/Title'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
 export const Section = styled.section`

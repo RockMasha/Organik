@@ -1,7 +1,11 @@
 import { Navigate } from 'react-router-dom'
 
 function ProfilePage() {
-  return <Navigate to="/profile/edit" replace />
+  return (
+    <main>
+      <Navigate to="/profile/edit" replace />
+    </main>
+  )
 }
 
 export default ProfilePage

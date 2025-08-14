@@ -124,11 +124,11 @@ export function SheetContent({
     }
     if (open) {
       document.addEventListener('keydown', handleEscape)
-      contentRef.current?.focus() // Фокус при відкритті
-      document.body.style.overflow = 'hidden' // Блокування прокрутки
+      contentRef.current?.focus()
+      document.body.style.overflow = 'hidden'
     } else {
       document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = '' // Відновлення прокрутки
+      document.body.style.overflow = ''
     }
     return () => {
       document.removeEventListener('keydown', handleEscape)
@@ -176,7 +176,7 @@ export function SheetContent({
               className="ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none"
               onClick={onClose}
             >
-              <XIcon className="size-4" />
+              <XIcon className="size-4 tablet:size-6 laptop:size-8 desktop:size-10 cursor-pointer" />
               <span className="sr-only">Закрити</span>
             </button>
           </div>

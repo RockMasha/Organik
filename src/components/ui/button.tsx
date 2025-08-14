@@ -8,6 +8,7 @@ import ArrowIcon from '@/assets/icons/arrow.svg?react'
 import { Link } from 'react-router-dom'
 import { getRoute } from '@/shared/helpers/getRoute'
 import type { RouteWithoutId } from '@/types'
+import useWindowWidth from '@/shared/hooks/useWindowWidth'
 
 const buttonVariants = cva(
   'inline-flex items-center border-2 border-transparent justify-center gap-2.5 whitespace-nowrap rounded-xl text-[20px] font-medium transition-all disabled:pointer-events-none disabled:opacity-50 shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] group',
@@ -73,8 +74,9 @@ function Button({
   ...props
 }: ButtonProps) {
   const resolvedLoaderColor = getLoaderColor(variant)
+  const windowWidth = useWindowWidth()
   const btnSize =
-    window.innerWidth > 767
+    windowWidth > 767
       ? size
       : size === 'icon' || size === 'half_rounded'
         ? size

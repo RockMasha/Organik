@@ -1,24 +1,25 @@
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 import LogoIcon from '@/assets/icons/logo.svg?react'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 
 export const StyledLink = styled(Link)`
   display: flex;
-  gap: 8.2px;
+  gap: ${responsiveSizing(6, 8.2)};
   text-align: center;
   align-items: center;
 `
 
 export const StyledIcon = styled(LogoIcon)`
-  width: 37px;
-  height: 53px;
+  width: ${responsiveSizing(34, 37)};
+  height: ${responsiveSizing(45, 53)};
   path {
-    stroke: #7eb693;
+    stroke: var(--color-green-200);
   }
 `
 
 export const StyledText = styled.h1`
-  color: #274c5b;
-  font-size: 38px;
+  color: var(--color-navy-100);
+  font-size: ${responsiveSizing(34, 38)};
   font-weight: 700;
 `

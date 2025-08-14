@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { FormLabel } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import responsiveSizing from '@/styles/shared/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
 export const FormLabelStyled = styled(FormLabel)`

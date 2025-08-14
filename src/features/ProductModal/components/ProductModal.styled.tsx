@@ -2,7 +2,7 @@ import StarRate from '@/components/modules/StarRate/StarRate'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import Text from '@/components/ui/Text'
-import responsiveSizing from '@/styles/helpers/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
 export const ModalWrapper = styled.div`

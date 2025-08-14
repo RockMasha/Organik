@@ -7,7 +7,7 @@ import {
   ProductTitle,
   ProductValueContainer,
 } from './ProductCard.styled'
-import responsiveSizing from '@/styles/helpers/resonsiceSizing'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import type { Product } from '@/types'
 import { getPriceWithDiscount } from '@/shared/helpers/getPriceWithDiscount'
 import PriceText from '@/components/ui/PriceText'

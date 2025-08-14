@@ -3,6 +3,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
+import useWindowWidth from '@/shared/hooks/useWindowWidth'
 
 const badgeVariants = cva(
   'inline-flex items-center justify-center rounded-lg border font-medium w-fit whitespace-nowrap [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none transition-[color,box-shadow] overflow-hidden',
@@ -34,7 +35,8 @@ function Badge({
 }: React.ComponentProps<'span'> &
   VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : 'span'
-  const badgeSize = window.innerWidth > 768 ? size : 'sm'
+  const windowWidth = useWindowWidth()
+  const badgeSize = windowWidth > 768 ? size : 'sm'
 
   return (
     <Comp

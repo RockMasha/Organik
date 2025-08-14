@@ -1,6 +1,6 @@
 import api from './kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
-import { handelAppError } from '@/shared/helpers/handelAppError'
+import { handelAppError } from '@/shared/helpers/errorHandlers/handelAppError'
 import { UserSchema, type RootState } from '@/types'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 

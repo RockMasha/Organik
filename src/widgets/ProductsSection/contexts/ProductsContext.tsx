@@ -1,11 +1,11 @@
 import { createContext, useContext, useState, useEffect } from 'react'
-import { processingRequestResult } from '@/shared/helpers/processingRequestResult'
+import { processingRequestResult } from '@/shared/helpers/processingRequestHandlers/processingRequestResult'
 import {
   checkContextConnection,
   type ChildrenProps,
   type Product,
 } from '@/types'
-import type { SetState } from '@/types/modules/setStates/SetState'
+import type { SetState } from '@/types'
 import { getProducts } from '../api/getProducts'
 
 interface ProductsListContextValue {

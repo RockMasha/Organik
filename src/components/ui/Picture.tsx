@@ -2,7 +2,7 @@ import type { Image } from '@/types'
 
 interface PictureProps {
   name: Image
-  className?: string // добавляем сюда
+  className?: string
 }
 
 const Picture = ({ name, className }: PictureProps) => {

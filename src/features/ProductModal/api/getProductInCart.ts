@@ -1,6 +1,6 @@
 import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
-import { handelError } from '@/shared/helpers/handelError'
+import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
 import { CartSchema } from '@/types'
 import { ok } from 'neverthrow'
 
@@ -11,6 +11,6 @@ export async function getProductInCart(id: number) {
     const product = parseResult.products.find((item) => item.product.id === id)
     return ok(product ?? null)
   } catch (error) {
-    return handelError(error)
+    return handelNeverthrowError(error)
   }
 }

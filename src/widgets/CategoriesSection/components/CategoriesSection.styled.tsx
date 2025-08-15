@@ -5,9 +5,9 @@ import Container from '@/components/ui/Container'
 import { Link } from 'react-router-dom'
 
 export const Section = styled.section`
-  background-color: var(--color-gray-700);
   padding-top: ${responsiveSizing(30, 100, 320, 1440)};
   padding-bottom: ${responsiveSizing(60, 140, 320, 1440)};
+  background-color: var(--color-gray-700);
 `
 
 export const StyledContainer = styled(Container)`
@@ -72,20 +72,22 @@ export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 236px;
-  height: 71px;
+  padding: 18px 40px;
   @media (min-width: 768px) {
-    width: ${responsiveSizing(236, 282, 768, 1440)};
-    height: ${responsiveSizing(71, 95, 768, 1440)};
+    padding-top: ${responsiveSizing(20, 30, 768, 1440)};
+    padding-bottom: ${responsiveSizing(20, 30, 768, 1440)};
+    padding-left: ${responsiveSizing(40, 80, 768, 1440)};
+    padding-right: ${responsiveSizing(40, 80, 768, 1440)};
   }
   @media (min-width: 1440px) {
     font-size: 25px;
   }
-  border-radius: 20px;
-  background: var(--color-white-100);
   color: var(--color-navy-100);
   font-family: Roboto;
   font-size: 22px;
   font-weight: 500;
   line-height: 1.4;
+  white-space: nowrap;
+  border-radius: 20px;
+  background: var(--color-white-100);
 `

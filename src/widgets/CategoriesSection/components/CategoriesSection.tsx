@@ -1,12 +1,27 @@
-import Container from '@/components/ui/Container'
-import { Section } from './CategoriesSection.styled'
+import {
+  Button,
+  Item,
+  List,
+  Section,
+  StyledContainer,
+} from './CategoriesSection.styled'
 
 function CategoriesSection() {
   return (
     <Section id="categories">
-      <Container>
-        <h2>CategoriesSection</h2>
-      </Container>
+      <StyledContainer>
+        <List>
+          <Item>
+            <Button>Fruit Juice</Button>
+          </Item>
+          <Item>
+            <Button>Organic Food</Button>
+          </Item>
+          <Item>
+            <Button>Nuts Cookies</Button>
+          </Item>
+        </List>
+      </StyledContainer>
     </Section>
   )
 }

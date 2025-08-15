@@ -9,13 +9,21 @@ import {
 import StarRate from '@/components/modules/StarRate/StarRate'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 
+type Product = {
+  name: string
+  prevPrice: string
+  currentPrice: string
+  type: string
+  picture: string
+}
+
 export const ProductItemInner = ({
   name,
   prevPrice,
   currentPrice,
   type,
   picture,
-}) => {
+}: Product) => {
   return (
     <>
       <ProductBadge>{type}</ProductBadge>

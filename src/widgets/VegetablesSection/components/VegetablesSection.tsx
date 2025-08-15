@@ -1,13 +1,52 @@
 import Container from '@/components/ui/Container'
-import { Section } from './VegetablesSection.styled'
+import {
+  ProductItem,
+  ProductList,
+  StyledButton,
+  StyledSection,
+  StyledText,
+  StyledTitle,
+} from './VegetablesSection.styled'
+import { ProductItemInner } from './ProductItem'
 
 function VegetablesSection() {
   return (
-    <Section id="vegetables">
+    <StyledSection id="testimonial">
       <Container>
-        <h2>VegetablesSection</h2>
+        <StyledText>Offer Products</StyledText>
+        <StyledTitle type="h2">We Offer Organic for You</StyledTitle>
+        <StyledButton arrow={true}>View All products</StyledButton>
+        <ProductList>
+          <ProductItem>
+            <ProductItemInner
+              name="Organic Almonds"
+              prevPrice="$ 14.00"
+              currentPrice="$ 9.37"
+              type="Vegetable"
+              picture="tomatoes"
+            />
+          </ProductItem>
+          <ProductItem>
+            <ProductItemInner
+              name="Vegan Red Tomato"
+              prevPrice="$ 18.00"
+              currentPrice="$ 9.37"
+              type="Fruits"
+              picture="tomatoes"
+            />
+          </ProductItem>
+          <ProductItem>
+            <ProductItemInner
+              name="Fresh Corn"
+              prevPrice="$ 21.23"
+              currentPrice="$ 18.00"
+              type="Vegetable"
+              picture="tomatoes"
+            />
+          </ProductItem>
+        </ProductList>
       </Container>
-    </Section>
+    </StyledSection>
   )
 }
 

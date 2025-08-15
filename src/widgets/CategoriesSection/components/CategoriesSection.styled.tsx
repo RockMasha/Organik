@@ -2,6 +2,7 @@ import { getImageBackground } from '@/styles/helpers/getImageBackground'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 import Container from '@/components/ui/Container'
+import { Link } from 'react-router-dom'
 
 export const Section = styled.section`
   background-color: var(--color-gray-700);
@@ -67,7 +68,7 @@ export const Item = styled.li`
   }
 `
 
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,5 @@
 import {
-  Link,
+  StyledLink,
   Item,
   List,
   Section,
@@ -12,13 +12,13 @@ function CategoriesSection() {
       <StyledContainer>
         <List>
           <Item>
-            <Link href="#">Fruit Juice</Link>
+            <StyledLink href="#">Fruit Juice</StyledLink>
           </Item>
           <Item>
-            <Link href="#">Organic Food</Link>
+            <StyledLink href="#">Organic Food</StyledLink>
           </Item>
           <Item>
-            <Link href="#">Nuts Cookies</Link>
+            <StyledLink href="#">Nuts Cookies</StyledLink>
           </Item>
         </List>
       </StyledContainer>

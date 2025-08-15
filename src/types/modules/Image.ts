@@ -13,3 +13,4 @@ export type Image =
   | 'tomatoes'
   | 'what-customer'
   | 'yello-drink'
+  | 'get-10-on'

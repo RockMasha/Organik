@@ -1,15 +1,11 @@
-import {
-  Section,
-  StyledTitle,
-  StyledButton,
-  StyledContainer,
-} from './HeroSection.styled'
+import Container from '@/components/ui/Container'
+import { Section, StyledTitle, StyledButton } from './HeroSection.styled'
 import Text from '@/components/ui/Text'
 
 function HeroSection() {
   return (
     <Section id="hero">
-      <StyledContainer>
+      <Container>
         <Text type="green">Made with nature</Text>
         <StyledTitle type="h1">
           Welcome to the world of nature and organic.
@@ -17,7 +13,7 @@ function HeroSection() {
         <StyledButton size={'default'} variant={'yellow'} arrow={true}>
           Explore Now
         </StyledButton>
-      </StyledContainer>
+      </Container>
     </Section>
   )
 }

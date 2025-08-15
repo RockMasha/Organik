@@ -67,7 +67,10 @@ export const Item = styled.li`
   }
 `
 
-export const Button = styled.button`
+export const Link = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 236px;
   height: 71px;
   @media (min-width: 768px) {

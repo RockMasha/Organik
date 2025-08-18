@@ -1,3 +1,4 @@
+import { getSymbolNumbOInput } from '@/shared/helpers/getSymbolNumbOInput'
 import {
   ModalCartForm,
   ModalCartLabel,
@@ -31,10 +32,9 @@ function AddToCartForm({ onSubmit, loading }: AddToCartFormProps) {
     watch,
   } = useForm({ defaultValues })
 
-  const quantityValue = watch('quantity', 1)
-  const symbolNumb = !Number.isNaN(quantityValue)
-    ? String(quantityValue).length
-    : 1
+  const symbolNumb = getSymbolNumbOInput(
+    watch('quantity', defaultValues.quantity)
+  )
 
   return (
     <ModalCartForm onSubmit={handleSubmit(onSubmit)}>

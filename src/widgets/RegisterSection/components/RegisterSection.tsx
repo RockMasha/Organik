@@ -1,15 +1,14 @@
 import Container from '@/components/ui/Container'
-import { SectionStyled } from './RegisterSection.styled'
-import Title from '@/components/ui/Title'
+import { SectionStyled, TitleStyled } from './RegisterSection.styled'
 import { AuthForm } from '@/features/AuthForm'
 
 function RegisterSection() {
   return (
     <SectionStyled>
       <Container>
-        <Title type="h1" className="text-center">
+        <TitleStyled type="h1" className="text-center">
           Welcome To Organick
-        </Title>
+        </TitleStyled>
         <AuthForm type="register" />
       </Container>
     </SectionStyled>

@@ -1,20 +1,38 @@
-import { Button } from '@/components/ui/button'
 import { FormLabel } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
 export const FormLabelStyled = styled(FormLabel)`
-  font-size: ${responsiveSizing(18, 44)};
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 26px;
+  font-size: ${responsiveSizing(16, 18)};
+  color: var(--color-navy-100);
 `
 export const InputStyled = styled(Input)`
-  height: ${responsiveSizing(36, 80)};
-  font-size: ${responsiveSizing(14, 32)};
-  border-radius: 16px;
+  min-width: 100%;
+  padding-bottom: ${responsiveSizing(18, 30)};
+  padding-top: ${responsiveSizing(18, 30)};
+  padding-right: ${responsiveSizing(10, 23)};
+  padding-left: ${responsiveSizing(10, 23)};
+  font-size: ${responsiveSizing(12, 18)};
+  &::placeholder {
+    font-size: ${responsiveSizing(14, 16)};
+  }
 `
 
-export const ButtonStyled = styled(Button)`
-  width: ${responsiveSizing(160, 400)};
-  height: ${responsiveSizing(60, 100)};
-  font-size: ${responsiveSizing(14, 40)};
+export const TextAreaStyled = styled(Textarea)`
+  min-width: 100%;
+  padding-top: ${responsiveSizing(15, 28)};
+  padding-bottom: ${responsiveSizing(15, 28)};
+  padding-left: ${responsiveSizing(10, 23)};
+  padding-right: ${responsiveSizing(10, 23)};
+  height: ${responsiveSizing(50, 247)};
+  font-size: ${responsiveSizing(16, 18)};
+  &::placeholder {
+    font-size: ${responsiveSizing(14, 16)};
+  }
 `

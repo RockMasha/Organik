@@ -1,6 +1,7 @@
 import StarRate from '@/components/modules/StarRate/StarRate'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import Text from '@/components/ui/Text'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'

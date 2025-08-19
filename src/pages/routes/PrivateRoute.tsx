@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import type { RootState } from '@/types'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import PageLoader from '@/components/modules/PageLoader/PageLoader'
 
 interface PrivateRouteProps {
   redirect?: string
@@ -27,7 +28,7 @@ function PrivateRoute({ redirect = '/login', Component }: PrivateRouteProps) {
   }, [dispatch])
 
   if (isLoading) {
-    return <></>
+    return <PageLoader />
   }
 
   return isLoggedIn ? Component : <Navigate to={redirect} />

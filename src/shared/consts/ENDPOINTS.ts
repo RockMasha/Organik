@@ -5,4 +5,6 @@ export const ENDPOINTS = {
   categories: 'categories',
   cart: 'carts',
   refresh: 'auth/refresh',
+  order: 'orders',
+  myOrders: 'orders/my-orders',
 }

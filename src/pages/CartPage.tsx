@@ -1,7 +1,11 @@
+import { CartOrders } from '@/widgets/CartOrders'
+import { CartPreviewSection } from '@/widgets/CartPreviewSection'
+
 function CartPage() {
   return (
     <main>
-      <h1>CartPage</h1>
+      <CartPreviewSection />
+      <CartOrders />
     </main>
   )
 }

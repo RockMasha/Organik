@@ -9,7 +9,7 @@ function CartTotalPrice() {
 
   return (
     <>
-      {totalPrices && (
+      {totalPrices && cart?.products.length !== 0 && (
         <TotalPriceBox>
           <TotalPriceText>Total Cost {totalPrices.totalPrice}$</TotalPriceText>
           <TotalPriceText>Discount {totalPrices.TotalDiscount}$</TotalPriceText>

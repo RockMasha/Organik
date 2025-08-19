@@ -12,13 +12,9 @@ import { processingRequestThunks } from '@/shared/helpers/processingRequestHandl
 import useLoading from '@/shared/hooks/useLoading'
 import { registerUser } from '../api/registerUser'
 import { loginUser } from '../api/loginUser'
-import {
-  AuthBtn,
-  FormItem,
-  FormList,
-  StyledRegisterLink,
-} from './AuthForm.styled'
+import { AuthBtn, FormItem, FormList } from './AuthForm.styled'
 import { Form, Link, useNavigate } from 'react-router-dom'
+import { StyledLink } from '@/components/modules/StyledLink/StyledLink'
 
 type AuthFormProps = {
   type: 'register' | 'login'
@@ -89,10 +85,10 @@ const AuthForm = ({ type }: AuthFormProps) => {
           {type === 'register' ? 'Зареєструватися' : 'Увійти'}
         </AuthBtn>
         {type === 'login' && (
-          <StyledRegisterLink as={Link} to="/register">
+          <StyledLink as={Link} to="/register">
             Не маєте акаунта?
             <span>Зареєструватися</span>
-          </StyledRegisterLink>
+          </StyledLink>
         )}
       </Form>
     </FormProvider>

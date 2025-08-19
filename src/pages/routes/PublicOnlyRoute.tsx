@@ -1,4 +1,5 @@
 import { refreshUser } from '@/api/refreshUser'
+import PageLoader from '@/components/modules/PageLoader/PageLoader'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import type { RootState } from '@/types'
 import type { JSX } from 'preact/jsx-runtime'
@@ -27,7 +28,7 @@ function PublicOnlyRoute({ redirect = '/', Component }: PublicOnlyRouteProps) {
   }, [dispatch])
 
   if (isLoading) {
-    return <></>
+    return <PageLoader />
   }
 
   return isLoggedIn ? <Navigate to={redirect} /> : Component

@@ -6,6 +6,9 @@ import { useForm } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
 import type { User } from '@/types'
 import type { OrderFormData } from '../consts/OrderFormSchema'
+import { makeOrder } from '../api/makeOrder'
+import { useSelector } from 'react-redux'
+import { selectCart } from '@/store/slices/cart/cartSelectors'
 // import { getRoute } from '@/shared/helpers/getRoute'
 // import { makeOrder } from '../api/makeOrder'
 
@@ -13,6 +16,8 @@ export const useOrderForm = () => {
   const [loading, startLoading] = useLoading()
   const dispatch = useAppDispatch()
   //   const navigate = useNavigate()
+  const cart = useSelector(selectCart)
+
   const methods = useForm<OrderFormData>({
     defaultValues: {
       full_name: 'loading...',
@@ -30,8 +35,9 @@ export const useOrderForm = () => {
     })
   }, [methods])
 
-  const onSubmit = async () => {
-    // makeOrder(data)
+  const onSubmit = async (data: OrderFormData) => {
+    if (!cart) return
+    makeOrder({ ...data, orderProducts: cart.products })
     // navigate(getRoute('thankOrder'))
   }
 

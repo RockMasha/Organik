@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button'
-import CircleLoader from '@/components/ui/loaders/CircleLoader/CircleLoader'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 

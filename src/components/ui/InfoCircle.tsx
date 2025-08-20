@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import Title from './Title'
+import Text from './Text'
 
 const StyledWrapper = styled.div`
   width: 240px;
@@ -22,7 +22,7 @@ const Inner = styled.div`
   justify-content: center;
 `
 
-export const StyledTitle = styled(Title)`
+export const StyledBoldText = styled(Text)`
   color: var(--color-navy-100);
   text-align: center;
   font-family: Roboto;
@@ -47,15 +47,15 @@ type CircleProps = {
   text: string
 }
 
-function Circle({ number, text }: CircleProps) {
+function InfoCircle({ number, text }: CircleProps) {
   return (
     <StyledWrapper>
       <Inner>
-        <StyledTitle type="h3-thin">{number}</StyledTitle>
+        <StyledBoldText>{number}</StyledBoldText>
         <StyledText>{text}</StyledText>
       </Inner>
     </StyledWrapper>
   )
 }
 
-export default Circle
+export default InfoCircle

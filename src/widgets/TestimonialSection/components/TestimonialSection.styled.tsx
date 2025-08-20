@@ -1,7 +1,6 @@
 import StarRate from '@/components/modules/StarRate/StarRate'
 import Container from '@/components/ui/Container'
 import Text from '@/components/ui/Text'
-import Title from '@/components/ui/Title'
 import { getImageBackground } from '@/styles/helpers/getImageBackground'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'

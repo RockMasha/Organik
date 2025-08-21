@@ -18,7 +18,7 @@ export const StyledContainer = styled(Container)`
   align-items: center;
 `
 
-export const StyledDiv = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -29,30 +29,23 @@ export const StyledDiv = styled.div`
   border-bottom: 2px solid var(--color-gray-500);
 `
 
-export const StyledDescript = styled(Text)`
+export const Description = styled(Text)`
   margin-bottom: 45px;
-  color: var(--color-gray-100);
   text-align: center;
   font-family: 'Open Sans';
-  font-size: 17px;
   line-height: 1.8;
   letter-spacing: 0.36px;
 `
 
-export const StyledNameDescrp = styled(Text)`
-  color: var(--color-gray-100);
-  text-align: center;
-  font-family: 'Open Sans';
+export const DescriptionAuthor = styled(Description)`
   font-size: 15px;
-  line-height: 1.8;
-  letter-spacing: 0.36px;
 `
 
 export const StyledStarRate = styled(StarRate)`
   margin: 17px 0;
 `
 
-export const StyledList = styled.ul`
+export const List = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;

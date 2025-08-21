@@ -1,22 +1,22 @@
 import {
   Section,
   StyledContainer,
-  StyledDescript,
-  StyledDiv,
-  StyledList,
-  StyledNameDescrp,
+  Description,
+  Wrapper,
+  List,
+  DescriptionAuthor,
   StyledStarRate,
 } from './TestimonialSection.styled'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
-import InfoCircle from '@/components/ui/InfoCircle'
 import Title from '@/components/ui/Title'
 import Text from '@/components/ui/Text'
+import InfoCircle from '@/components/modules/InfoCircle/InfoCircle'
 
 function TestimonialSection() {
   return (
     <Section id="testimonial">
       <StyledContainer>
-        <StyledDiv>
+        <Wrapper>
           <Text type="green">Testimonial</Text>
           <Title className="text-center mb-[40px]" type="h2">
             What Our Customer Saying?
@@ -43,16 +43,16 @@ function TestimonialSection() {
             />
           </picture>
           <StyledStarRate rating={5} size={responsiveSizing(27, 30)} />
-          <StyledDescript>
+          <Description>
             The quality of organic produce is extremely high, the service is
             second to none and the taste of the food takes me back to my
             childhood when we were growing our own.
-          </StyledDescript>
+          </Description>
           <Title type="h3-thin">Sara Taylor</Title>
-          <StyledNameDescrp>Consumer</StyledNameDescrp>
-        </StyledDiv>
+          <DescriptionAuthor>Consumer</DescriptionAuthor>
+        </Wrapper>
 
-        <StyledList>
+        <List>
           <li>
             <InfoCircle number="100%" text="Organic" />
           </li>
@@ -65,7 +65,7 @@ function TestimonialSection() {
           <li>
             <InfoCircle number="25+" text="Years of Farming" />
           </li>
-        </StyledList>
+        </List>
       </StyledContainer>
     </Section>
   )

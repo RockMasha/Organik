@@ -1,7 +1,8 @@
+import Text from '@/components/ui/Text'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
-import Text from './Text'
 
-const StyledWrapper = styled.div`
+export const Wrapper = styled.div`
   width: 240px;
   height: 240px;
   border-radius: 50%;
@@ -11,7 +12,7 @@ const StyledWrapper = styled.div`
   box-sizing: border-box;
 `
 
-const Inner = styled.div`
+export const Inner = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -22,40 +23,20 @@ const Inner = styled.div`
   justify-content: center;
 `
 
-export const StyledBoldText = styled(Text)`
+export const BoldText = styled.p`
   color: var(--color-navy-100);
   text-align: center;
-  font-family: Roboto;
-  font-size: 38px;
+  font-size: ${responsiveSizing(38, 42, 768, 1440)};
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: 0.36px;
 `
 
-export const StyledText = styled.p`
+export const StyledText = styled(Text)`
   color: var(--color-navy-100);
   text-align: center;
   font-family: 'Open Sans';
-  font-size: 17px;
   font-weight: 600;
   line-height: 1.8;
   letter-spacing: 0.36px;
 `
-
-type CircleProps = {
-  number: string
-  text: string
-}
-
-function InfoCircle({ number, text }: CircleProps) {
-  return (
-    <StyledWrapper>
-      <Inner>
-        <StyledBoldText>{number}</StyledBoldText>
-        <StyledText>{text}</StyledText>
-      </Inner>
-    </StyledWrapper>
-  )
-}
-
-export default InfoCircle

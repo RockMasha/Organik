@@ -1,112 +1,105 @@
 import Container from '@/components/ui/Container'
 import {
-  PositionedDiv,
+  WrapperForDate,
   Section,
-  StyledFormBackground,
-  StyledFormButton,
-  StyledFormText,
+  FormBackground,
+  FormButton,
   StyledInput,
   StyledItem,
-  StyledList,
-  StyledMark,
-  StyledName,
-  StyledPicture,
-  StyledSvg,
-  StyledTextCard,
+  List,
+  ItemName,
+  ListPicture,
+  ItemText,
   StyledTitle,
-  StyledTitleCard,
+  ItemTitle,
+  TitleWrapper,
+  FormTitle,
+  PositionedWrapper,
 } from './NewsSection.styled'
 import { Button } from '@/components/ui/button'
-import userIcon from '@/assets/icons/user.svg'
+import UserIcon from '@/assets/icons//user.svg?react'
+import Text from '@/components/ui/Text'
+
+type ItemProps = {
+  date: string
+  name: string
+  title: string
+  text: string
+  picture: string
+}
+
+const Item = ({ date, name, title, text, picture }: ItemProps) => {
+  return (
+    <StyledItem>
+      <div className="relative">
+        <ListPicture name={picture} />
+        <WrapperForDate variant="transparent">
+          <p className="md:[&>span]:block text-center">
+            {date.split(' ').map((word, i) => (
+              <span key={i}>{word} </span>
+            ))}
+          </p>
+        </WrapperForDate>
+      </div>
+      <PositionedWrapper className="p-[20px]">
+        <div className="mb-[10px]">
+          <div className="flex gap-[10px]">
+            <UserIcon className="w-[18px] h-[20px]" />
+            <ItemName>{name}</ItemName>
+          </div>
+        </div>
+        <ItemTitle type="h3-weight" className="mb-[10px] ">
+          {title}
+        </ItemTitle>
+        <ItemText>{text}</ItemText>
+        <Button arrow variant="yellow" className="mt-[28px]">
+          Read More
+        </Button>
+      </PositionedWrapper>
+    </StyledItem>
+  )
+}
 
 function NewsSection() {
   return (
     <Section id="news">
       <Container>
-        <div>
+        <TitleWrapper>
           <div>
-            <StyledMark>News</StyledMark>
+            <Text type="green">News</Text>
             <StyledTitle type="h2">
-              Discover The Recent Content About Organic Products
+              Discover weekly content about organic food, & more
             </StyledTitle>
           </div>
-          <Button arrow variant="transparent" className="mb-10">
+          <Button arrow variant="transparent" className="bg-white-100">
             More News
           </Button>
-        </div>
-        <StyledList>
-          <StyledItem>
-            <div className="relative">
-              <StyledPicture name="salad" />
-              <PositionedDiv>
-                <p>14 Feb</p>
-              </PositionedDiv>
-            </div>
-            <div className="p-[20px]">
-              <div className="mb-[10px]">
-                <div className="flex gap-[10px]">
-                  <StyledSvg src={userIcon} alt="avatar" />
-                  <StyledName>Kristina Castle</StyledName>
-                </div>
-              </div>
-              <StyledTitleCard className="mb-[10px]">
-                Everything You Need to Know About Organic
-              </StyledTitleCard>
-              <StyledTextCard>
-                Organic farming is the only way that you still can experience
-                the real world.
-              </StyledTextCard>
-              <Button
-                arrow
-                variant="transparent"
-                className="border-none bg-transparent p-0 mt-[28px]"
-              >
-                View More
-              </Button>
-            </div>
-          </StyledItem>
+        </TitleWrapper>
+        <List>
+          <Item
+            date="25 Nov"
+            name="By Rachi Card"
+            title="The Benefits of Vitamin D & How to Get It"
+            text="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
+            picture="salad"
+          />
 
-          <StyledItem>
-            <div className="relative">
-              <StyledPicture name="tomatoes" />
-              <PositionedDiv>
-                <p>20 Feb</p>
-              </PositionedDiv>
-            </div>
-            <div className="p-[20px]">
-              <div className="mb-[10px]">
-                <div className="flex gap-[10px]">
-                  <StyledSvg src={userIcon} alt="avatar" />
-                  <StyledName>Alex Louis</StyledName>
-                </div>
-              </div>
-              <StyledTitleCard className="mb-[10px]">
-                Organic Fruits: Surprising Benefits and Facts
-              </StyledTitleCard>
-              <StyledTextCard>
-                The world of nature has grown on the principles of health,
-                ecology, and care.
-              </StyledTextCard>
-              <Button
-                arrow
-                variant="transparent"
-                className="border-none bg-transparent p-0 mt-[28px]"
-              >
-                View More
-              </Button>
-            </div>
-          </StyledItem>
-        </StyledList>
+          <Item
+            date="25 Nov"
+            name="By Rachi Card"
+            title="Our Favourite Summertime Tommeto"
+            text="Simply dummy text of the printing and typesetting industry. Lorem Ipsum"
+            picture="tomatoes"
+          />
+        </List>
 
-        <StyledFormBackground>
-          <StyledFormText type="h3-weight">
-            Subscribe our Newsletter
-          </StyledFormText>
+        <FormBackground>
+          <FormTitle type="h3-weight">Subscribe our Newsletter</FormTitle>
           <form>
             <StyledInput type="text" placeholder="Enter Your Email Address" />
-            <StyledFormButton>Subscribe</StyledFormButton>
+            <FormButton>Subscribe</FormButton>
           </form>
-        </StyledFormBackground>
+        </FormBackground>
       </Container>
     </Section>
   )

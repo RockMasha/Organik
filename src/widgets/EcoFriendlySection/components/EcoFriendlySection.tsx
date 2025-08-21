@@ -2,13 +2,12 @@ import Container from '@/components/ui/Container'
 import {
   PictureBackground,
   Section,
-  StyledDecoratText,
   StyledList,
-  StyledListText,
   StyledListTitle,
   StyledTitle,
   StyledWrapper,
 } from './EcoFriendlySection.styled'
+import Text from '@/components/ui/Text'
 
 function EcoFriendlySection() {
   return (
@@ -16,35 +15,37 @@ function EcoFriendlySection() {
       <PictureBackground />
       <Container>
         <StyledWrapper>
-          <StyledDecoratText>Eco Friendly</StyledDecoratText>
+          <Text type="green" className="mt-[40px]">
+            Eco Friendly
+          </Text>
           <StyledTitle type="h2">From Our Farm To Your Home.</StyledTitle>
           <StyledList>
             <li>
               <StyledListTitle type="h3-thin">
                 Choose Your Products
               </StyledListTitle>
-              <StyledListText>
+              <Text>
                 In our listing, we have several collections of organic products.
                 This is the place where you need to choose the product you want.
-              </StyledListText>
+              </Text>
             </li>
             <li>
               <StyledListTitle type="h3-thin">
                 Farmers will produce it
               </StyledListTitle>
-              <StyledListText>
+              <Text>
                 The Product that you ordered will be verified that we have or
                 not if have we will start to move on with the next step.
-              </StyledListText>
+              </Text>
             </li>
             <li>
               <StyledListTitle type="h3-thin">
                 We Can Delivery too
               </StyledListTitle>
-              <StyledListText>
+              <Text>
                 If you are not comfortable going to the nearby market place we
                 also will deliver your product to your doorstep.
-              </StyledListText>
+              </Text>
             </li>
           </StyledList>
         </StyledWrapper>

@@ -48,29 +48,13 @@ export const StyledList = styled.ul`
   gap: 35px;
 `
 
-export const StyledDecoratText = styled.p`
-  margin-top: 40px;
-  color: var(--color-green-200);
-  font-family: Yellowtail;
-  font-size: 26px;
-  line-height: 1.8;
-`
-
 export const StyledTitle = styled(Title)`
   font-size: ${responsiveSizing(28, 50)};
   margin-bottom: 20px;
 `
 
 export const StyledListTitle = styled(Title)`
-  font-size: 22px;
   font-weight: 500;
   line-height: 1.4;
   text-transform: capitalize;
-`
-
-export const StyledListText = styled.p`
-  color: var(--color-gray-100);
-  font-family: 'Open Sans';
-  font-size: 17px;
-  line-height: 1.8;
 `

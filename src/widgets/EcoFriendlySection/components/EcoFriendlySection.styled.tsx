@@ -11,7 +11,7 @@ export const Section = styled.section`
   }
 `
 
-export const PictureBackground = styled.div`
+export const BackgroundPicture = styled.div`
   position: relative;
   width: 100vw;
   margin-left: 50%;
@@ -30,7 +30,7 @@ export const PictureBackground = styled.div`
   }
 `
 
-export const StyledWrapper = styled.div`
+export const Wrapper = styled.div`
   @media (min-width: 1440px) {
     position: absolute;
     top: ${responsiveSizing(80, 90, 1440, 1920)};
@@ -42,18 +42,17 @@ export const StyledWrapper = styled.div`
   }
 `
 
-export const StyledList = styled.ul`
+export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 35px;
 `
 
 export const StyledTitle = styled(Title)`
-  font-size: ${responsiveSizing(28, 50)};
   margin-bottom: 20px;
 `
 
-export const StyledListTitle = styled(Title)`
+export const ListTitle = styled(Title)`
   font-weight: 500;
   line-height: 1.4;
   text-transform: capitalize;

@@ -1,54 +1,50 @@
 import Container from '@/components/ui/Container'
 import {
-  PictureBackground,
+  BackgroundPicture,
   Section,
-  StyledList,
-  StyledListTitle,
+  List,
+  ListTitle,
   StyledTitle,
-  StyledWrapper,
+  Wrapper,
 } from './EcoFriendlySection.styled'
 import Text from '@/components/ui/Text'
 
 function EcoFriendlySection() {
   return (
     <Section id="ecoFriendly" className="relative">
-      <PictureBackground />
+      <BackgroundPicture />
       <Container>
-        <StyledWrapper>
+        <Wrapper>
           <Text type="green" className="mt-[40px]">
             Eco Friendly
           </Text>
-          <StyledTitle type="h2">From Our Farm To Your Home.</StyledTitle>
-          <StyledList>
+          <StyledTitle type="h2">
+            Econis is a Friendly Organic Store
+          </StyledTitle>
+          <List>
             <li>
-              <StyledListTitle type="h3-thin">
-                Choose Your Products
-              </StyledListTitle>
+              <ListTitle type="h3-thin">Start with Our Company First</ListTitle>
               <Text>
-                In our listing, we have several collections of organic products.
-                This is the place where you need to choose the product you want.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptat
+                accusantium doloremque laudantium. Sed ut perspiciatis.
               </Text>
             </li>
             <li>
-              <StyledListTitle type="h3-thin">
-                Farmers will produce it
-              </StyledListTitle>
+              <ListTitle type="h3-thin">Learn How to Grow Yourself</ListTitle>
               <Text>
-                The Product that you ordered will be verified that we have or
-                not if have we will start to move on with the next step.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptat
+                accusantium doloremque laudantium. Sed ut perspiciatis.
               </Text>
             </li>
             <li>
-              <StyledListTitle type="h3-thin">
-                We Can Delivery too
-              </StyledListTitle>
+              <ListTitle type="h3-thin">Farming Strategies of Today</ListTitle>
               <Text>
-                If you are not comfortable going to the nearby market place we
-                also will deliver your product to your doorstep.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptat
+                accusantium doloremque laudantium. Sed ut perspiciatis.
               </Text>
             </li>
-          </StyledList>
-        </StyledWrapper>
+          </List>
+        </Wrapper>
       </Container>
     </Section>
   )

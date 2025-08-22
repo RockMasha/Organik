@@ -47,14 +47,12 @@ const AuthForm = ({ type }: AuthFormProps) => {
       const { email, password } = data
       const action = await dispatch(authFunctions[type]({ email, password }))
       const response = processingRequestThunks(action)
-      if (
-        type === 'register' &&
-        response !== undefined &&
-        action.meta?.requestStatus === 'fulfilled'
-      ) {
-        navigate('/profile/edit')
+      if (type === 'register' && !!response) {
+        navigate(ROUTES.editProfile)
       }
     })
+
+  const isRegister = type === 'register'
 
   return (
     <FormProvider {...methods}>
@@ -73,7 +71,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
           inputType="password"
           placeholder="Type your password"
         ></FormFieldFull>
-        {type === 'register' ? (
+        {isRegister ? (
           <FormFieldFull
             name="checkPassword"
             label="Check password"
@@ -82,7 +80,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
           ></FormFieldFull>
         ) : null}
         <ButtonStyled size="sm" type="submit" loader={loading}>
-          {type === 'register' ? 'Sign up' : 'Log in'}
+          {isRegister ? 'Sign up' : 'Log in'}
         </ButtonStyled>
         {type === 'login' ? (
           <RegisterLink>

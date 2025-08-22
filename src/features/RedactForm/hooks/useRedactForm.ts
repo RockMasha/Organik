@@ -1,47 +1,61 @@
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { redactUser } from '../api/redactUser'
 import { useNavigate } from 'react-router-dom'
 import type { Redact } from '../consts/RedactSchema'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { refreshUser } from '@/api/refreshUser'
-import { useForm } from 'react-hook-form'
+import { useForm, type UseFormReturn } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
+import redactUser from '../api/redactUser'
+import { ROUTES } from '@/shared/consts/ROUTES'
+import { getRoute } from '@/shared/helpers/getRoute'
+import type { RouteWithoutId } from '@/types'
+
+const defaultValues = {
+  first_name: '',
+  last_name: '',
+  phone: '',
+  address: '',
+}
+
+type resetFormProps = {
+  methods: UseFormReturn<Redact>
+  data: {
+    first_name: string | null
+    last_name: string | null
+    phone: string | null
+    address: string | null
+  }
+}
+
+const resetForm = ({ methods, data }: resetFormProps) => {
+  methods.reset({
+    first_name: data.first_name ?? '',
+    last_name: data.last_name ?? '',
+    phone: data.phone ?? '+',
+    address: data.address ?? '',
+  })
+}
 
 export const useRedactForm = () => {
+  const [loadingFields, setLoadingFields] = useState(true)
   const [loading, startLoading] = useLoading()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const methods = useForm<Redact>({
-    defaultValues: {
-      first_name: '',
-      last_name: '',
-      phone: '',
-      address: '',
-    },
-  })
+  const methods = useForm<Redact>({ defaultValues })
 
   useEffect(() => {
     startLoading(async () => {
       const user = await dispatch(refreshUser()).unwrap()
-      methods.reset({
-        first_name: user.first_name ?? '',
-        last_name: user.last_name ?? '',
-        phone: user.phone ?? '',
-        address: user.address ?? '',
-      })
+      resetForm({ methods, data: user })
+      setLoadingFields(false)
     })
   }, [methods])
 
   const onSubmit = async (data: Redact) => {
     const response = await dispatch(redactUser(data)).unwrap()
-    methods.reset({
-      first_name: response.first_name ?? '',
-      last_name: response.last_name ?? '',
-      phone: response.phone ?? '',
-      address: response.address ?? '',
-    })
-    navigate('/')
+    resetForm({ methods, data: response })
+    navigate(getRoute(ROUTES.home as RouteWithoutId))
   }
 
-  return { methods, onSubmit, loading }
+  return { methods, onSubmit, loading, loadingFields }
 }

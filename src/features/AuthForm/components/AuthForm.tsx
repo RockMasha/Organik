@@ -11,10 +11,12 @@ import FormFieldFull from '@/components/modules/FormFieldFull/FormFieldFull'
 import { ButtonStyled } from '@/components/modules/FormFieldFull/FormFieldFull.styled'
 import { processingRequestThunks } from '@/shared/helpers/proccesingRequestThunks'
 import useLoading from '@/shared/hooks/useLoading'
-import { registerUser } from '../api/registerUser'
-import { loginUser } from '../api/loginUser'
-import { StyledRegisterLink } from './AuthForm.styled'
+import { RegisterLink } from './AuthForm.styled'
 import { Link, useNavigate } from 'react-router-dom'
+import registerUser from '../api/registerUser'
+import loginUser from '../api/loginUser'
+import { getRoute } from '@/shared/helpers/getRoute'
+import { ROUTES } from '@/shared/consts/ROUTES'
 
 type AuthFormProps = {
   type: 'register' | 'login'
@@ -60,27 +62,33 @@ const AuthForm = ({ type }: AuthFormProps) => {
         onSubmit={methods.handleSubmit(onSubmit)}
         className="flex flex-col gap-4 items-center"
       >
-        <FormFieldFull name="email" label="Пошта"></FormFieldFull>
+        <FormFieldFull
+          name="email"
+          label="Email"
+          placeholder="Type your email"
+        ></FormFieldFull>
         <FormFieldFull
           name="password"
-          label="Пароль"
+          label="Password"
           inputType="password"
+          placeholder="Type your password"
         ></FormFieldFull>
         {type === 'register' ? (
           <FormFieldFull
             name="checkPassword"
-            label="Повторіть пароль"
+            label="Check password"
             inputType="password"
+            placeholder="Type your password again"
           ></FormFieldFull>
         ) : null}
         <ButtonStyled size="sm" type="submit" loader={loading}>
-          {type === 'register' ? 'Зареєструватися' : 'Увійти'}
+          {type === 'register' ? 'Sign up' : 'Log in'}
         </ButtonStyled>
         {type === 'login' ? (
-          <StyledRegisterLink as={Link} to="/register">
-            Не маєте акаунта?
-            <span>Зареєструватися</span>
-          </StyledRegisterLink>
+          <RegisterLink>
+            Don`t have an account?
+            <Link to={getRoute(ROUTES.register)}>Sign up</Link>
+          </RegisterLink>
         ) : null}
       </form>
     </FormProvider>

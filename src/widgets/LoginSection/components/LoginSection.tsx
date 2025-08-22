@@ -8,7 +8,7 @@ function LoginSection() {
     <SectionStyled>
       <Container>
         <Title type="h1" className="text-center">
-          Welcome To Organick
+          Welcome Back To Organick
         </Title>
         <AuthForm type="login" />
       </Container>

@@ -1,7 +1,6 @@
 import { refreshUser } from '@/api/refreshUser'
-import { loginUser } from '@/features/AuthForm/api/loginUser'
-import { registerUser } from '@/features/AuthForm/api/registerUser'
-import { redactUser } from '@/features/RedactForm/api/redactUser'
+import { loginUser, registerUser } from '@/features/AuthForm'
+import { redactUser } from '@/features/RedactForm'
 import type { ResponseUser, User } from '@/types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
@@ -24,7 +23,11 @@ const initialState: UserSliceState = {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-  reducers: {},
+  reducers: {
+    clearToken: (state: typeof initialState) => {
+      state.token = null
+    },
+  },
   extraReducers: (builder) => {
     const handlePending = (state: typeof initialState) => {
       state.isLoading = true
@@ -80,4 +83,5 @@ const userSlice = createSlice({
   },
 })
 
+export const { clearToken } = userSlice.actions
 export const userReducer = userSlice.reducer

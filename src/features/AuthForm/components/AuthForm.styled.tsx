@@ -1,7 +1,7 @@
 import responsiveSizing from '@/styles/shared/resonsiceSizing'
 import styled from '@emotion/styled'
 
-export const StyledRegisterLink = styled.a`
+export const RegisterLink = styled.p`
   display: block;
   font-family: 'Open Sans';
   font-size: ${responsiveSizing(16, 32)};
@@ -28,7 +28,7 @@ export const StyledRegisterLink = styled.a`
     width: 100%;
   }
 
-  span {
+  a {
     display: block;
     font-family: 'Open Sans';
     font-weight: 100;

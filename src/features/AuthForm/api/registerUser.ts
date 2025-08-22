@@ -5,7 +5,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { UserRegisterSchema, type UserRegister } from '../consts/userSchema'
 import { handelAppError } from '@/shared/helpers/handelAppError'
 
-export const registerUser = createAsyncThunk(
+const registerUser = createAsyncThunk(
   'auth/register',
   async (formData: UserRegister, thunkApi) => {
     try {
@@ -21,3 +21,5 @@ export const registerUser = createAsyncThunk(
     }
   }
 )
+
+export default registerUser

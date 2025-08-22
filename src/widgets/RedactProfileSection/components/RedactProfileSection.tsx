@@ -8,7 +8,7 @@ function RedactProfileSection() {
     <SectionStyled>
       <Container>
         <Title type="h1" className="text-center">
-          Редагування профілю
+          Redact profile
         </Title>
         <RedactForm></RedactForm>
       </Container>

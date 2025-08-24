@@ -10,7 +10,7 @@ import { FormLabelStyled, InputStyled } from './FormFieldFull.styled'
 type FormFieldFullProps = {
   name: string
   label: string
-  placeholder: string
+  placeholder?: string
   inputType?: string
   loading?: boolean
 }

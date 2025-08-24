@@ -2,7 +2,6 @@ import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '@/pages/HomePage'
 import CartPage from '@/pages/CartPage'
 import RegisterPage from '@/pages/RegisterPage'
-import ProfilePage from '@/pages/ProfilePage'
 import RedactProfilePage from '@/pages/RedactProfilePage'
 import NotFoundPage from '@/pages/NotFoundPage'
 import LoginPage from '@/pages/LoginPage'
@@ -11,6 +10,7 @@ import PrivateRoute from './PrivateRoute'
 import PublicOnlyRoute from './PublicOnlyRoute'
 import { ROUTES } from '@/shared/consts/ROUTES'
 import ThankOrderPage from '../ThankOrderPage'
+import ProfilePage from '../ProfilePage'
 
 const router = createBrowserRouter([
   {

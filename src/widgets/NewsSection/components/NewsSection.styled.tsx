@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import Picture from '@/components/ui/Picture'
 import Text from '@/components/ui/Text'
 import Title from '@/components/ui/Title'
@@ -53,7 +54,7 @@ export const List = styled.ul`
   }
 `
 
-export const PositionedWrapper = styled.div`
+export const InfoWrapper = styled.div`
   @media (min-width: 1440px) {
     position: absolute;
     top: ${responsiveSizing(250, 290, 1440, 1920)};
@@ -63,6 +64,11 @@ export const PositionedWrapper = styled.div`
     border-radius: 31px 34px 30px 30px;
     box-shadow: 0 20px 35px 0 rgba(167, 167, 167, 0.25);
     background-color: var(--color-white-100);
+  }
+
+  @media (min-width: 1920px) {
+    left: calc(50% - 310px);
+    top: 50%;
   }
 `
 
@@ -93,7 +99,7 @@ export const ListPicture = styled(Picture)`
   }
 `
 
-export const ItemName = styled(Text)`
+export const ItemTitleDescription = styled(Text)`
   color: var(--color-navy-100);
   line-height: 1.3;
 `
@@ -124,7 +130,6 @@ export const ItemTitle = styled(Title)`
 export const ItemText = styled(Text)`
   color: var(--color-gray-100);
   font-family: 'Open Sans';
-  font-size: 17px;
   line-height: 1.8;
 `
 
@@ -164,14 +169,10 @@ export const FormBackground = styled.div`
   }
 `
 
-export const StyledInput = styled.input`
-  width: 100%;
+export const StyledInput = styled(Input)`
   height: 80px;
   text-align: center;
-  font-size: 16px;
-  border-radius: 16px;
   border: 1px solid var(--color-gray-400);
-  background: var(--color-white-100);
   @media (min-width: 1440px) {
     width: 350px;
     height: 82px;
@@ -182,9 +183,7 @@ export const FormButton = styled(Button)`
   width: 100%;
   height: 71px;
   margin-top: 10px;
-  color: var(--color-white-100);
   border-radius: 16px;
-  background: var(--color-navy-100);
   @media (min-width: 1440px) {
     width: 200px;
     height: 82px;

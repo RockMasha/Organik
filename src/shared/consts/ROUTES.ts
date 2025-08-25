@@ -3,6 +3,7 @@ export const ROUTES = {
   register: 'register',
   login: 'login',
   cart: 'cart',
+  orderHistory: 'order-history',
   thankOrder: 'cart/thank',
   profile: 'profile',
   editProfile: 'profile/edit',

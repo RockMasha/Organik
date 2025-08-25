@@ -27,8 +27,3 @@ export const TotalPriceText = styled.p`
   font-size: ${responsiveSizing(20, 40)};
   font-weight: 700;
 `
-
-export const NoProductsBox = styled.div`
-  padding-bottom: ${responsiveSizing(40, 120)};
-  text-align: center;
-`

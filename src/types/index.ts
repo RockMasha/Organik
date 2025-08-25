@@ -17,6 +17,9 @@ export {
 export { CartSchema, type Cart } from './modules/cart/Cart'
 export { CartProductSchema, type CartProduct } from './modules/cart/CartProduct'
 
+// order
+export { OrderSchema, type Order } from './modules/order/Order'
+
 // elements
 export type { NullableElement } from './modules/elements/NullableElement'
 

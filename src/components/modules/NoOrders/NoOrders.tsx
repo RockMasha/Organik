@@ -1,12 +1,12 @@
 import Title from '@/components/ui/Title'
-import { NoProductsBox } from './CartOrders.styled'
 import { LinkButton } from '@/components/ui/button'
+import { NoProductsBox } from './NoOrders.styled'
 
-function NoProductsInCart() {
+function NoOrders({ title }: { title: string }) {
   return (
     <NoProductsBox>
       <Title className="mb-8 tablet:mb-10 laptop:mb-12 desktop:mb-14" type="h2">
-        No products in cart now
+        {title}
       </Title>
       <LinkButton arrow={true} link="home">
         Make order
@@ -15,4 +15,4 @@ function NoProductsInCart() {
   )
 }
 
-export default NoProductsInCart
+export default NoOrders

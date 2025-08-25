@@ -12,6 +12,7 @@ import PublicOnlyRoute from './PublicOnlyRoute'
 import { ROUTES } from '@/shared/consts/ROUTES'
 import ThankOrderPage from '../ThankOrderPage'
 import { ProductModal } from '@/features/ProductModal'
+import OrderHistoryPage from '../OrderHistoryPage'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.thankOrder,
         element: <ThankOrderPage />,
+      },
+      {
+        path: ROUTES.orderHistory,
+        element: <PrivateRoute Component={<OrderHistoryPage />} />,
       },
       {
         path: ROUTES.profile,

@@ -19,7 +19,7 @@ export const List = styled.ul`
 export const ItemNatural = styled.li`
   width: 100%;
   padding: ${responsiveSizing(40, 90, 320, 1440)}
-    ${responsiveSizing(20, 52, 320, 1440)};
+    ${responsiveSizing(20, 52, 320, 1440)}
   ${getImageBackground('get-fresh')}
   background-repeat: no-repeat;
   background-size: cover;

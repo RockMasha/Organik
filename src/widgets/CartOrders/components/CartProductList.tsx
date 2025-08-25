@@ -3,7 +3,7 @@ import { ProductList } from './CartOrders.styled'
 import { useSelector } from 'react-redux'
 import { selectCart } from '@/store/slices/cart/cartSelectors'
 import OrderProductSkeleton from '@/features/CartProduct/components/CartProductSkeleton'
-import NoProductsInCart from './NoProductsInCart'
+import NoOrders from '@/components/modules/NoOrders/NoOrders'
 
 function CartProductList() {
   const cart = useSelector(selectCart)
@@ -24,7 +24,9 @@ function CartProductList() {
           ))}
         </ProductList>
       )}
-      {cart && cart.products.length === 0 && <NoProductsInCart />}
+      {cart && cart.products.length === 0 && (
+        <NoOrders title={'No products in cart now'} />
+      )}
     </>
   )
 }

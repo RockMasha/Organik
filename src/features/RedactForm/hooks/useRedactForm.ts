@@ -5,9 +5,7 @@ import { useEffect, useState } from 'react'
 import { refreshUser } from '@/api/refreshUser'
 import { useForm, type UseFormReturn } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
-import { ROUTES } from '@/shared/consts/ROUTES'
 import { getRoute } from '@/shared/helpers/getRoute'
-import type { RouteWithoutId } from '@/types'
 import { redactUser } from '../api/redactUser'
 
 const defaultValues = {

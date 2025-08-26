@@ -36,7 +36,7 @@ export const Item = styled.li`
   justify-content: center;
   align-items: center;
   padding: 114px 36px;
-  ${({ bg }) => getImageBackground(bg)};
+  ${({ bg }: ItemProps) => getImageBackground(bg)};
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;

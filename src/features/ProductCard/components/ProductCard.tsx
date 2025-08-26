@@ -44,14 +44,16 @@ function ProductCardInner({ data }: { data: Product }) {
       <ProductTitle type="h4">{name}</ProductTitle>
       <ProductValueContainer>
         <ProductPriceBox>
+          <PriceText minWidth={15} maxWidth={15}>
+            {discount !== 0
+              ? `$${getPriceWithDiscount(price, discount)}`
+              : `$${price}`}
+          </PriceText>
           {discount !== 0 && (
-            <PriceText minWidth={15} maxWidth={15}>
-              ${getPriceWithDiscount(price, discount)}
+            <PriceText type="crossed" minWidth={18} maxWidth={18}>
+              ${price}
             </PriceText>
           )}
-          <PriceText type="crossed" minWidth={18} maxWidth={18}>
-            ${price}
-          </PriceText>
         </ProductPriceBox>
         <StarRate rating={rate} size={responsiveSizing(16, 20)} />
       </ProductValueContainer>

@@ -4,9 +4,10 @@ import {
   ModalCartLabel,
   ModalCartInput,
   ModalBtn,
-  ModalCartError,
+  // ModalCartError,
 } from './ProductModal.styled'
 import { useForm, type FieldValues } from 'react-hook-form'
+import Text from '@/components/ui/Text'
 
 interface AddToCartFormProps {
   onSubmit: (data: FieldValues) => void
@@ -45,9 +46,7 @@ function AddToCartForm({ onSubmit, loading }: AddToCartFormProps) {
           symbolNumb={symbolNumb}
           {...register('quantity', quantityValidation)}
         />
-        {errors.quantity && (
-          <ModalCartError>{errors.quantity.message}</ModalCartError>
-        )}
+        {errors.quantity && <Text type="error">{errors.quantity.message}</Text>}
       </ModalCartLabel>
       <ModalBtn type="submit" arrow={true} loader={loading}>
         Add To Cart

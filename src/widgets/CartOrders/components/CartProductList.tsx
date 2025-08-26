@@ -1,7 +1,7 @@
 import OrderProduct from '@/features/CartProduct/components/CartProduct'
 import { ProductList } from './CartOrders.styled'
 import { useSelector } from 'react-redux'
-import { selectCart } from '@/store/slices/cart/cartSelectors'
+import { selectCart } from '@/store'
 import OrderProductSkeleton from '@/features/CartProduct/components/CartProductSkeleton'
 import NoOrders from '@/components/modules/NoOrders/NoOrders'
 

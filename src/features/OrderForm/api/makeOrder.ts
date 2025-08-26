@@ -1,29 +1,47 @@
 import api from '@/api/kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
-import type { CartProduct } from '@/types'
+import {
+  CartProductSchema,
+  OrderSchema,
+  UserSchema,
+  type CartProduct,
+} from '@/types'
+import { getPostOrderProducts } from '../helpers/getPostOrderCart'
+import { type OrderFormData } from '../consts/OrderFormSchema'
+import { array, object } from 'zod'
 
-// const makeOrderApiSchema =
+const makeOrderApiSchema = object({
+  ...OrderSchema,
+  orderProducts: array(CartProductSchema),
+  user: UserSchema,
+})
 
-interface OrderData {
-  full_name: string
-  //   email: `${string}@${string}.${string}`
-  email: string
-  //   phone: `+380${number}`
-  phone: string
-  address: string
-  message?: string
+interface OrderData extends OrderFormData {
   orderProducts: CartProduct[]
 }
 
 export async function makeOrder(data: OrderData) {
   try {
-    const result = await api.post(`${ENDPOINTS.order}`, { json: data }).json()
+    const postData = {
+      ...data,
+      orderProducts: getPostOrderProducts(data.orderProducts),
+    }
+    delete postData.message
+    console.log('postData', postData)
+
+    const result = await api
+      .post(`${ENDPOINTS.order}`, {
+        json: postData,
+      })
+      .json()
     console.log(result)
 
-    // const parseResult = CartSchema.parse(result)
+    const parseResult = makeOrderApiSchema.parse(result)
     // return ok(parseResult)
   } catch (error) {
+    console.log('error', error)
+
     return handelNeverthrowError(error)
   }
 }

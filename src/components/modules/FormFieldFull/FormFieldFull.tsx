@@ -17,6 +17,7 @@ type FormFieldFullProps = {
   inputType?: string
   placeholder?: string
   variant?: 'input' | 'textarea'
+  loading?: boolean
 }
 
 const FormFieldFull = ({
@@ -25,6 +26,7 @@ const FormFieldFull = ({
   inputType,
   placeholder,
   variant,
+  loading,
 }: FormFieldFullProps) => {
   const { control } = useFormContext()
   const fieldType = variant ? variant : 'input'
@@ -38,21 +40,38 @@ const FormFieldFull = ({
           <FormLabelStyled className="text-[20px]">{label}</FormLabelStyled>
           {fieldType === 'input' && (
             <FormControl>
-              <InputStyled
-                variant="transparent"
-                type={inputType}
-                placeholder={placeholder}
-                {...field}
-              />
+              {loading ? (
+                <InputStyled
+                  placeholder="wait a moment..."
+                  variant="transparent"
+                  type={inputType}
+                  {...field}
+                />
+              ) : (
+                <InputStyled
+                  placeholder={placeholder}
+                  variant="transparent"
+                  type={inputType}
+                  {...field}
+                />
+              )}
             </FormControl>
           )}
           {fieldType === 'textarea' && (
             <FormControl>
-              <TextAreaStyled
-                variant="transparent"
-                placeholder={placeholder}
-                {...field}
-              />
+              {loading ? (
+                <TextAreaStyled
+                  variant="transparent"
+                  placeholder={placeholder}
+                  {...field}
+                />
+              ) : (
+                <TextAreaStyled
+                  variant="transparent"
+                  placeholder={placeholder}
+                  {...field}
+                />
+              )}
             </FormControl>
           )}
           <FormMessage />

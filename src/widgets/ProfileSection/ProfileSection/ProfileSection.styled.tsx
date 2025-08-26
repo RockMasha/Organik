@@ -1,0 +1,7 @@
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
+import styled from '@emotion/styled'
+
+export const Section = styled.section`
+  padding: ${responsiveSizing(40, 80)};
+  background-color: var(--color-white-200);
+`

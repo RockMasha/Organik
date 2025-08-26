@@ -12,9 +12,16 @@ import { processingRequestThunks } from '@/shared/helpers/processingRequestHandl
 import useLoading from '@/shared/hooks/useLoading'
 import { registerUser } from '../api/registerUser'
 import { loginUser } from '../api/loginUser'
-import { AuthBtn, FormItem, FormList } from './AuthForm.styled'
-import { Form, Link, useNavigate } from 'react-router-dom'
-import { StyledLink } from '@/components/modules/StyledLink/StyledLink'
+import {
+  AuthBtn,
+  Form,
+  FormItem,
+  FormList,
+  RegisterLink,
+} from './AuthForm.styled'
+import { Link, useNavigate } from 'react-router-dom'
+import { getRoute } from '@/shared/helpers/getRoute'
+import { ROUTES } from '@/shared/consts/ROUTES'
 
 type AuthFormProps = {
   type: 'register' | 'login'
@@ -24,10 +31,10 @@ const AuthForm = ({ type }: AuthFormProps) => {
   const [loading, startLoading] = useLoading()
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
+
+  const isRegister = type === 'register'
   const methods = useForm<UserRegister | UserLogin>({
-    resolver: zodResolver(
-      type === 'register' ? UserRegisterSchema : UserLoginSchema
-    ),
+    resolver: zodResolver(isRegister ? UserRegisterSchema : UserLoginSchema),
     defaultValues: {
       email: '',
       password: '',
@@ -45,50 +52,49 @@ const AuthForm = ({ type }: AuthFormProps) => {
       const { email, password } = data
       const action = await dispatch(authFunctions[type]({ email, password }))
       const response = processingRequestThunks(action)
-      if (
-        type === 'register' &&
-        response !== undefined &&
-        action.meta?.requestStatus === 'fulfilled'
-      ) {
-        navigate('/profile/edit')
+      if (isRegister && !!response) {
+        navigate(getRoute('editProfile'))
       }
     })
 
   return (
     <FormProvider {...methods}>
-      <Form
-        onSubmit={methods.handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 items-center"
-      >
+      <Form onSubmit={methods.handleSubmit(onSubmit)}>
         <FormList>
           <FormItem>
-            <FormFieldFull name="email" label="Пошта" />
+            <FormFieldFull
+              name="email"
+              label="Email"
+              placeholder="Type your email"
+            />
           </FormItem>
           <FormItem>
             <FormFieldFull
               name="password"
-              label="Пароль"
+              label="Password"
               inputType="password"
+              placeholder="Type your password"
             />
           </FormItem>
-          {type === 'register' && (
+          {isRegister && (
             <FormItem>
               <FormFieldFull
                 name="checkPassword"
-                label="Повторіть пароль"
+                label="Repeat password"
                 inputType="password"
+                placeholder="Type your password again"
               />
             </FormItem>
           )}
         </FormList>
         <AuthBtn type="submit" loader={loading}>
-          {type === 'register' ? 'Зареєструватися' : 'Увійти'}
+          {isRegister ? 'Sign up' : 'Log in'}
         </AuthBtn>
         {type === 'login' && (
-          <StyledLink as={Link} to="/register">
-            Не маєте акаунта?
-            <span>Зареєструватися</span>
-          </StyledLink>
+          <RegisterLink>
+            Don`t have an account?
+            <Link to={getRoute(ROUTES.register)}>Sign up</Link>
+          </RegisterLink>
         )}
       </Form>
     </FormProvider>

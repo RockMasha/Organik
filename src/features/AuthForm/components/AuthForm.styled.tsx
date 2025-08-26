@@ -2,6 +2,20 @@ import { Button } from '@/components/ui/button'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
+export const RegisterLink = styled.p`
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans';
+  font-size: ${responsiveSizing(16, 32)};
+  font-weight: 700;
+  letter-spacing: 0.36px;
+  text-align: center;
+  color: var(--color-gray-100);
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+`
+
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
@@ -24,6 +38,11 @@ export const FormItem = styled.li`
   }
   @media (min-width: 1920px) {
     width: 569px;
+  }
+  a {
+    display: block;
+    font-family: 'Open Sans';
+    font-weight: 100;
   }
 `
 

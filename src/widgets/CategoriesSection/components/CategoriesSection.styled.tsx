@@ -25,31 +25,22 @@ export const List = styled.ul`
     flex-direction: row;
     justify-content: center;
   }
-
-  li:nth-child(1) {
-    ${getImageBackground('yello-drink')}
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  li:nth-child(2) {
-    ${getImageBackground('green_cucumber')}
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  li:nth-child(3) {
-    ${getImageBackground('cookies')}
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 `
+
+interface ItemProps {
+  bg: 'yello-drink' | 'green_cucumber' | 'cookies'
+}
 
 export const Item = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 114px 36px;
+  ${({ bg }) => getImageBackground(bg)};
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+
   @media (min-width: 320px) {
     padding-top: ${responsiveSizing(114, 214, 320, 768)};
     padding-bottom: ${responsiveSizing(114, 214, 320, 768)};

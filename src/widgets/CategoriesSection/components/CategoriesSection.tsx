@@ -11,13 +11,13 @@ function CategoriesSection() {
     <Section id="categories">
       <StyledContainer>
         <List>
-          <Item>
+          <Item bg="yello-drink">
             <StyledLink href="#">Fruit Juice</StyledLink>
           </Item>
-          <Item>
+          <Item bg="green_cucumber">
             <StyledLink href="#">Organic Food</StyledLink>
           </Item>
-          <Item>
+          <Item bg="cookies">
             <StyledLink href="#">Nuts Cookies</StyledLink>
           </Item>
         </List>

@@ -1,9 +1,9 @@
-import { Navigate } from 'react-router-dom'
+import { ProfileSection } from '@/widgets/ProfileSection'
 
 function ProfilePage() {
   return (
     <main>
-      <Navigate to="/profile/edit" replace />
+      <ProfileSection />
     </main>
   )
 }

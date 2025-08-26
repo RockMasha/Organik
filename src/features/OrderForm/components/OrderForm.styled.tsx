@@ -15,6 +15,7 @@ export const OrderFormList = styled.ul`
 `
 
 export const InputItem = styled.li`
+  position: relative;
   @media (min-width: 768px) and (max-width: 1919px) {
     min-width: ${responsiveSizing(300, 800, 768)};
   }

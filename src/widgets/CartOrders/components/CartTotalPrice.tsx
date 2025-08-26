@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import { TotalPriceBox, TotalPriceText } from './CartOrders.styled'
-import { selectCart } from '@/store/slices/cart/cartSelectors'
+import { selectCart } from '@/store'
 import { getTotalPrice } from '../helpers/getTotalPrice'
 
 function CartTotalPrice() {

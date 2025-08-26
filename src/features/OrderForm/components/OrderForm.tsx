@@ -48,7 +48,7 @@ function OrderForm() {
             />
           </TextAreaItem>
         </OrderFormList>
-        <Button className="block mx-auto" size="flattened" loader={loading}>
+        <Button className="flex mx-auto" size="flattened" loader={loading}>
           Confirm
         </Button>
       </form>

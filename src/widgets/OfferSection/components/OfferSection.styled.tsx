@@ -19,7 +19,7 @@ export const List = styled.ul`
 export const ItemNatural = styled.li`
   width: 100%;
   padding: ${responsiveSizing(40, 90, 320, 1440)}
-    ${responsiveSizing(20, 52, 320, 1440)};
+    ${responsiveSizing(20, 52, 320, 1440)}
   ${getImageBackground('get-fresh')}
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,7 +45,6 @@ export const StyledText = styled.p`
 `
 export const StyledTitle = styled.h2`
   color: ${({ color }) => color};
-  font-family: Roboto;
   font-size: ${responsiveSizing(26, 40)};
   font-weight: 700;
   line-height: 1.3;

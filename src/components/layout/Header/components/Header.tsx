@@ -28,6 +28,7 @@ import CartBtn from './CartBtn'
 import useOpen from '../hooks/useOpen'
 import useWindowWidth from '@/shared/hooks/useWindowWidth'
 import { MenuIcon } from 'lucide-react'
+import { getRoute } from '@/shared/helpers/getRoute'
 
 function Header() {
   const { open, toggleOpen, setOpen } = useOpen()
@@ -49,10 +50,10 @@ function Header() {
                 <StyledNavigationMenuContent>
                   <StyledDropList>
                     <li>
-                      <StyledNavText to="/">Home</StyledNavText>
+                      <StyledNavText to={getRoute('home')}>Home</StyledNavText>
                     </li>
                     <li>
-                      <StyledNavText to="/cart">Cart</StyledNavText>
+                      <StyledNavText to={getRoute('cart')}>Cart</StyledNavText>
                     </li>
                   </StyledDropList>
                 </StyledNavigationMenuContent>

@@ -132,7 +132,10 @@ function FormMessage({ className, children, ...props }: ComponentProps<'p'>) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn('text-red-100 text-sm', className)}
+      className={cn(
+        'text-red-100 text-[12px] tablet:text-[14px] laptop:text-[16px] desktop:text-[18px] ',
+        className
+      )}
       {...props}
     >
       {body}

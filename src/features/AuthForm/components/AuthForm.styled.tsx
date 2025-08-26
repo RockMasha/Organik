@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
 
-export const RegisterLink = styled.p`
+export const RegisterLinkText = styled.p`
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans';
@@ -39,7 +39,7 @@ export const FormItem = styled.li`
   @media (min-width: 1920px) {
     width: 569px;
   }
-  a {
+  Link {
     display: block;
     font-family: 'Open Sans';
     font-weight: 100;

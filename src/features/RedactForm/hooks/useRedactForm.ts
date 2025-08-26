@@ -1,12 +1,13 @@
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useNavigate } from 'react-router-dom'
-import type { Redact } from '../consts/RedactSchema'
+import { RedactSchema, type Redact } from '../consts/RedactSchema'
 import { useEffect, useState } from 'react'
 import { refreshUser } from '@/api/refreshUser'
 import { useForm, type UseFormReturn } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
 import { getRoute } from '@/shared/helpers/getRoute'
 import { redactUser } from '../api/redactUser'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const defaultValues = {
   first_name: '',
@@ -39,7 +40,10 @@ export const useRedactForm = () => {
   const [loading, startLoading] = useLoading()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const methods = useForm<Redact>({ defaultValues })
+  const methods = useForm<Redact>({
+    defaultValues,
+    resolver: zodResolver(RedactSchema),
+  })
 
   useEffect(() => {
     startLoading(async () => {

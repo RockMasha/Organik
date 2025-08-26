@@ -40,38 +40,21 @@ const FormFieldFull = ({
           <FormLabelStyled className="text-[20px]">{label}</FormLabelStyled>
           {fieldType === 'input' && (
             <FormControl>
-              {loading ? (
-                <InputStyled
-                  placeholder="wait a moment..."
-                  variant="transparent"
-                  type={inputType}
-                  {...field}
-                />
-              ) : (
-                <InputStyled
-                  placeholder={placeholder}
-                  variant="transparent"
-                  type={inputType}
-                  {...field}
-                />
-              )}
+              <InputStyled
+                placeholder={loading ? 'wait a moment...' : placeholder}
+                variant="transparent"
+                type={inputType}
+                {...field}
+              />
             </FormControl>
           )}
           {fieldType === 'textarea' && (
             <FormControl>
-              {loading ? (
-                <TextAreaStyled
-                  variant="transparent"
-                  placeholder={placeholder}
-                  {...field}
-                />
-              ) : (
-                <TextAreaStyled
-                  variant="transparent"
-                  placeholder={placeholder}
-                  {...field}
-                />
-              )}
+              <TextAreaStyled
+                variant="transparent"
+                placeholder={loading ? 'wait a moment...' : placeholder}
+                {...field}
+              />
             </FormControl>
           )}
           <FormMessage />

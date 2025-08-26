@@ -17,11 +17,10 @@ import {
   Form,
   FormItem,
   FormList,
-  RegisterLink,
+  RegisterLinkText,
 } from './AuthForm.styled'
 import { Link, useNavigate } from 'react-router-dom'
 import { getRoute } from '@/shared/helpers/getRoute'
-import { ROUTES } from '@/shared/consts/ROUTES'
 
 type AuthFormProps = {
   type: 'register' | 'login'
@@ -91,10 +90,10 @@ const AuthForm = ({ type }: AuthFormProps) => {
           {isRegister ? 'Sign up' : 'Log in'}
         </AuthBtn>
         {type === 'login' && (
-          <RegisterLink>
+          <RegisterLinkText>
             Don`t have an account?
-            <Link to={getRoute(ROUTES.register)}>Sign up</Link>
-          </RegisterLink>
+            <Link to={getRoute('register')}>Sign up</Link>
+          </RegisterLinkText>
         )}
       </Form>
     </FormProvider>

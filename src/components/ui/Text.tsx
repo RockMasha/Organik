@@ -13,8 +13,17 @@ const GreenText = styled.p`
   font-family: Yellowtail;
 `
 
+const ErrorText = styled.p`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  color: var(--color-red-100);
+  font-size: ${responsiveSizing(12, 18)};
+`
+
 interface TextProps extends ChildrenProps {
-  type?: 'normal' | 'green'
+  type?: 'normal' | 'green' | 'error'
   className?: string
 }
 
@@ -24,6 +33,8 @@ function Text({ type, children, className }: TextProps) {
       return <NormalText className={className}>{children}</NormalText>
     case 'green':
       return <GreenText className={className}>{children}</GreenText>
+    case 'error':
+      return <ErrorText className={className}>{children}</ErrorText>
     default:
       return <NormalText className={className}>{children}</NormalText>
   }

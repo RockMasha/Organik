@@ -83,15 +83,6 @@ export const ProductQualityInput = styled('input')<{ symbolNumb: number }>`
   border-radius: 16px;
 `
 
-export const ProductQualityError = styled.p`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translateY(100%);
-  color: var(--color-red-100);
-  font-size: ${responsiveSizing(12, 18)};
-`
-
 export const ProductDeleteBtn = styled(Button)`
   padding-top: ${responsiveSizing(6, 12)};
   padding-bottom: ${responsiveSizing(6, 12)};

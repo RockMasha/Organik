@@ -144,15 +144,6 @@ export const ModalCartInput = styled('input')<{ symbolNumb: number }>`
   border-radius: 16px;
 `
 
-export const ModalCartError = styled.p`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translateY(100%);
-  color: var(--color-red-100);
-  font-size: ${responsiveSizing(12, 18)};
-`
-
 export const ModalBtn = styled(Button)`
   padding-top: ${responsiveSizing(10, 24)};
   padding-bottom: ${responsiveSizing(10, 24)};

@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { getCart } from '../api/getCart'
 import { processingRequestThunks } from '@/shared/helpers/processingRequestHandlers/processingRequestThunks'
+import { clearCart } from '@/store'
 
 function CartOrders() {
   const dispatch = useAppDispatch()
@@ -17,6 +18,9 @@ function CartOrders() {
       processingRequestThunks(answer)
     }
     getCartData()
+    return () => {
+      dispatch(clearCart())
+    }
   }, [])
 
   return (

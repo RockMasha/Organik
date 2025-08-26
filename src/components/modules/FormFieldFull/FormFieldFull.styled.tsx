@@ -30,7 +30,7 @@ export const TextAreaStyled = styled(Textarea)`
   padding-bottom: ${responsiveSizing(15, 28)};
   padding-left: ${responsiveSizing(10, 23)};
   padding-right: ${responsiveSizing(10, 23)};
-  height: ${responsiveSizing(50, 247)};
+  height: ${responsiveSizing(100, 247)};
   font-size: ${responsiveSizing(16, 18)};
   &::placeholder {
     font-size: ${responsiveSizing(14, 16)};

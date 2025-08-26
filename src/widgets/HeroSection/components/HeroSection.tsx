@@ -13,6 +13,7 @@ function HeroSection() {
         </StyledTitle>
         <StyledButton
           link="home"
+          id="offer"
           size={'default'}
           variant={'yellow'}
           arrow={true}

@@ -17,7 +17,7 @@ export const getRoute: GetRoute = (route, id?) => {
   }
 
   if (route === 'home') {
-    return `/${point}${id ? `#${getSectionId(id as HomeId)}` : ''}`
+    return `${point}${id ? `#${getSectionId(id as HomeId)}` : ''}`
   }
 
   if (route === 'product') {

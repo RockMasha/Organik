@@ -34,7 +34,14 @@ export const StyledContainer = styled(Container)`
   justify-content: space-between;
 `
 
-export const StyledLink = styled(LinkButton)`
+export const StyledLink = styled(Link)`
+  display: flex;
+  gap: 8.2px;
+  text-align: center;
+  align-items: center;
+`
+
+export const StyledCartBtn = styled(LinkButton)`
   display: flex;
   gap: 8.2px;
   text-align: center;

@@ -62,7 +62,7 @@ function NewsSection() {
               type="text"
               placeholder="Enter Your Email Address"
             />
-            <FormButton>Subscribe</FormButton>
+            <FormButton type="button">Subscribe</FormButton>
           </form>
         </FormBackground>
       </Container>

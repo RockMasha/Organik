@@ -32,7 +32,7 @@ export function useQuantityForm({ quantity, id }: CartProductData) {
   const dispatch = useAppDispatch()
 
   async function updateProduct(event: ChangeEvent<HTMLInputElement>) {
-    const isValid = await trigger('quantity')    
+    const isValid = await trigger('quantity')
     if (!isValid) return
     const value = Number(event.currentTarget.value)
     if (timeoutRef.current) {

@@ -1,7 +1,4 @@
-import {
-  ProductQualityInput,
-  ProductQualityLabel,
-} from './CartProduct.styled'
+import { ProductQualityInput, ProductQualityLabel } from './CartProduct.styled'
 import { useQuantityForm } from '../hooks/useQuantityForm'
 import CircleLoader from '@/components/ui/loaders/CircleLoader/CircleLoader'
 import Text from '@/components/ui/Text'

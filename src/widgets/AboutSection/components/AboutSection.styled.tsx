@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import Text from '@/components/ui/Text'
 import Title from '@/components/ui/Title'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/button'
 import Container from '@/components/ui/Container'
 
 export const Section = styled.section`
@@ -101,6 +101,6 @@ export const StyledAdvantage = styled.div`
   }
 `
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled(LinkButton)`
   margin-top: 50px;
 `

@@ -26,7 +26,7 @@ function ProductCard({ data, variant }: ProductCardProps) {
     <ProductItem data-id={data.id}>
       {(variant === 'item' || !variant) && <ProductCardInner data={data} />}
       {variant === 'link' && (
-        <Link to={`${getRoute('product', data.id)}#product-modal`}>
+        <Link to={getRoute('product', data.id)}>
           <ProductCardInner data={data} />
         </Link>
       )}

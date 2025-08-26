@@ -1,16 +1,23 @@
 import Container from '@/components/ui/Container'
-import { Section, StyledTitle, StyledButton } from './HeroSection.styled'
+import { Section, StyledButton, StyledTitle } from './HeroSection.styled'
 import Text from '@/components/ui/Text'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function HeroSection() {
   return (
-    <Section id="hero">
+    <Section id={getSectionId('hero')}>
       <Container>
         <Text type="green">Made with nature</Text>
         <StyledTitle type="h1">
           Welcome to the world of nature and organic.
         </StyledTitle>
-        <StyledButton size={'default'} variant={'yellow'} arrow={true}>
+        <StyledButton
+          link="home"
+          id="offer"
+          size={'default'}
+          variant={'yellow'}
+          arrow={true}
+        >
           Explore Now
         </StyledButton>
       </Container>

@@ -6,13 +6,17 @@ import { useSelector } from 'react-redux'
 import type { RootState } from '@/types'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import PageLoader from '@/components/modules/PageLoader/PageLoader'
+import { getRoute } from '@/shared/helpers/getRoute'
 
 interface PrivateRouteProps {
   redirect?: string
   Component: JSX.Element
 }
 
-function PrivateRoute({ redirect = '/login', Component }: PrivateRouteProps) {
+function PrivateRoute({
+  redirect = getRoute('login'),
+  Component,
+}: PrivateRouteProps) {
   const dispatch = useAppDispatch()
   const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn)
   const [isLoading, setIsLoading] = useState(true)

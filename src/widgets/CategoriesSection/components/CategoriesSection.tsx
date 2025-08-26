@@ -1,3 +1,4 @@
+import { getSectionId } from '@/shared/helpers/getSectionId'
 import {
   StyledLink,
   Item,
@@ -8,7 +9,7 @@ import {
 
 function CategoriesSection() {
   return (
-    <Section id="categories">
+    <Section id={getSectionId('categories')}>
       <StyledContainer>
         <List>
           <Item>

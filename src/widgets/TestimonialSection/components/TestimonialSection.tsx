@@ -11,10 +11,11 @@ import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import Title from '@/components/ui/Title'
 import Text from '@/components/ui/Text'
 import InfoCircle from '@/components/modules/InfoCircle/InfoCircle'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function TestimonialSection() {
   return (
-    <Section id="testimonial">
+    <Section id={getSectionId('testimonial')}>
       <StyledContainer>
         <Wrapper>
           <Text type="green">Testimonial</Text>

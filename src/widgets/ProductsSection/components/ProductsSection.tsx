@@ -9,6 +9,7 @@ import { ProductsPagination } from './ProductsPagination'
 import { ProductsList } from './ProductList'
 import { Outlet } from 'react-router-dom'
 import ProductFilter from './ProductFilter'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 export const Products = Object.assign(ProductsContextProvider, {
   List: ProductsList,
@@ -18,7 +19,7 @@ export const Products = Object.assign(ProductsContextProvider, {
 
 function ProductsSection() {
   return (
-    <Section id="products">
+    <Section id={getSectionId('products')}>
       <Container>
         <Outlet />
         <ProductGreenText type="green">Categories</ProductGreenText>

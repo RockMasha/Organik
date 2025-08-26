@@ -1,5 +1,6 @@
 import { refreshUser } from '@/api/refreshUser'
 import PageLoader from '@/components/modules/PageLoader/PageLoader'
+import { getRoute } from '@/shared/helpers/getRoute'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import type { RootState } from '@/types'
 import type { JSX } from 'preact/jsx-runtime'
@@ -12,7 +13,10 @@ interface PublicOnlyRouteProps {
   Component: JSX.Element
 }
 
-function PublicOnlyRoute({ redirect = '/', Component }: PublicOnlyRouteProps) {
+function PublicOnlyRoute({
+  redirect = getRoute('home'),
+  Component,
+}: PublicOnlyRouteProps) {
   const dispatch = useAppDispatch()
   const isLoggedIn = useSelector((state: RootState) => state.user.isLoggedIn)
   const [isLoading, setIsLoading] = useState(true)

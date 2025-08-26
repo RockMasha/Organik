@@ -1,42 +1,18 @@
 import { NavigationMenuItem } from '@radix-ui/react-navigation-menu'
 import { StyledNavText } from './Header.styled'
-import { ROUTES } from '@/shared/consts/ROUTES'
 import type { ChildrenProps } from '@/types'
-
-type Link =
-  | 'categories'
-  | 'home'
-  | 'cart'
-  | 'hero'
-  | 'about'
-  | 'products'
-  | 'ecoFriendly'
-  | 'news'
-  | 'offer'
-  | 'testimonial'
-  | 'vegetables'
+import { getRoute } from '@/shared/helpers/getRoute'
+import type { HomeId } from '@/types/modules/routes/HomeId'
 
 interface MenuItemProps extends ChildrenProps {
-  link: Link
+  link: HomeId
   onClick?: () => void
-}
-
-const getLink = (link: Link) => {
-  switch (link) {
-    case 'home':
-      return ROUTES.home
-    case 'cart':
-      return ROUTES.cart
-
-    default:
-      return `/#${link}`
-  }
 }
 
 function MenuItem({ link, onClick, children }: MenuItemProps) {
   return (
     <NavigationMenuItem>
-      <StyledNavText to={getLink(link)} onClick={onClick}>
+      <StyledNavText to={getRoute('home', link)} onClick={onClick}>
         {children}
       </StyledNavText>
     </NavigationMenuItem>

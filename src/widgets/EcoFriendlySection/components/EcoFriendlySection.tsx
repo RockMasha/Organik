@@ -8,10 +8,11 @@ import {
   Wrapper,
 } from './EcoFriendlySection.styled'
 import Text from '@/components/ui/Text'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function EcoFriendlySection() {
   return (
-    <Section id="ecoFriendly" className="relative">
+    <Section id={getSectionId('ecoFriendly')} className="relative">
       <BackgroundPicture />
       <Container>
         <Wrapper>

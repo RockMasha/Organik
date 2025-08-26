@@ -8,7 +8,7 @@ import {
   StyledItem,
   WrapperForDate,
 } from './NewsSection.styled'
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/button'
 
 type ItemProps = {
   date: string
@@ -42,9 +42,15 @@ const Item = ({ date, name, title, text, picture }: ItemProps) => {
           {title}
         </ItemTitle>
         <ItemText>{text}</ItemText>
-        <Button arrow variant="yellow" className="mt-[28px]">
+        <LinkButton
+          id="news"
+          link="home"
+          arrow
+          variant="yellow"
+          className="mt-[28px]"
+        >
           Read More
-        </Button>
+        </LinkButton>
       </InfoWrapper>
     </StyledItem>
   )

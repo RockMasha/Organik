@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button'
 import { selectToken } from '@/store'
 import { useSelector } from 'react-redux'
 import { StyledCart, StyledLink } from './Header.styled'
@@ -8,12 +7,10 @@ function CartBtn() {
   return (
     <>
       {token && (
-        <Button variant="transparent" size="half_rounded">
-          <StyledLink to="/cart">
-            <StyledCart />
-            Cart
-          </StyledLink>
-        </Button>
+        <StyledLink link="cart" variant="transparent" size="half_rounded">
+          <StyledCart />
+          Cart
+        </StyledLink>
       )}
     </>
   )

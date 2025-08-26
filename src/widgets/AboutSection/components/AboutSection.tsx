@@ -12,10 +12,11 @@ import Text from '@/components/ui/Text'
 import AdvantageItem from './AdvantageItem'
 import IconQuality from '@/assets/icons/quality-icon.svg?react'
 import IconOrganicFood from '@/assets/icons/organic-food-icon.svg?react'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function AboutSection() {
   return (
-    <Section id="about">
+    <Section id={getSectionId('about')}>
       <StyledContainer>
         <Picture name="belive" />
         <StyledMainPart>
@@ -48,7 +49,13 @@ function AboutSection() {
             />
           </StyledAdvantageList>
 
-          <StyledButton size="default" variant="blue" arrow={true}>
+          <StyledButton
+            link="home"
+            id="products"
+            size="default"
+            variant="blue"
+            arrow={true}
+          >
             Shop Now
           </StyledButton>
         </StyledMainPart>

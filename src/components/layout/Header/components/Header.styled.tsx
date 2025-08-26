@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/navigation-menu'
 import { NavLink } from 'react-router-dom'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
+import { LinkButton } from '@/components/ui/button'
 
 export const StyledHeader = styled.header`
   padding: 20px 0;
@@ -33,7 +34,7 @@ export const StyledContainer = styled(Container)`
   justify-content: space-between;
 `
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(LinkButton)`
   display: flex;
   gap: 8.2px;
   text-align: center;

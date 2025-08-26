@@ -15,6 +15,7 @@ import { loginUser } from '../api/loginUser'
 import { AuthBtn, FormItem, FormList } from './AuthForm.styled'
 import { Form, Link, useNavigate } from 'react-router-dom'
 import { StyledLink } from '@/components/modules/StyledLink/StyledLink'
+import { getRoute } from '@/shared/helpers/getRoute'
 
 type AuthFormProps = {
   type: 'register' | 'login'
@@ -50,7 +51,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
         response !== undefined &&
         action.meta?.requestStatus === 'fulfilled'
       ) {
-        navigate('/profile/edit')
+        navigate(getRoute('editProfile'))
       }
     })
 
@@ -85,7 +86,7 @@ const AuthForm = ({ type }: AuthFormProps) => {
           {type === 'register' ? 'Зареєструватися' : 'Увійти'}
         </AuthBtn>
         {type === 'login' && (
-          <StyledLink as={Link} to="/register">
+          <StyledLink as={Link} to={getRoute('register')}>
             Не маєте акаунта?
             <span>Зареєструватися</span>
           </StyledLink>

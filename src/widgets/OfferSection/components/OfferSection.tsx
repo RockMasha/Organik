@@ -7,10 +7,11 @@ import {
   StyledText,
   StyledTitle,
 } from './OfferSection.styled'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function OfferSection() {
   return (
-    <Section id="offer">
+    <Section id={getSectionId('offer')}>
       <Container>
         <List>
           <ItemNatural>

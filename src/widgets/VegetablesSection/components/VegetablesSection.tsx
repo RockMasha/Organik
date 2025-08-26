@@ -10,6 +10,7 @@ import type { Product } from '@/types'
 import { getVegetables } from '../api/getVegetables'
 import { processingRequestResult } from '@/shared/helpers/processingRequestHandlers/processingRequestResult'
 import { ProductCard, ProductCardSkeleton } from '@/features/ProductCard'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function VegetablesSection() {
   const [vegetables, setVegetables] = useState<Product[]>([])
@@ -24,7 +25,7 @@ function VegetablesSection() {
   }, [])
 
   return (
-    <Section id="vegetables">
+    <Section id={getSectionId('vegetables')}>
       <Container>
         <VegetablesSignature type="green">Offer</VegetablesSignature>
         <VegetablesTitle type="h2">We Offer Organic For You</VegetablesTitle>

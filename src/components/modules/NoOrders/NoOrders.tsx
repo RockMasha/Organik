@@ -8,7 +8,7 @@ function NoOrders({ title }: { title: string }) {
       <Title className="mb-8 tablet:mb-10 laptop:mb-12 desktop:mb-14" type="h2">
         {title}
       </Title>
-      <LinkButton arrow={true} link="home">
+      <LinkButton arrow={true} link="home" id="products">
         Make order
       </LinkButton>
     </NoProductsBox>

@@ -7,8 +7,9 @@ import CircleLoader, {
 import ArrowIcon from '@/assets/icons/arrow.svg?react'
 import { Link } from 'react-router-dom'
 import { getRoute } from '@/shared/helpers/getRoute'
-import type { RouteWithoutId } from '@/types'
+import type { RouteWithId, RouteWithoutId } from '@/types'
 import useWindowWidth from '@/shared/hooks/useWindowWidth'
+import type { HomeId } from '@/types/modules/routes/HomeId'
 
 const buttonVariants = cva(
   'inline-flex items-center border-2 border-transparent justify-center gap-2.5 whitespace-nowrap rounded-xl text-[20px] font-medium transition-all disabled:pointer-events-none disabled:opacity-50 shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] group',
@@ -102,13 +103,18 @@ function Button({
   )
 }
 
-interface LinkProps
+interface LinkElementProps
   extends React.ComponentProps<'a'>,
     VariantProps<typeof buttonVariants> {
   loader?: boolean
   arrow?: boolean
   link: RouteWithoutId
 }
+
+type LinkProps =
+  | (LinkElementProps & { link: RouteWithoutId; id?: never })
+  | (LinkElementProps & { link: RouteWithId; id: number })
+  | (LinkElementProps & { link: 'home'; id?: HomeId })
 
 function LinkButton({
   className,
@@ -118,6 +124,7 @@ function LinkButton({
   children,
   arrow,
   link,
+  id,
   ...props
 }: LinkProps) {
   const resolvedLoaderColor = getLoaderColor(variant)
@@ -125,7 +132,7 @@ function LinkButton({
   return (
     <Link
       className={cn(buttonVariants({ variant, size, className }))}
-      to={getRoute(link)}
+      to={id ? getRoute(link, id) : getRoute(link)}
       {...props}
     >
       <>

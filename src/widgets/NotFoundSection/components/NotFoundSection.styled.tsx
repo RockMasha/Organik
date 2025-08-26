@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import Text from '@/components/ui/Text'
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/button'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import { getImageBackground } from '@/styles/helpers/getImageBackground'
 
@@ -36,7 +36,7 @@ export const StyledText = styled(Text)`
   margin-top: 10px;
 `
 
-export const StyledButton = styled(Button)`
+export const StyledButton = styled(LinkButton)`
   margin-top: 30px;
 `
 

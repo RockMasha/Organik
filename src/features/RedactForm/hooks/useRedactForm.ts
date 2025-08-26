@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import { refreshUser } from '@/api/refreshUser'
 import { useForm } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
+import { getRoute } from '@/shared/helpers/getRoute'
 
 export const useRedactForm = () => {
   const [loading, startLoading] = useLoading()
@@ -40,7 +41,7 @@ export const useRedactForm = () => {
       phone: response.phone ?? '',
       address: response.address ?? '',
     })
-    navigate('/')
+    navigate(getRoute('home'))
   }
 
   return { methods, onSubmit, loading }

@@ -9,13 +9,14 @@ import {
   TitleWrapper,
   FormTitle,
 } from './NewsSection.styled'
-import { Button } from '@/components/ui/button'
+import { LinkButton } from '@/components/ui/button'
 import Text from '@/components/ui/Text'
 import Item from './NewsItem'
+import { getSectionId } from '@/shared/helpers/getSectionId'
 
 function NewsSection() {
   return (
-    <Section id="news">
+    <Section id={getSectionId('news')}>
       <Container>
         <TitleWrapper>
           <div>
@@ -24,9 +25,15 @@ function NewsSection() {
               Discover weekly content about organic food, & more
             </StyledTitle>
           </div>
-          <Button arrow variant="transparent" className="bg-white-100">
+          <LinkButton
+            link="home"
+            id="news"
+            arrow
+            variant="transparent"
+            className="bg-white-100"
+          >
             More News
-          </Button>
+          </LinkButton>
         </TitleWrapper>
         <List>
           <Item

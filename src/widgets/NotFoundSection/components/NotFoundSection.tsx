@@ -1,7 +1,6 @@
 import { Section } from './NotFoundSection.styled'
 import Title from '@/components/ui/Title'
 import { StyledButton, StyledText, StyledTitle } from './NotFoundSection.styled'
-import { Link } from 'react-router-dom'
 
 function NotFoundSection() {
   return (
@@ -11,8 +10,8 @@ function NotFoundSection() {
       <StyledText type="normal">
         The page you are looking for doesn&apos;t exist or has been moved
       </StyledText>
-      <StyledButton variant="blue" arrow={true} size="flattened">
-        <Link to="/">Go To Home Page</Link>
+      <StyledButton link="home" variant="blue" arrow={true} size="flattened">
+        Go To Home Page
       </StyledButton>
     </Section>
   )

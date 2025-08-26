@@ -1,0 +1,33 @@
+import { useEffect, useState } from 'react'
+import { Section, TitleStyled } from './ProfileSection.styled'
+import ProfileList from '@/components/modules/ProfileList/ProfileList'
+import { refreshUser } from '@/api/refreshUser'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import useLoading from '@/shared/hooks/useLoading'
+import type { User } from '@/types'
+
+function ProfileSection() {
+  const [loading, startLoading] = useLoading()
+  const [data, setData] = useState<User | null>(null)
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    startLoading(async () => {
+      const user = await dispatch(refreshUser()).unwrap()
+      console.log(user)
+      setData(user)
+    })
+  }, [dispatch, useLoading])
+
+  return (
+    <Section>
+      <TitleStyled type="h1" className="text-center">
+        Profile
+      </TitleStyled>
+      {loading && <p>wait a moment...</p>}
+      {data && <ProfileList data={data} />}
+    </Section>
+  )
+}
+
+export default ProfileSection

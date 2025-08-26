@@ -1,10 +1,9 @@
-import { getRoute } from '@/shared/helpers/getRoute'
-import { Navigate } from 'react-router-dom'
+import { ProfileSection } from '@/widgets/ProfileSection'
 
 function ProfilePage() {
   return (
     <main>
-      <Navigate to={getRoute('editProfile')} replace />
+      <ProfileSection />
     </main>
   )
 }

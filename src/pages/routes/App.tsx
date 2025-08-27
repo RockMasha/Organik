@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '@/pages/HomePage'
 import CartPage from '@/pages/CartPage'
 import RegisterPage from '@/pages/RegisterPage'
@@ -14,55 +14,60 @@ import ThankOrderPage from '../ThankOrderPage'
 import { ProductModal } from '@/features/ProductModal'
 import OrderHistoryPage from '../OrderHistoryPage'
 
-const router = createHashRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: ROUTES.home,
+      element: <Layout />,
+      children: [
+        {
+          path: ROUTES.home,
+          element: <HomePage />,
+          children: [
+            {
+              path: ROUTES.product,
+              element: <ProductModal />,
+            },
+          ],
+        },
+        {
+          path: ROUTES.register,
+          element: <PublicOnlyRoute Component={<RegisterPage />} />,
+        },
+        {
+          path: ROUTES.login,
+          element: <PublicOnlyRoute Component={<LoginPage />} />,
+        },
+        {
+          path: ROUTES.cart,
+          element: <PrivateRoute Component={<CartPage />} />,
+        },
+        {
+          path: ROUTES.thankOrder,
+          element: <ThankOrderPage />,
+        },
+        {
+          path: ROUTES.orderHistory,
+          element: <PrivateRoute Component={<OrderHistoryPage />} />,
+        },
+        {
+          path: ROUTES.profile,
+          element: <PrivateRoute Component={<ProfilePage />} />,
+        },
+        {
+          path: ROUTES.editProfile,
+          element: <PrivateRoute Component={<RedactProfilePage />} />,
+        },
+        {
+          path: '*',
+          element: <NotFoundPage />,
+        },
+      ],
+    },
+  ],
   {
-    path: ROUTES.home,
-    element: <Layout />,
-    children: [
-      {
-        path: ROUTES.home,
-        element: <HomePage />,
-        children: [
-          {
-            path: ROUTES.product,
-            element: <ProductModal />,
-          },
-        ],
-      },
-      {
-        path: ROUTES.register,
-        element: <PublicOnlyRoute Component={<RegisterPage />} />,
-      },
-      {
-        path: ROUTES.login,
-        element: <PublicOnlyRoute Component={<LoginPage />} />,
-      },
-      {
-        path: ROUTES.cart,
-        element: <PrivateRoute Component={<CartPage />} />,
-      },
-      {
-        path: ROUTES.thankOrder,
-        element: <ThankOrderPage />,
-      },
-      {
-        path: ROUTES.orderHistory,
-        element: <PrivateRoute Component={<OrderHistoryPage />} />,
-      },
-      {
-        path: ROUTES.profile,
-        element: <PrivateRoute Component={<ProfilePage />} />,
-      },
-      {
-        path: ROUTES.editProfile,
-        element: <PrivateRoute Component={<RedactProfilePage />} />,
-      },
-      {
-        path: '*',
-        element: <NotFoundPage />,
-      },
-    ],
-  },
-])
+    basename: '/Organic',
+  }
+)
 
 export default router

@@ -3,9 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://rockmasha.github.io/Organic",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Organic/",
+    "build": "vite build --base=/Organic/ && npm run postbuild",
+    "postbuild": "cp dist/index.html dist/404.html ",
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit -p tsconfig.app.json",

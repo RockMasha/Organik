@@ -12,6 +12,14 @@ cp .env.example .env                                 # Create settings file
 npm run dev                                          # Run local server
 ```
 
+## Filling .env
+
+in .env you need to specify the api link
+
+```bash
+VITE_API_BASE_URL=SOME_URL
+```
+
 ## 🚀 Main technologies
 
 - [Preact](https://preactjs.com/)
@@ -26,22 +34,20 @@ npm run dev                                          # Run local server
 
 https://www.figma.com/design/TwRpJiT4xjRJaEG5twKgW5/Final-2?node-id=1447-1778&m=dev
 
+Authors - Reactyanki
+
 ## 🚀 Scripts you can use
 
-<!-- - "dev": "vite",
-- "build": "vite build --base=/Organic/",
-- "preview": "vite preview",
-- "lint": "eslint .",
-- "type-check": "tsc --noEmit -p tsconfig.app.json",
-- "format": "prettier --write .",
-- "prepare": "husky" -->
+- npm run dev - project launch in development mode
+- npm run build - create production-project assembly
+- npm run preview - run local server for viewing production-project assembly
+- npm run lint - check code with ESLint
+- npm run type-check - check TypeScript types
+- npm run format - automatically formats code using Prettier
+- npm run prepare - configures Husky to run Git hooks
 
-- "npm run dev" - project launch in development mode
-- "npm run build" - create production-project assembly
-- "npm run preview" - run local server for viewing production-project assembly
-- "npm run lint" - check code with ESLint
-- "npm run type-check" - check TypeScript types
-- "npm run format" - automatically formats code using Prettier
-- "npm run prepare" - configures Husky to run Git hooks
+Authors of this project:
 
-Authors - Reactyanki
+- Maria - https://github.com/RockMasha
+- Ilya - https://github.com/IVoynelovych
+- Yulia - https://github.com/bananchiki7

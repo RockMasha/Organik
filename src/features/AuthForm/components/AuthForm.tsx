@@ -19,7 +19,7 @@ import {
   FormList,
   RegisterLinkText,
 } from './AuthForm.styled'
-import { Link, useNavigate } from 'react-router-dom'       
+import { Link, useNavigate } from 'react-router-dom'
 import { getRoute } from '@/shared/helpers/getRoute'
 
 type AuthFormProps = {

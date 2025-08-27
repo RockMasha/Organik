@@ -8,7 +8,7 @@ function ProductListSkeleton() {
         <InfoItem>
           <Skeleton
             className="
-          w-[100%] h-[40px]
+          w-[100%] h-[50px]
           rounded-2xl bg-gray-200
         "
           />
@@ -16,7 +16,7 @@ function ProductListSkeleton() {
         <InfoItem>
           <Skeleton
             className="
-          w-[100%] h-[40px]
+          w-[100%] h-[50px]
           rounded-2xl bg-gray-200
         "
           />
@@ -24,7 +24,7 @@ function ProductListSkeleton() {
         <InfoItem>
           <Skeleton
             className="
-          w-[100%] h-[40px]
+          w-[100%] h-[50px]
           rounded-2xl bg-gray-200
         "
           />
@@ -32,7 +32,7 @@ function ProductListSkeleton() {
         <InfoItem>
           <Skeleton
             className="
-          w-[100%] h-[40px]
+          w-[100%] h-[50px]
           rounded-2xl bg-gray-200
         "
           />
@@ -40,13 +40,13 @@ function ProductListSkeleton() {
       </InfoList>
       <LinksList>
         <li>
-          <Skeleton className="w-25 h-18 rounded-full " />
+          <Skeleton className="h-[80px] w-[170px] rounded-[25px] " />
         </li>
         <li>
-          <Skeleton className="w-25 h-18 rounded-full " />
+          <Skeleton className="h-[80px] w-[130px] rounded-[25px] " />
         </li>
         <li>
-          <Skeleton className="w-25 h-18 rounded-full " />
+          <Skeleton className="h-[80px] w-[175px] rounded-[25px] " />
         </li>
       </LinksList>
     </>

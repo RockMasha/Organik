@@ -42,17 +42,17 @@ function ProfileList({ data }: ProfileProps) {
       <LinksList>
         <li>
           <LinkButton variant="blue" link="editProfile">
-            Edit
-          </LinkButton>
-        </li>
-        <li>
-          <LinkButton variant="blue" link="home">
-            History
+            Edit Profile
           </LinkButton>
         </li>
         <li>
           <LinkButton variant="blue" link="cart">
             Cart
+          </LinkButton>
+        </li>
+        <li>
+          <LinkButton variant="blue" link="home">
+            Order History
           </LinkButton>
         </li>
       </LinksList>

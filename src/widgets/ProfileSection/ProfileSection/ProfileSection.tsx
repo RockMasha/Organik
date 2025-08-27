@@ -5,6 +5,7 @@ import { refreshUser } from '@/api/refreshUser'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import useLoading from '@/shared/hooks/useLoading'
 import type { User } from '@/types'
+import ProductListSkeleton from '@/components/modules/ProfileList/ProductListSkeleton'
 
 function ProfileSection() {
   const [loading, startLoading] = useLoading()
@@ -24,7 +25,7 @@ function ProfileSection() {
       <TitleStyled type="h1" className="text-center">
         Profile
       </TitleStyled>
-      {loading && <p>wait a moment...</p>}
+      {loading && <ProductListSkeleton />}
       {data && <ProfileList data={data} />}
     </Section>
   )

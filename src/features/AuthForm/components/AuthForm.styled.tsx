@@ -13,7 +13,6 @@ export const RegisterLinkText = styled.p`
   color: var(--color-gray-100);
   position: relative;
   text-decoration: none;
-  cursor: pointer;
 `
 
 export const Form = styled.form`

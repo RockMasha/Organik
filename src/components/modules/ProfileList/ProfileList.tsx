@@ -6,6 +6,7 @@ import {
   InfoText,
   LinksList,
 } from './ProfileList.styled'
+import type { RouteWithoutId } from '@/types'
 
 interface ProfileData {
   phone: string | null
@@ -19,42 +20,37 @@ type ProfileProps = {
 }
 
 function ProfileList({ data }: ProfileProps) {
+  const infoItems = [
+    { label: 'First Name', value: data.first_name },
+    { label: 'Last Name', value: data.last_name },
+    { label: 'Phone number', value: data.phone },
+    { label: 'Address', value: data.address },
+  ]
+
+  const infoLinks = [
+    { link: 'editProfile', name: 'Edit Profile' },
+    { link: 'cart', name: 'Cart' },
+    { link: 'orderHistory', name: 'Order History' },
+  ]
+
   return (
     <>
       <InfoList>
-        <InfoItem>
-          <InfoLabel>First Name</InfoLabel>
-          <InfoText>{data.first_name}</InfoText>
-        </InfoItem>
-        <InfoItem>
-          <InfoLabel>Last Name</InfoLabel>
-          <InfoText>{data.last_name}</InfoText>
-        </InfoItem>
-        <InfoItem>
-          <InfoLabel>Phone number</InfoLabel>
-          <InfoText>{data.phone}</InfoText>
-        </InfoItem>
-        <InfoItem>
-          <InfoLabel>Address</InfoLabel>
-          <InfoText>{data.address}</InfoText>
-        </InfoItem>
+        {infoItems.map((obj) => (
+          <InfoItem key={obj.label}>
+            <InfoLabel>{obj.label}</InfoLabel>
+            <InfoText>{obj.value}</InfoText>
+          </InfoItem>
+        ))}
       </InfoList>
       <LinksList>
-        <li>
-          <LinkButton variant="blue" link="editProfile">
-            Edit
-          </LinkButton>
-        </li>
-        <li>
-          <LinkButton variant="blue" link="home">
-            History
-          </LinkButton>
-        </li>
-        <li>
-          <LinkButton variant="blue" link="cart">
-            Cart
-          </LinkButton>
-        </li>
+        {infoLinks.map((obj) => (
+          <li key={obj.name}>
+            <LinkButton variant="blue" link={obj.link as RouteWithoutId}>
+              {obj.name}
+            </LinkButton>
+          </li>
+        ))}
       </LinksList>
     </>
   )

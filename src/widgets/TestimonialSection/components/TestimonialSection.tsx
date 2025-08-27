@@ -25,20 +25,20 @@ function TestimonialSection() {
           <picture>
             <source
               srcSet="
-                  /images/woman/woman-320-1x.avif 1x,
-                  /images/woman/woman-320-2x.avif 2x
+                  /Organic/images/woman/woman-320-1x.avif 1x,
+                  /Organic/images/woman/woman-320-2x.avif 2x
                 "
               type="image/avif"
             />
             <source
               srcSet="
-                  /images/woman/woman-320-1x.webp 1x,
-                  /images/woman/woman-320-2x.webp 2x
+                  /Organic/images/woman/woman-320-1x.webp 1x,
+                  /Organic/images/woman/woman-320-2x.webp 2x
                 "
               type="image/webp"
             />
             <img
-              src="/images/woman/woman-320-1x.jpg"
+              src="/Organic/images/woman/woman-320-1x.jpg"
               alt="picture"
               loading="lazy"
             />

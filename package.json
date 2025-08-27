@@ -1,11 +1,11 @@
 {
-  "name": "Organic",
+  "name": "organic",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=organic",
+    "build": "vite build --base=/Organic/",
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "tsc --noEmit -p tsconfig.app.json",

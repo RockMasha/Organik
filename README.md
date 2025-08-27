@@ -38,15 +38,15 @@ Authors - Reactyanki
 
 ## 🚀 Scripts you can use
 
-- npm run dev - project launch in development mode
-- npm run build - create production-project assembly
-- npm run preview - run local server for viewing production-project assembly
-- npm run lint - check code with ESLint
-- npm run type-check - check TypeScript types
-- npm run format - automatically formats code using Prettier
-- npm run prepare - configures Husky to run Git hooks
+- `npm run dev` - project launch in development mode
+- `npm run build` - create production-project assembly
+- `npm run preview` - run local server for viewing production-project assembly
+- `npm run lint` - check code with ESLint
+- `npm run type-check` - check TypeScript types
+- `npm run format` - automatically formats code using Prettier
+- `npm run prepare` - configures Husky to run Git hooks
 
-Authors of this project:
+## 🚀 Authors of this project:
 
 - Maria - https://github.com/RockMasha
 - Ilya - https://github.com/IVoynelovych

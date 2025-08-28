@@ -3,7 +3,7 @@ import MainLoader from '@/components/ui/loaders/MainLoader/MainLoader'
 
 function PageLoader() {
   return (
-    <Backdrop>
+    <Backdrop className="z-1000">
       <MainLoader />
     </Backdrop>
   )

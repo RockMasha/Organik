@@ -14,7 +14,8 @@ import { processingRequestThunks } from '@/shared/helpers/processingRequestHandl
 import { useNavigate } from 'react-router-dom'
 
 export const useOrderForm = () => {
-  const [loading, startLoading] = useLoading()
+  const [postOrderLoading, startPostOrderLoading] = useLoading()
+  const [fetchUserLoading, startFetchUserLoading] = useLoading()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const cart = useSelector(selectCart)
@@ -22,33 +23,32 @@ export const useOrderForm = () => {
   const methods = useForm<OrderFormData>({
     resolver: zodResolver(OrderFormSchema),
     defaultValues: {
-      full_name: 'loading...',
-      email: 'loading...',
-      phone: 'loading...',
-      address: 'loading...',
+      full_name: '',
+      email: '',
+      phone: '',
+      address: '',
       message: '',
     },
     mode: 'onTouched',
   })
 
   useEffect(() => {
-    const setUserData = async () => {
+    startFetchUserLoading(async () => {
       const user = await dispatch(refreshUser()).unwrap()
       methods.reset(getUserValues(user))
-    }
-    setUserData()
+    })
   }, [methods])
 
   const onSubmit = async (data: OrderFormData) => {
     if (!cart) return
-    startLoading(async () => {
+    startPostOrderLoading(async () => {
       const answer = await makeOrder({ ...data, orderProducts: cart.products })
       const result = processingRequestThunks(answer)
       if (result) navigate(getRoute('thankOrder'))
     })
   }
 
-  return { methods, onSubmit, loading }
+  return { methods, onSubmit, postOrderLoading, fetchUserLoading }
 }
 
 function getUserValues(user: User) {

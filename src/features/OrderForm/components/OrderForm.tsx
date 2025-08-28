@@ -5,7 +5,8 @@ import { InputItem, OrderFormList, TextAreaItem } from './OrderForm.styled'
 import { useOrderForm } from '../hooks/useOrderForm'
 
 function OrderForm() {
-  const { methods, onSubmit, loading } = useOrderForm()
+  const { methods, onSubmit, postOrderLoading, fetchUserLoading } =
+    useOrderForm()
 
   return (
     <FormProvider {...methods}>
@@ -16,6 +17,7 @@ function OrderForm() {
               name="full_name"
               label="Full Name*"
               placeholder="Your Full Name"
+              loading={fetchUserLoading}
             />
           </InputItem>
           <InputItem>
@@ -23,6 +25,7 @@ function OrderForm() {
               name="address"
               label="Address*"
               placeholder="your company address"
+              loading={fetchUserLoading}
             />
           </InputItem>
           <InputItem>
@@ -30,6 +33,7 @@ function OrderForm() {
               name="email"
               label="Your Email*"
               placeholder="example@yourmail.com"
+              loading={fetchUserLoading}
             />
           </InputItem>
           <InputItem>
@@ -37,6 +41,7 @@ function OrderForm() {
               name="phone"
               label="Phone number*"
               placeholder="Enter your phone"
+              loading={fetchUserLoading}
             />
           </InputItem>
           <TextAreaItem>
@@ -45,10 +50,15 @@ function OrderForm() {
               label="Message"
               placeholder="some extra information"
               variant="textarea"
+              loading={fetchUserLoading}
             />
           </TextAreaItem>
         </OrderFormList>
-        <Button className="flex mx-auto" size="flattened" loader={loading}>
+        <Button
+          className="flex mx-auto"
+          size="flattened"
+          loader={postOrderLoading}
+        >
           Confirm
         </Button>
       </form>

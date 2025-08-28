@@ -15,7 +15,6 @@ function ProfileSection() {
   useEffect(() => {
     startLoading(async () => {
       const user = await dispatch(refreshUser()).unwrap()
-      console.log(user)
       setData(user)
     })
   }, [dispatch, useLoading])

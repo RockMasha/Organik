@@ -15,7 +15,7 @@ export const ModalWrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: var(--color-white-opacity);
+  background-color: var(--color-white-opacity-200);
   z-index: 10;
 `
 

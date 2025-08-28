@@ -14,15 +14,25 @@ import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import { LinkButton } from '@/components/ui/button'
 
 export const StyledHeader = styled.header`
-  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  padding: 10px 0;
+  height: 70px;
+  background-color: var(--color-white-opacity-100);
+  backdrop-filter: blur(5px);
+  z-index: 50;
   @media (min-width: 768px) {
-    padding: 30px 0;
+    height: 100px;
+    padding: 15px 0;
   }
   @media (min-width: 1440px) {
-    padding: 40px 0;
+    height: 110px;
+    padding: 20px 0;
   }
   @media (min-width: 1920px) {
-    padding: 50px 0;
+    height: 125px;
+    padding: 25px 0;
   }
 `
 
@@ -46,6 +56,7 @@ export const StyledCartBtn = styled(LinkButton)`
   gap: 8.2px;
   text-align: center;
   align-items: center;
+  background-color: var(--color-white-opacity-100);
 `
 
 export const StyledAuthLink = styled(Link)`
@@ -143,6 +154,7 @@ export const StyledNavTextTrigger = styled(NavigationMenuTrigger)`
   color: var(--color-navy-100);
   font-size: 20px;
   font-weight: 500;
+  background-color: transparent;
 `
 
 export const StyledDiv = styled.div`

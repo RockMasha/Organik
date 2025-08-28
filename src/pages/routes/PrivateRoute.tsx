@@ -1,4 +1,4 @@
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import { useEffect, useState } from 'preact/hooks'
 import type { JSX } from 'preact/jsx-runtime'
 import { Navigate } from 'react-router-dom'

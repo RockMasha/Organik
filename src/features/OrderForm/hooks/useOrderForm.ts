@@ -1,6 +1,6 @@
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useEffect } from 'react'
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import { useForm } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
 import type { User } from '@/types'

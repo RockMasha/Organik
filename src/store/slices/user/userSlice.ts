@@ -1,4 +1,4 @@
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import { loginUser } from '@/features/AuthForm/api/loginUser'
 import { registerUser } from '@/features/AuthForm/api/registerUser'
 import { redactUser } from '@/features/RedactForm/api/redactUser'

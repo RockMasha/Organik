@@ -1,6 +1,6 @@
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useEffect } from 'react'
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import { useForm } from 'react-hook-form'
 import useLoading from '@/shared/hooks/useLoading'
 import type { User } from '@/types'
@@ -10,11 +10,13 @@ import { useSelector } from 'react-redux'
 import { selectCart } from '@/store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { getRoute } from '@/shared/helpers/getRoute'
-import { processingRequestThunks } from '@/shared/helpers/processingRequestHandlers/processingRequestThunks'
 import { useNavigate } from 'react-router-dom'
+import { showSuccessToast } from '@/shared/helpers/toasts/showSuccsesToast'
+import { processingRequestResult } from '@/shared/helpers/processingRequestHandlers/processingRequestResult'
 
 export const useOrderForm = () => {
-  const [loading, startLoading] = useLoading()
+  const [postOrderLoading, startPostOrderLoading] = useLoading()
+  const [fetchUserLoading, startFetchUserLoading] = useLoading()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const cart = useSelector(selectCart)
@@ -22,32 +24,35 @@ export const useOrderForm = () => {
   const methods = useForm<OrderFormData>({
     resolver: zodResolver(OrderFormSchema),
     defaultValues: {
-      full_name: 'loading...',
-      email: 'loading...',
-      phone: 'loading...',
-      address: 'loading...',
+      full_name: '',
+      email: '',
+      phone: '',
+      address: '',
       message: '',
     },
+    mode: 'onTouched',
   })
 
   useEffect(() => {
-    const setUserData = async () => {
+    startFetchUserLoading(async () => {
       const user = await dispatch(refreshUser()).unwrap()
       methods.reset(getUserValues(user))
-    }
-    setUserData()
+    })
   }, [methods])
 
   const onSubmit = async (data: OrderFormData) => {
     if (!cart) return
-    startLoading(async () => {
+    startPostOrderLoading(async () => {
       const answer = await makeOrder({ ...data, orderProducts: cart.products })
-      const result = processingRequestThunks(answer)
-      if (result) navigate(getRoute('thankOrder'))
+      const result = processingRequestResult(answer)
+      if (result) {
+        showSuccessToast(`Order ${result.id} made success`)
+        navigate(getRoute('thankOrder'))
+      }
     })
   }
 
-  return { methods, onSubmit, loading }
+  return { methods, onSubmit, postOrderLoading, fetchUserLoading }
 }
 
 function getUserValues(user: User) {

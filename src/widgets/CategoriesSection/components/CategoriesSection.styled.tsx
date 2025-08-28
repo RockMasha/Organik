@@ -80,5 +80,5 @@ export const StyledLink = styled(Link)`
   line-height: 1.4;
   white-space: nowrap;
   border-radius: 20px;
-  background: var(--color-white-100);
+  background-color: var(--color-white-100);
 `

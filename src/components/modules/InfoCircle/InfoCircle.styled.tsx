@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   border-radius: 50%;
   border: 5px solid var(--color-green-200);
   padding: 6px;
-  background: #fff;
+  background-color: var(--color-white-100);
   box-sizing: border-box;
 `
 
@@ -16,7 +16,7 @@ export const Inner = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: var(--color-white-300);
+  background-color: var(--color-white-300);
   display: flex;
   flex-direction: column;
   align-items: center;

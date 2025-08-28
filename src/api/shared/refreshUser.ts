@@ -1,4 +1,4 @@
-import api from './kyInstance'
+import api from '../kyInstance'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'
 import { handelAppError } from '@/shared/helpers/errorHandlers/handelAppError'
 import { UserSchema, type RootState } from '@/types'

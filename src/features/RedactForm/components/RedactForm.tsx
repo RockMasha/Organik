@@ -9,7 +9,8 @@ import {
 import { useRedactForm } from '../hooks/useRedactForm'
 
 const RedactForm = () => {
-  const { methods, onSubmit, loading, loadingFields } = useRedactForm()
+  const { methods, onSubmit, postOrderLoading, fetchUserLoading } =
+    useRedactForm()
 
   return (
     <FormProvider {...methods}>
@@ -23,7 +24,7 @@ const RedactForm = () => {
               name="first_name"
               label="First name*"
               placeholder="Type your name"
-              loading={loadingFields}
+              loading={fetchUserLoading}
             />
           </FormItem>
           <FormItem>
@@ -31,7 +32,7 @@ const RedactForm = () => {
               name="last_name"
               label="Last name*"
               placeholder="Type your surname"
-              loading={loadingFields}
+              loading={fetchUserLoading}
             />
           </FormItem>
           <FormItem>
@@ -39,7 +40,7 @@ const RedactForm = () => {
               name="phone"
               label="Phone number*"
               placeholder="Type your phone number"
-              loading={loadingFields}
+              loading={fetchUserLoading}
             />
           </FormItem>
           <FormItem>
@@ -47,11 +48,11 @@ const RedactForm = () => {
               name="address"
               label="Address*"
               placeholder="Type your address"
-              loading={loadingFields}
+              loading={fetchUserLoading}
             />
           </FormItem>
         </FormList>
-        <StyledButton loader={loading}>Confirm</StyledButton>
+        <StyledButton loader={postOrderLoading}>Confirm</StyledButton>
       </StyledForm>
     </FormProvider>
   )

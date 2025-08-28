@@ -1,19 +1,7 @@
 import { Button } from '@/components/ui/button'
 import responsiveSizing from '@/styles/helpers/responsiveSizing'
 import styled from '@emotion/styled'
-
-export const RegisterLinkText = styled.p`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans';
-  font-size: ${responsiveSizing(16, 32)};
-  font-weight: 700;
-  letter-spacing: 0.36px;
-  text-align: center;
-  color: var(--color-gray-100);
-  position: relative;
-  text-decoration: none;
-`
+import { Link } from 'react-router-dom'
 
 export const Form = styled.form`
   display: flex;
@@ -46,5 +34,33 @@ export const FormItem = styled.li`
 `
 
 export const AuthBtn = styled(Button)`
-  margin-bottom: ${responsiveSizing(15, 25)};
+  margin-bottom: ${responsiveSizing(15, 35)};
+`
+
+export const RegisterLinkText = styled.p`
+  font-size: ${responsiveSizing(14, 28)};
+  font-weight: 500;
+  letter-spacing: 0.36px;
+  text-align: center;
+  color: var(--color-grey-100);
+  position: relative;
+`
+
+export const RegisterLink = styled(Link)`
+  font-size: ${responsiveSizing(14, 28)};
+  font-weight: 700;
+  letter-spacing: 0.36px;
+  text-align: center;
+  color: var(--color-navy-100);
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-navy-100);
+  border-bottom-width: ${responsiveSizing(3, 4)};
+  transition:
+    border-bottom-color 0.3s,
+    color 0.3s;
+  :hover {
+    color: var(--color-green-200);
+    border-bottom-color: var(--color-green-200);
+  }
 `

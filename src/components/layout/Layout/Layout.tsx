@@ -3,6 +3,7 @@ import { Header } from '../Header'
 import Footer from '../Footer/Footer'
 import { Toaster } from '@/components/ui/sonner'
 import { useScrollToHashElement } from '@/shared/hooks/useScrollToHashElement'
+import UpBtn from '@/components/modules/UpBtn/UpBtn'
 
 function Layout() {
   useScrollToHashElement()
@@ -14,6 +15,7 @@ function Layout() {
       <Footer />
 
       <Toaster />
+      <UpBtn />
     </>
   )
 }

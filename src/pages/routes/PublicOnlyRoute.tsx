@@ -1,4 +1,4 @@
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import PageLoader from '@/components/modules/PageLoader/PageLoader'
 import { getRoute } from '@/shared/helpers/getRoute'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'

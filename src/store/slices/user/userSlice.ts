@@ -1,4 +1,4 @@
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import { loginUser } from '@/features/AuthForm/api/loginUser'
 import { registerUser } from '@/features/AuthForm/api/registerUser'
 import { redactUser } from '@/features/RedactForm/api/redactUser'
@@ -33,15 +33,12 @@ const userSlice = createSlice({
     const handleRejected = (state: typeof initialState) => {
       state.isLoading = false
       state.isLoggedIn = false
-      state.token = null
     }
 
     const handleAuthFulfilled = (
       state: typeof initialState,
       action: PayloadAction<ResponseUser>
     ) => {
-      console.log(action)
-
       state.isLoading = false
       state.isLoggedIn = true
       state.date.email = action.payload.user.email

@@ -77,10 +77,10 @@ function OrderProductSkeleton() {
       <Skeleton
         className="
           absolute h-[35px] w-[35px] rounded-lg top-0 right-0
-          min-[500px]:top-[50%] min-[500px]:translate-y-[-50%]
+          min-[500px]:top-[50%]
           tablet:h-[40px] tablet:w-[40px]  
           laptop:h-[50px] laptop:w-[50px] laptop:static
-          desktop:translate-x-[200%]
+          desktop:translate-x-[200%] desktop:absolute
         "
       />
     </ProductItem>

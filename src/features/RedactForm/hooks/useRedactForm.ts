@@ -43,6 +43,7 @@ export const useRedactForm = () => {
   const methods = useForm<Redact>({
     defaultValues,
     resolver: zodResolver(RedactSchema),
+    mode: 'onTouched',
   })
 
   useEffect(() => {

@@ -6,9 +6,7 @@ function RegisterSection() {
   return (
     <SectionStyled>
       <Container>
-        <TitleStyled type="h1" className="text-center">
-          Welcome To Organick
-        </TitleStyled>
+        <TitleStyled type="h1">Welcome To Organick</TitleStyled>
         <AuthForm type="register" />
       </Container>
     </SectionStyled>

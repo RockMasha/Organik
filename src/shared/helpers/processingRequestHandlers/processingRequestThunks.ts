@@ -6,7 +6,7 @@ export function processingRequestThunks<T>(data: T): T | void {
 
   const maybeErrorMessage = action.payload?.message
 
-  if (maybeErrorMessage) {
+  if (maybeErrorMessage && maybeErrorMessage !== 'canceled') {
     showErrorToast(maybeErrorMessage)
     return
   }

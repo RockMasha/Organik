@@ -8,5 +8,6 @@ export const SectionStyled = styled.section`
 `
 
 export const TitleStyled = styled(Title)`
-  margin-bottom: ${responsiveSizing(20, 40)};
+  margin-bottom: ${responsiveSizing(20, 60)};
+  text-align: center;
 `

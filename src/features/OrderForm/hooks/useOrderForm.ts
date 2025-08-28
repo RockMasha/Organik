@@ -28,6 +28,7 @@ export const useOrderForm = () => {
       address: 'loading...',
       message: '',
     },
+    mode: 'onTouched',
   })
 
   useEffect(() => {

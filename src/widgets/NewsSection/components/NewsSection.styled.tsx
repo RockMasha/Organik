@@ -74,7 +74,7 @@ export const InfoWrapper = styled.div`
 
 export const StyledItem = styled.li`
   border-radius: 45px;
-  background: var(--color-white-100);
+  background-color: var(--color-white-100);
   box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.14);
   @media (min-width: 1440px) {
     position: relative;

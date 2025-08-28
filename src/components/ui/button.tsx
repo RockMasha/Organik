@@ -128,10 +128,17 @@ function LinkButton({
   ...props
 }: LinkProps) {
   const resolvedLoaderColor = getLoaderColor(variant)
+  const windowWidth = useWindowWidth()
+  const btnSize =
+    windowWidth > 767
+      ? size
+      : size === 'icon' || size === 'half_rounded'
+        ? size
+        : 'sm'
 
   return (
     <Link
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size: btnSize, className }))}
       to={id ? getRoute(link, id) : getRoute(link)}
       {...props}
     >

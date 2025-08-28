@@ -1,10 +1,10 @@
+import PreviewSection from '@/components/modules/PreviewSection/PreviewSection'
 import { CartOrders } from '@/widgets/CartOrders'
-import { CartPreviewSection } from '@/widgets/CartPreviewSection'
 
 function CartPage() {
   return (
     <main>
-      <CartPreviewSection />
+      <PreviewSection image="cart" title="Cart" />
       <CartOrders />
     </main>
   )

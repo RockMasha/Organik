@@ -10,8 +10,9 @@ import { useSelector } from 'react-redux'
 import { selectCart } from '@/store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { getRoute } from '@/shared/helpers/getRoute'
-import { processingRequestThunks } from '@/shared/helpers/processingRequestHandlers/processingRequestThunks'
 import { useNavigate } from 'react-router-dom'
+import { showSuccessToast } from '@/shared/helpers/toasts/showSuccsesToast'
+import { processingRequestResult } from '@/shared/helpers/processingRequestHandlers/processingRequestResult'
 
 export const useOrderForm = () => {
   const [postOrderLoading, startPostOrderLoading] = useLoading()
@@ -43,8 +44,11 @@ export const useOrderForm = () => {
     if (!cart) return
     startPostOrderLoading(async () => {
       const answer = await makeOrder({ ...data, orderProducts: cart.products })
-      const result = processingRequestThunks(answer)
-      if (result) navigate(getRoute('thankOrder'))
+      const result = processingRequestResult(answer)
+      if (result) {
+        showSuccessToast(`Order ${result.id} made success`)
+        navigate(getRoute('thankOrder'))
+      }
     })
   }
 

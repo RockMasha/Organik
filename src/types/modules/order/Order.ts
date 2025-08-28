@@ -20,8 +20,8 @@ export const OrderSchema = z.object({
   paid: z.boolean(),
   status: z.enum(['pending', 'fulfilled', 'rejected']),
   id: z.number(),
-  createdAt: z.string().transform((str) => new Date(str)),
-  updatedAt: z.string().transform((str) => new Date(str)),
+  createdAt: z.string(),
+  updatedAt: z.string(),
 })
 
 export type Order = z.infer<typeof OrderSchema>

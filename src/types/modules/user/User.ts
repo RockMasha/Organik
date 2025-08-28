@@ -14,8 +14,8 @@ export const UserSchema = z.object({
   phone: PhoneSchema.nullable(),
   address: AddressSchema.nullable(),
   id: z.number(),
-  createdAt: z.string().transform((str) => new Date(str)),
-  updatedAt: z.string().transform((str) => new Date(str)),
+  createdAt: z.string(),
+  updatedAt: z.string(),
 })
 
 export type User = z.infer<typeof UserSchema>

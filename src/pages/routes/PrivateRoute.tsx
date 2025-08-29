@@ -1,16 +1,16 @@
 import { refreshUser } from '@/api/refreshUser'
-import { useEffect, useState } from 'preact/hooks'
-import type { JSX } from 'preact/jsx-runtime'
-import { Navigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import type { RootState } from '@/types'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import PageLoader from '@/components/modules/PageLoader/PageLoader'
 import { getRoute } from '@/shared/helpers/getRoute'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import type { RootState } from '@/types'
+import { Suspense, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import type { ComponentType } from 'react'
 
 interface PrivateRouteProps {
   redirect?: string
-  Component: JSX.Element
+  Component: ComponentType
 }
 
 function PrivateRoute({
@@ -35,7 +35,13 @@ function PrivateRoute({
     return <PageLoader />
   }
 
-  return isLoggedIn ? Component : <Navigate to={redirect} />
+  return isLoggedIn ? (
+    <Suspense fallback={<PageLoader />}>
+      <Component />
+    </Suspense>
+  ) : (
+    <Navigate to={redirect} />
+  )
 }
 
 export default PrivateRoute

@@ -8,7 +8,5 @@ jobs:
     uses: ./.github/workflows/setup-node.yml
     with:
       script: npm run build
-      uploadArtifact: |
-        .
-        logs
+      uploadArtifact: dist
       artifactName: frontend-build

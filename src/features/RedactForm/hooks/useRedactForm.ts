@@ -30,7 +30,7 @@ const resetForm = ({ methods, data }: resetFormProps) => {
   methods.reset({
     first_name: data.first_name ?? '',
     last_name: data.last_name ?? '',
-    phone: data.phone ?? '+',
+    phone: data.phone ?? '',
     address: data.address ?? '',
   })
 }
@@ -43,7 +43,6 @@ export const useRedactForm = () => {
   const methods = useForm<Redact>({
     defaultValues,
     resolver: zodResolver(RedactSchema),
-    mode: 'onTouched',
   })
 
   useEffect(() => {
@@ -57,7 +56,7 @@ export const useRedactForm = () => {
     startPostOrderLoading(async () => {
       const response = await dispatch(redactUser(data)).unwrap()
       resetForm({ methods, data: response })
-      navigate(getRoute('home'))
+      navigate(getRoute('profile'))
     })
   }
 

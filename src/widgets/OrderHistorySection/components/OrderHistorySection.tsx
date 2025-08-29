@@ -30,15 +30,15 @@ function OrderHistorySection() {
         <OrderHistoryTitle type="h1">Orders History</OrderHistoryTitle>
         <OrderList>
           {orders === null &&
-            new Array(4)
+            new Array(3)
               .fill(0)
               .map((_, index) => <HistoryOrderItemSkeleton key={index} />)}
 
           {orders &&
             orders.length > 0 &&
-            orders.map((data) => (
-              <HistoryOrderItem data={data} key={data.id} />
-            ))}
+            orders
+              .reverse()
+              .map((data) => <HistoryOrderItem data={data} key={data.id} />)}
 
           {orders?.length === 0 && <NoOrders title={'No made orders now'} />}
         </OrderList>

@@ -9,6 +9,6 @@ jobs:
     with:
       script: npm run build
       uploadArtifact: |
-        dist
+        .
         logs
       artifactName: frontend-build

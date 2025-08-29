@@ -1,1 +1,0 @@
-import{d as n,q as e}from"./sonner-DKp8VmbJ.js";import{a5 as i}from"./index-yoIYmZrI.js";function f(r=!1){const[a,t]=n(r),o=e(async s=>{try{return t(!0),await s()}catch{i()}finally{t(!1)}},[]);return[a,o]}export{f as u};

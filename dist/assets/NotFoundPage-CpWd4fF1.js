@@ -1,4 +1,4 @@
-import{r as e,s as n,T as i,L as o,u as t,j as a}from"./index-yoIYmZrI.js";import{g as r}from"./getImageBackground-COxyacxJ.js";import"./sonner-DKp8VmbJ.js";import"./zod-DL37wdzu.js";const d=n.section`
+import{r as e,s as n,T as i,a2 as o,aa as a,u as t,k as r}from"./index-Dn5vD4rF.js";import"./sonner-DKp8VmbJ.js";import"./zod-DL37wdzu.js";const d=n.section`
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -22,11 +22,11 @@ import{r as e,s as n,T as i,L as o,u as t,j as a}from"./index-yoIYmZrI.js";impor
     text-align: left;
   }
 
-  ${r("404")}
-`,p=n(i)`
+  ${a("404")}
+`,l=n(i)`
   letter-spacing: 0.36px;
   margin-top: 10px;
-`,l=n(o)`
+`,p=n(o)`
   margin-top: 30px;
 `,s=n.h1`
   color: var(--color-green-100);
@@ -41,4 +41,4 @@ import{r as e,s as n,T as i,L as o,u as t,j as a}from"./index-yoIYmZrI.js";impor
   @media (min-width: 1440px) {
     font-size: 300px;
   }
-`;function g(){return t(d,{children:[t(s,{children:"404"}),t(a,{type:"h1",children:"Page Not Found"}),t(p,{type:"normal",children:"The page you are looking for doesn't exist or has been moved"}),t(l,{link:"home",variant:"blue",arrow:!0,size:"flattened",children:"Go To Home Page"})]})}function u(){return t("main",{children:t(g,{})})}export{u as default};
+`;function c(){return t(d,{children:[t(s,{children:"404"}),t(r,{type:"h1",children:"Page Not Found"}),t(l,{type:"normal",children:"The page you are looking for doesn't exist or has been moved"}),t(p,{link:"home",variant:"blue",arrow:!0,size:"flattened",children:"Go To Home Page"})]})}function h(){return t("main",{children:t(c,{})})}export{h as default};

@@ -16,7 +16,9 @@
   --color-white-100: #ffffff;
   --color-white-200: #f9f8f8;
   --color-white-300: #f1f1f1;
-  --color-white-opacity: rgba(244, 244, 244, 0.82);
+
+  --color-white-opacity-100: rgba(255, 255, 255, 0.5);
+  --color-white-opacity-200: rgba(244, 244, 244, 0.82);
 
   --color-green-100: #8fa8a8;
   --color-green-200: #7eb693;
@@ -48,7 +50,9 @@
   --color-white-100: #ffffff;
   --color-white-200: #f9f8f8;
   --color-white-300: #f1f1f1;
-  --color-white-opacity: rgba(244, 244, 244, 0.82);
+
+  --color-white-opacity-100: rgba(255, 255, 255, 0.3);
+  --color-white-opacity-200: rgba(244, 244, 244, 0.82);
 
   --color-green-100: #8fa8a8;
   --color-green-200: #7eb693;

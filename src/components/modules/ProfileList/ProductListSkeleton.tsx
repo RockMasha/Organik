@@ -5,49 +5,23 @@ function ProductListSkeleton() {
   return (
     <>
       <InfoList>
-        <InfoItem>
-          <Skeleton
-            className="
+        {new Array(4).fill(0).map((_, index) => (
+          <InfoItem key={index}>
+            <Skeleton
+              className="
           w-[100%] h-[50px]
           rounded-2xl bg-gray-200
         "
-          />
-        </InfoItem>
-        <InfoItem>
-          <Skeleton
-            className="
-          w-[100%] h-[50px]
-          rounded-2xl bg-gray-200
-        "
-          />
-        </InfoItem>
-        <InfoItem>
-          <Skeleton
-            className="
-          w-[100%] h-[50px]
-          rounded-2xl bg-gray-200
-        "
-          />
-        </InfoItem>
-        <InfoItem>
-          <Skeleton
-            className="
-          w-[100%] h-[50px]
-          rounded-2xl bg-gray-200
-        "
-          />
-        </InfoItem>
+            />
+          </InfoItem>
+        ))}
       </InfoList>
       <LinksList>
-        <li>
-          <Skeleton className="h-[80px] w-[170px] rounded-[25px] " />
-        </li>
-        <li>
-          <Skeleton className="h-[80px] w-[130px] rounded-[25px] " />
-        </li>
-        <li>
-          <Skeleton className="h-[80px] w-[175px] rounded-[25px] " />
-        </li>
+        {new Array(4).fill(0).map((_, index) => (
+          <li key={index}>
+            <Skeleton className="h-[60px] w-[130px] tablet:h-[80px] tablet:w-[170px] rounded-[25px] " />
+          </li>
+        ))}
       </LinksList>
     </>
   )

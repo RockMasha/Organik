@@ -1,4 +1,4 @@
-import { LinkButton } from '@/components/ui/button'
+import { Button, LinkButton } from '@/components/ui/button'
 import {
   InfoItem,
   InfoLabel,
@@ -27,7 +27,7 @@ function ProfileList({ data }: ProfileProps) {
     { label: 'Address', value: data.address },
   ]
 
-  const infoLinks = [
+  const infoLinks: { link: RouteWithoutId; name: string }[] = [
     { link: 'editProfile', name: 'Edit Profile' },
     { link: 'cart', name: 'Cart' },
     { link: 'orderHistory', name: 'Order History' },
@@ -46,11 +46,14 @@ function ProfileList({ data }: ProfileProps) {
       <LinksList>
         {infoLinks.map((obj) => (
           <li key={obj.name}>
-            <LinkButton variant="blue" link={obj.link as RouteWithoutId}>
+            <LinkButton variant="blue" link={obj.link}>
               {obj.name}
             </LinkButton>
           </li>
         ))}
+        <li>
+          <Button variant="yellow">logout</Button>
+        </li>
       </LinksList>
     </>
   )

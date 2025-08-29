@@ -1,11 +1,11 @@
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
+import { Navigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import type { RootState } from '@/types'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import PageLoader from '@/components/modules/PageLoader/PageLoader'
 import { getRoute } from '@/shared/helpers/getRoute'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import type { RootState } from '@/types'
 import { Suspense, useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
 import type { ComponentType } from 'react'
 
 interface PrivateRouteProps {

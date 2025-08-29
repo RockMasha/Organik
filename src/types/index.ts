@@ -12,6 +12,12 @@ export {
   ResponseUserSchema,
   type ResponseUser,
 } from './modules/user/ResponseUser'
+export { AddressSchema } from './modules/user/Address'
+export { FullNameSchema } from './modules/user/FullName'
+export { FirstNameSchema } from './modules/user/FirstName'
+export { PhoneSchema } from './modules/user/Phone'
+export { LastNameSchema } from './modules/user/LastName'
+export { EmailSchema } from './modules/user/Email'
 
 // cart
 export { CartSchema, type Cart } from './modules/cart/Cart'

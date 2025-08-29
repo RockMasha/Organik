@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Section, TitleStyled } from './ProfileSection.styled'
 import ProfileList from '@/components/modules/ProfileList/ProfileList'
-import { refreshUser } from '@/api/refreshUser'
+import { refreshUser } from '@/api/shared/refreshUser'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import useLoading from '@/shared/hooks/useLoading'
 import type { User } from '@/types'
@@ -15,7 +15,6 @@ function ProfileSection() {
   useEffect(() => {
     startLoading(async () => {
       const user = await dispatch(refreshUser()).unwrap()
-      console.log(user)
       setData(user)
     })
   }, [dispatch, useLoading])

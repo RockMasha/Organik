@@ -1,7 +1,9 @@
 import { z } from 'zod'
+import { EmailSchema } from '@/types'
+
 
 export const UserLoginSchema = z.object({
-  email: z.email({ message: 'Incorrect email' }),
+  email: EmailSchema,
   password: z
     .string()
     .min(8, { message: 'Password must contain at least 8 symbols' }),

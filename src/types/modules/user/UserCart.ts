@@ -3,8 +3,8 @@ import { CartProductSchema } from '../cart/CartProduct'
 
 export const UserCartSchema = z.object({
   id: z.number(),
-  createdAt: z.string().transform((str) => new Date(str)),
-  updatedAt: z.string().transform((str) => new Date(str)),
+  createdAt: z.string(),
+  updatedAt: z.string(),
   cartItems: z.array(CartProductSchema).optional(),
 })
 

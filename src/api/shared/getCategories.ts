@@ -1,4 +1,4 @@
-import api from './kyInstance'
+import api from '../kyInstance'
 import { ok } from 'neverthrow'
 import { handelNeverthrowError } from '@/shared/helpers/errorHandlers/handelNeverthrowError'
 import { ENDPOINTS } from '@/shared/consts/ENDPOINTS'

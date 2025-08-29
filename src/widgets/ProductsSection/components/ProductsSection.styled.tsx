@@ -1,0 +1,39 @@
+import Text from '@/components/ui/Text'
+import Title from '@/components/ui/Title'
+import responsiveSizing from '@/styles/helpers/responsiveSizing'
+import styled from '@emotion/styled'
+
+export const Section = styled.section`
+  position: relative;
+  padding-top: ${responsiveSizing(100, 176)};
+  padding-bottom: ${responsiveSizing(85, 200)};
+`
+
+export const ProductList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px 20px;
+  margin-bottom: ${responsiveSizing(30, 50)};
+`
+
+export const ProductTitle = styled(Title)`
+  margin-bottom: ${responsiveSizing(20, 40)};
+  text-align: center;
+`
+
+export const ProductGreenText = styled(Text)`
+  margin-bottom: ${responsiveSizing(2, 8)};
+  text-align: center;
+`
+
+export const ProductFilterList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: ${responsiveSizing(2, 8)};
+  margin-bottom: ${responsiveSizing(10, 30)};
+  li {
+    cursor: pointer;
+  }
+`

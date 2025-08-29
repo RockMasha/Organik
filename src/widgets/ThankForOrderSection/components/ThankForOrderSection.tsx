@@ -8,7 +8,7 @@ function ThankForOrderSection() {
   return (
     <Section>
       <StyledTitle type="h1">Thank you for your order</StyledTitle>
-      <StyledPicture name="thank-for-order" />
+      <StyledPicture name="thank-for-order" lazy={false} />
     </Section>
   )
 }

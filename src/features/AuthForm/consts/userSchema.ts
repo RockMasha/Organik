@@ -1,7 +1,6 @@
 import { z } from 'zod'
 import { EmailSchema } from '@/types'
 
-
 export const UserLoginSchema = z.object({
   email: EmailSchema,
   password: z

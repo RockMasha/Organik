@@ -6,11 +6,11 @@ import { ROUTES } from '@/shared/consts/ROUTES'
 import { lazy } from 'react'
 import { Suspense } from 'react'
 import PageLoader from '@/components/modules/PageLoader/PageLoader'
+import HomePage from '../HomePage'
 
 const ProductModal = lazy(
   () => import('@/features/ProductModal/components/ProductModal')
 )
-const HomePage = lazy(() => import('@/pages/HomePage'))
 const RegisterPage = lazy(() => import('@/pages/RegisterPage'))
 const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const CartPage = lazy(() => import('@/pages/CartPage'))
@@ -32,11 +32,7 @@ const router = createBrowserRouter(
       children: [
         {
           path: ROUTES.home,
-          element: (
-            <Suspense fallback={<PageLoader />}>
-              <HomePage />
-            </Suspense>
-          ),
+          element: <HomePage />,
           children: [
             {
               path: ROUTES.product,

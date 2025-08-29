@@ -17,8 +17,8 @@ export const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   width: 100vw;
-  padding: 10px 0;
-  height: 70px;
+  padding: 15px 0;
+  height: ${responsiveSizing(85, 100, 320, 768)};
   background-color: var(--color-white-opacity-100);
   backdrop-filter: blur(5px);
   z-index: 50;
@@ -57,6 +57,9 @@ export const StyledCartBtn = styled(LinkButton)`
   text-align: center;
   align-items: center;
   background-color: var(--color-white-opacity-100);
+  :hover {
+    background-color: var(--color-navy-100);
+  }
 `
 
 export const StyledAuthLink = styled(Link)`

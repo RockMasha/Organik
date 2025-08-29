@@ -11,7 +11,7 @@ interface PreviewSectionProps {
 function PreviewSection({ image, title }: PreviewSectionProps) {
   return (
     <Section>
-      <Picture className="w-full" name={image} />
+      <Picture className="w-full" name={image} lazy={false} />
       <Title className="absolute" type="h1">
         {title}
       </Title>

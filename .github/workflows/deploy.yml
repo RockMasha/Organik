@@ -13,7 +13,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: frontend-build
-          path: .
+          path: dist
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

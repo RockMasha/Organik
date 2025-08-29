@@ -5,33 +5,29 @@ import {
   StyledDropList,
   StyledNavigationMenuContent,
   StyledDiv,
-  StyledMenu,
-  SheetWrapper,
   StyledNavigation,
   StyledNavigationList,
   StyledNavText,
   StyledNavTextTrigger,
-  StyledNavigationSheet,
-  StyledNavigationListSheet,
+  SheetWrapper,
+  StyledMenu,
 } from './Header.styled'
 import { NavigationMenuItem } from '@/components/ui/navigation-menu'
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetHeader,
-  SheetTitle,
-} from '@/components/ui/sheet'
 import MenuItem from './MenuItem'
 import Logo from '@/components/modules/Logo/Logo'
 import CartBtn from './CartBtn'
-import useOpen from '../hooks/useOpen'
 import useWindowWidth from '@/shared/hooks/useWindowWidth'
-import { MenuIcon } from 'lucide-react'
 import { getRoute } from '@/shared/helpers/getRoute'
+import { lazy } from 'react'
+import { Suspense } from 'react'
+import useOpen from '../hooks/useOpen'
+import { Sheet, SheetTrigger } from '@/components/ui/sheet'
+import { MenuIcon } from 'lucide-react'
+
+const MobileSheet = lazy(() => import('./MobileSheet'))
 
 function Header() {
-  const { open, toggleOpen, setOpen } = useOpen()
+  const { open, setOpen, toggleOpen } = useOpen()
   const windowWidth = useWindowWidth()
 
   return (
@@ -84,37 +80,9 @@ function Header() {
                     <MenuIcon />
                   </StyledMenu>
                 </SheetTrigger>
-                <SheetContent side="right" open={open} onClose={toggleOpen}>
-                  <SheetHeader>
-                    <SheetTitle>
-                      <Logo />
-                    </SheetTitle>
-                    <StyledNavigationSheet>
-                      <StyledNavigationListSheet>
-                        <NavigationMenuItem className="flex justify-between gap-4">
-                          {window.innerWidth < 600 && (
-                            <>
-                              <AuthLink />
-                              <CartBtn />
-                            </>
-                          )}
-                        </NavigationMenuItem>
-                        <MenuItem link="hero" onClick={toggleOpen}>
-                          Welcome
-                        </MenuItem>
-                        <MenuItem link="about" onClick={toggleOpen}>
-                          About us
-                        </MenuItem>
-                        <MenuItem link="categories" onClick={toggleOpen}>
-                          Categories
-                        </MenuItem>
-                        <MenuItem link="products" onClick={toggleOpen}>
-                          Products
-                        </MenuItem>
-                      </StyledNavigationListSheet>
-                    </StyledNavigationSheet>
-                  </SheetHeader>
-                </SheetContent>
+                <Suspense fallback={null}>
+                  {open && <MobileSheet toggleOpen={toggleOpen} open={open} />}
+                </Suspense>
               </Sheet>
             </SheetWrapper>
           )}

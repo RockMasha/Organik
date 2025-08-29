@@ -1,10 +1,10 @@
+import { z } from 'zod'
 import {
   AddressSchema,
   FirstNameSchema,
   LastNameSchema,
   PhoneSchema,
 } from '@/types'
-import z from 'zod'
 
 export const RedactSchema = z.object({
   first_name: FirstNameSchema.optional(),

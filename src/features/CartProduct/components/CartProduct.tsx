@@ -25,7 +25,7 @@ function OrderProduct({ data }: OrderProductProps) {
 
   return (
     <ProductItem>
-      <ProductImage src={img} />
+      <ProductImage src={img} loading="lazy" />
       <ProductContentBox>
         <ProductDataBox>
           <ProductTitle type="h2">{name}</ProductTitle>

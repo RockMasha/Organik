@@ -3,14 +3,14 @@ import PageLoader from '@/components/modules/PageLoader/PageLoader'
 import { getRoute } from '@/shared/helpers/getRoute'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import type { RootState } from '@/types'
-import type { JSX } from 'preact/jsx-runtime'
-import { useEffect, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
+import type { ComponentType } from 'react'
 
 interface PublicOnlyRouteProps {
   redirect?: string
-  Component: JSX.Element
+  Component: ComponentType
 }
 
 function PublicOnlyRoute({
@@ -35,7 +35,13 @@ function PublicOnlyRoute({
     return <PageLoader />
   }
 
-  return isLoggedIn ? <Navigate to={redirect} /> : Component
+  return !isLoggedIn ? (
+    <Suspense fallback={<PageLoader />}>
+      <Component />
+    </Suspense>
+  ) : (
+    <Navigate to={redirect} />
+  )
 }
 
 export default PublicOnlyRoute

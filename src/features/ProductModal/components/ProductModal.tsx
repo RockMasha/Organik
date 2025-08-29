@@ -23,7 +23,7 @@ import { useAddToCart } from '../hooks/useAddToCart'
 import AddToCartForm from './AddToCartForm'
 import { useEffect } from 'react'
 
-export default function ProductModal() {
+function ProductModal() {
   const { id } = useParams()
   const navigate = useNavigate()
   const { product, cartProduct } = useProductData(id)
@@ -89,3 +89,5 @@ export default function ProductModal() {
     </ModalWrapper>
   )
 }
+
+export default ProductModal

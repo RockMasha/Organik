@@ -3,9 +3,10 @@ import type { Image } from '@/types'
 interface PictureProps {
   name: Image
   className?: string
+  lazy?: boolean
 }
 
-const Picture = ({ name, className }: PictureProps) => {
+const Picture = ({ name, className, lazy }: PictureProps) => {
   return (
     <picture className={className}>
       <source
@@ -71,10 +72,21 @@ const Picture = ({ name, className }: PictureProps) => {
       <img
         src={`/Organic/images/${name}/${name}-320-1x.jpg`}
         alt="picture"
-        loading="lazy"
+        loading={getLoading(lazy)}
       />
     </picture>
   )
+}
+
+const getLoading = (lazy: boolean | undefined) => {
+  switch (lazy) {
+    case true:
+      return 'lazy'
+    case false:
+      return 'eager'
+    default:
+      return 'lazy'
+  }
 }
 
 export default Picture

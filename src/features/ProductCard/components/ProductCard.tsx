@@ -40,7 +40,7 @@ function ProductCardInner({ data }: { data: Product }) {
   return (
     <>
       <ProductBadge>{category.name}</ProductBadge>
-      <ProductImg src={img} />
+      <ProductImg src={img} loading="lazy" />
       <ProductTitle type="h4">{name}</ProductTitle>
       <ProductValueContainer>
         <ProductPriceBox>
